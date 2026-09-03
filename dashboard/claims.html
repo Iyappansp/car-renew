@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Claims — RenewPath Dashboard</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/home.css">
+<link rel="stylesheet" href="../assets/css/pages.css">
+<link rel="stylesheet" href="../assets/css/dashboard.css">
+<link rel="stylesheet" href="../assets/css/responsive.css">
+<link rel="stylesheet" href="../assets/css/dark-mode.css">
+<link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body data-dash-page="claims">
+<div class="dash-shell" id="dash-shell-root"></div>
+
+<div id="dash-page-content" style="display:none">
+
+  <div class="dash-card claim-card">
+    <div class="claim-card-head">
+      <div>
+        <h3 class="h4">Claim CLM-DEMO-4821</h3>
+        <span class="text-muted" style="font-size:0.85rem">Hyundai Creta SX — Minor accidental damage</span>
+      </div>
+      <span class="pill pill-warning">Under Review</span>
+    </div>
+    <div class="wallet-row"><span class="wr-label">Incident date</span><span class="wr-value">12 Aug 2026</span></div>
+    <div class="wallet-row"><span class="wr-label">Policy</span><span class="wr-value">POL-DEMO-2847</span></div>
+    <div class="wallet-row" style="margin-bottom:var(--space-6)"><span class="wr-label">Claim type</span><span class="wr-value">Accidental damage</span></div>
+
+    <h4 class="h4" style="margin-bottom:var(--space-5);font-size:0.95rem">Claim timeline</h4>
+    <div class="timeline">
+      <div class="timeline-item is-done"><span class="timeline-dot">1</span><div class="timeline-content"><h4>Reported</h4><p>Claim was logged on 12 Aug 2026.</p></div></div>
+      <div class="timeline-item is-done"><span class="timeline-dot">2</span><div class="timeline-content"><h4>Documents submitted</h4><p>Photos and repair estimate uploaded.</p></div></div>
+      <div class="timeline-item is-done"><span class="timeline-dot">3</span><div class="timeline-content"><h4>Inspection</h4><p>Vehicle inspection completed on 18 Aug 2026.</p></div></div>
+      <div class="timeline-item"><span class="timeline-dot">4</span><div class="timeline-content"><h4>Claim review</h4><p>Currently being reviewed by the insurer.</p></div></div>
+      <div class="timeline-item"><span class="timeline-dot">5</span><div class="timeline-content"><h4>Resolution</h4><p>Pending — you'll be notified once resolved.</p></div></div>
+    </div>
+    <button type="button" class="btn btn-secondary" style="margin-top:var(--space-6)" id="view-claim-btn">View Claim</button>
+  </div>
+
+  <div style="margin-top:var(--space-6)">
+    <a href="../claims.html" class="btn btn-primary">Start a New Claim</a>
+  </div>
+
+</div>
+
+<script src="../assets/js/dashboard.js"></script>
+<script src="../assets/js/animations.js"></script>
+<script>
+  document.getElementById('view-claim-btn').addEventListener('click', function () {
+    window.RenewPath.toast('Claim details refreshed.');
+  });
+</script>
+</body>
+</html>

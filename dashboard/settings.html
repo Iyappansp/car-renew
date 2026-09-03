@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Account Settings — RenewPath Dashboard</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/pages.css">
+<link rel="stylesheet" href="../assets/css/dashboard.css">
+<link rel="stylesheet" href="../assets/css/responsive.css">
+<link rel="stylesheet" href="../assets/css/dark-mode.css">
+<link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body data-dash-page="settings">
+<div class="dash-shell" id="dash-shell-root"></div>
+
+<div id="dash-page-content" style="display:none">
+
+  <div style="max-width:720px;display:flex;flex-direction:column;gap:var(--space-6)">
+
+    <div class="dash-card">
+      <h4 class="h4" style="margin-bottom:var(--space-4)">Notification preferences</h4>
+      <div class="settings-row"><div class="settings-row-label"><p>Email notifications</p><span>Renewal, quote and account updates</span></div><label class="switch"><input type="checkbox" checked data-setting="email-notif"><span class="switch-track"></span></label></div>
+      <div class="settings-row"><div class="settings-row-label"><p>SMS notifications</p><span>Text message alerts for urgent updates</span></div><label class="switch"><input type="checkbox" checked data-setting="sms-notif"><span class="switch-track"></span></label></div>
+      <div class="settings-row"><div class="settings-row-label"><p>Renewal alerts</p><span>Reminders as your renewal date approaches</span></div><label class="switch"><input type="checkbox" checked data-setting="renewal-alerts"><span class="switch-track"></span></label></div>
+      <div class="settings-row"><div class="settings-row-label"><p>Claim updates</p><span>Status changes on active claims</span></div><label class="switch"><input type="checkbox" checked data-setting="claim-updates"><span class="switch-track"></span></label></div>
+    </div>
+
+    <div class="dash-card">
+      <h4 class="h4" style="margin-bottom:var(--space-4)">Security</h4>
+      <div class="settings-row">
+        <div class="settings-row-label"><p>Change password</p><span>Last changed 3 months ago</span></div>
+        <button type="button" class="btn btn-secondary btn-sm" data-modal-open="change-pw-modal">Change</button>
+      </div>
+      <div class="settings-row">
+        <div class="settings-row-label"><p>Session management</p><span>Manage devices signed in to your account</span></div>
+        <button type="button" class="btn btn-ghost btn-sm" id="manage-sessions-btn">Manage</button>
+      </div>
+    </div>
+
+    <div class="dash-card">
+      <h4 class="h4" style="margin-bottom:var(--space-4)">Appearance</h4>
+      <div class="settings-row">
+        <div class="settings-row-label"><p>Theme</p><span>Light or dark mode</span></div>
+        <div class="filter-group" style="min-width:auto">
+          <button type="button" class="filter-chip" id="settings-theme-light">Light</button>
+          <button type="button" class="filter-chip" id="settings-theme-dark">Dark</button>
+        </div>
+      </div>
+      <div class="settings-row">
+        <div class="settings-row-label"><p>Language / direction</p><span>Left-to-right or right-to-left layout</span></div>
+        <div class="filter-group" style="min-width:auto">
+          <button type="button" class="filter-chip" id="settings-dir-ltr">LTR</button>
+          <button type="button" class="filter-chip" id="settings-dir-rtl">RTL</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="modal-backdrop" id="change-pw-modal">
+  <div class="modal-box">
+    <h3 class="h4" style="margin-bottom:var(--space-5)">Change password</h3>
+    <form id="change-pw-form">
+      <div class="field"><label for="cpw-current">Current password</label><input type="password" id="cpw-current" class="input" required></div>
+      <div class="field"><label for="cpw-new">New password</label><input type="password" id="cpw-new" class="input" required minlength="8"></div>
+      <div class="field mb-0"><label for="cpw-confirm">Confirm new password</label><input type="password" id="cpw-confirm" class="input" required></div>
+      <div class="flex gap-3" style="margin-top:var(--space-6)">
+        <button type="button" class="btn btn-ghost w-100" data-modal-close>Cancel</button>
+        <button type="submit" class="btn btn-primary w-100">Update</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="../assets/js/dashboard.js"></script>
+<script src="../assets/js/animations.js"></script>
+<script>
+  document.querySelectorAll('[data-setting]').forEach(function (input) {
+    var key = 'rp-setting-' + input.dataset.setting;
+    var stored = localStorage.getItem(key);
+    if (stored !== null) input.checked = stored === '1';
+    input.addEventListener('change', function () {
+      localStorage.setItem(key, input.checked ? '1' : '0');
+      window.RenewPath.toast('Profile changes saved.');
+    });
+  });
+
+  function syncThemeButtons() {
+    var theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    document.getElementById('settings-theme-light').classList.toggle('active', theme === 'light');
+    document.getElementById('settings-theme-dark').classList.toggle('active', theme === 'dark');
+  }
+  function syncDirButtons() {
+    var isRTL = document.documentElement.getAttribute('dir') === 'rtl';
+    document.getElementById('settings-dir-ltr').classList.toggle('active', !isRTL);
+    document.getElementById('settings-dir-rtl').classList.toggle('active', isRTL);
+  }
+  document.getElementById('settings-theme-light').addEventListener('click', function () {
+    document.documentElement.setAttribute('data-theme', 'light'); localStorage.setItem('rp-theme', 'light'); syncThemeButtons();
+  });
+  document.getElementById('settings-theme-dark').addEventListener('click', function () {
+    document.documentElement.setAttribute('data-theme', 'dark'); localStorage.setItem('rp-theme', 'dark'); syncThemeButtons();
+  });
+  document.getElementById('settings-dir-ltr').addEventListener('click', function () {
+    document.documentElement.setAttribute('dir', 'ltr'); localStorage.setItem('rp-rtl', '0'); syncDirButtons();
+  });
+  document.getElementById('settings-dir-rtl').addEventListener('click', function () {
+    document.documentElement.setAttribute('dir', 'rtl'); localStorage.setItem('rp-rtl', '1'); syncDirButtons();
+  });
+  syncThemeButtons();
+  syncDirButtons();
+
+  document.getElementById('manage-sessions-btn').addEventListener('click', function () {
+    window.RenewPath.toast('Session list refreshed.');
+  });
+  document.getElementById('change-pw-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var pw = document.getElementById('cpw-new').value;
+    var confirm = document.getElementById('cpw-confirm');
+    if (pw !== confirm.value) { confirm.classList.add('is-invalid'); return; }
+    confirm.classList.remove('is-invalid');
+    document.getElementById('change-pw-modal').classList.remove('open');
+    document.body.style.overflow = '';
+    window.RenewPath.toast('Profile changes saved.');
+    this.reset();
+  });
+</script>
+</body>
+</html>

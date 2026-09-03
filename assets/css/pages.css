@@ -1,0 +1,150 @@
+/* ============================================================
+   INNER PAGE PATTERNS — shared across how-it-works, policy-types,
+   claims, insurers, renewal, faq, contact, auth pages
+   ============================================================ */
+
+/* ---------- Inner hero (shorter than home hero) ---------- */
+.inner-hero { padding-block: clamp(48px, 6vw, 80px) clamp(40px, 5vw, 64px); position: relative; overflow: hidden; }
+.inner-hero .hero-glow { background: radial-gradient(500px circle at 85% 0%, var(--color-primary-100), transparent 60%); }
+.inner-hero-content { position: relative; z-index: 1; max-width: 720px; }
+.inner-hero-content.center { max-width: 680px; margin-inline: auto; text-align: center; }
+.inner-hero .eyebrow.center-eyebrow { justify-content: center; }
+
+/* ---------- Numbered steps (How It Works) ---------- */
+.step-grid { display: grid; gap: var(--space-6); }
+@media (min-width: 640px) { .step-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .step-grid { grid-template-columns: repeat(4, 1fr); } }
+.step-card { padding: var(--space-6); position: relative; }
+.step-card .step-num { font-size: 2.2rem; font-weight: 800; color: var(--color-primary-100); line-height: 1; margin-bottom: var(--space-4); }
+.step-card .step-icon { width: 42px; height: 42px; border-radius: 12px; background: var(--color-primary-100); color: var(--color-primary); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4); }
+.step-card .step-icon svg { width: 20px; height: 20px; }
+.step-connector { display: none; }
+@media (min-width: 1024px) {
+  .step-grid.with-connector { position: relative; }
+  .step-grid.with-connector::before {
+    content: ""; position: absolute; top: 90px; left: 12.5%; right: 12.5%; height: 2px;
+    background: repeating-linear-gradient(to right, var(--border) 0 8px, transparent 8px 14px); z-index: 0;
+  }
+}
+
+/* ---------- Policy type detail blocks ---------- */
+.policy-detail-block { padding: var(--space-7); }
+.policy-detail-block h3 { margin-bottom: var(--space-4); }
+.policy-detail-grid { display: grid; gap: var(--space-6); }
+@media (min-width: 768px) { .policy-detail-grid { grid-template-columns: repeat(3, 1fr); } }
+.policy-detail-col h5 { font-size: 0.82rem; text-transform: none; color: var(--text-muted); margin-bottom: 10px; font-weight: 700; }
+.policy-detail-col ul { display: flex; flex-direction: column; gap: 8px; }
+.policy-detail-col li { font-size: 0.88rem; color: var(--text-secondary); display: flex; gap: 8px; align-items: flex-start; }
+.policy-detail-col li svg { width: 14px; height: 14px; flex-shrink: 0; margin-top: 4px; }
+
+.addon-card { padding: var(--space-5); display: flex; flex-direction: column; gap: 10px; height: 100%; }
+.addon-card .addon-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--color-secondary-100); color: var(--color-secondary-600); display: flex; align-items: center; justify-content: center; }
+.addon-card .addon-icon svg { width: 19px; height: 19px; }
+
+/* ---------- Comparison table (mobile → cards) ---------- */
+.compare-table-wrap { overflow-x: auto; border-radius: var(--radius-lg); border: 1px solid var(--border); }
+.compare-table { width: 100%; border-collapse: collapse; min-width: 640px; }
+.compare-table th, .compare-table td { padding: 16px 20px; text-align: left; border-bottom: 1px solid var(--border-soft); font-size: 0.88rem; }
+.compare-table thead th { background: var(--surface); font-size: 0.78rem; color: var(--text-muted); font-weight: 700; }
+.compare-table tbody tr:last-child td { border-bottom: none; }
+.compare-table td.is-highlighted, .compare-table th.is-highlighted { background: var(--color-primary-50); }
+
+.compare-cards { display: none; flex-direction: column; gap: var(--space-4); }
+@media (max-width: 767px) {
+  .compare-table-wrap { display: none; }
+  .compare-cards { display: flex; }
+}
+.compare-card-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border-soft); font-size: 0.87rem; }
+.compare-card-row:last-child { border-bottom: none; }
+
+/* ---------- Claim process (vertical flow) ---------- */
+.claim-flow { display: flex; flex-direction: column; align-items: center; gap: 0; max-width: 420px; margin-inline: auto; }
+.claim-flow-step {
+  width: 100%; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md);
+  padding: 16px 20px; text-align: center; font-weight: 600; box-shadow: var(--shadow-sm);
+}
+.claim-flow-arrow { color: var(--text-muted); margin-block: 6px; }
+.claim-flow-arrow svg { width: 18px; height: 18px; }
+
+.checklist-grid { display: grid; gap: var(--space-4); }
+@media (min-width: 640px) { .checklist-grid { grid-template-columns: repeat(2, 1fr); } }
+.checklist-item { display: flex; align-items: center; gap: 12px; padding: 14px 18px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); font-size: 0.9rem; font-weight: 500; }
+.checklist-item svg { width: 18px; height: 18px; color: var(--color-success); flex-shrink: 0; }
+
+/* ---------- Insurer cards + filters ---------- */
+.filter-bar { display: flex; flex-wrap: wrap; gap: var(--space-5); padding: var(--space-5); background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); margin-bottom: var(--space-7); }
+.filter-group { flex: 1; min-width: 160px; }
+.filter-group .fg-label { font-size: 0.78rem; font-weight: 700; color: var(--text-muted); margin-bottom: 10px; display: block; }
+.filter-chip { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; font-size: 0.82rem; font-weight: 600; border-radius: var(--radius-pill); border: 1.5px solid var(--border); background: var(--color-bg); color: var(--text-secondary); margin: 0 6px 6px 0; transition: all var(--dur-fast); cursor: pointer; }
+.filter-chip.active { background: var(--color-primary); border-color: var(--color-primary); color: #fff; }
+.filter-chip:hover:not(.active) { border-color: var(--color-primary); color: var(--color-primary); }
+.filter-clear { font-size: 0.82rem; color: var(--color-primary); font-weight: 600; align-self: flex-end; }
+
+.insurer-card { padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-4); }
+.insurer-card-head { display: flex; align-items: center; gap: 14px; }
+.insurer-card-head img { width: 52px; height: 52px; border-radius: 12px; flex-shrink: 0; }
+.insurer-rating { display: flex; align-items: center; gap: 4px; font-size: 0.82rem; color: var(--text-muted); }
+.insurer-rating svg { width: 14px; height: 14px; color: var(--color-secondary); }
+.insurer-tag-row { display: flex; flex-wrap: wrap; gap: 6px; }
+
+/* ---------- Renewal stepper ---------- */
+.stepper { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-8); max-width: 720px; margin-inline: auto; }
+.stepper-step { display: flex; flex-direction: column; align-items: center; gap: 8px; flex: 1; position: relative; }
+.stepper-circle { width: 36px; height: 36px; border-radius: 50%; background: var(--border-soft); color: var(--text-muted); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; border: 2px solid var(--border-soft); transition: all var(--dur-fast); z-index: 1; }
+.stepper-step.active .stepper-circle { background: var(--color-primary); border-color: var(--color-primary); color: #fff; }
+.stepper-step.done .stepper-circle { background: var(--color-success); border-color: var(--color-success); color: #fff; }
+.stepper-label { font-size: 0.76rem; font-weight: 600; color: var(--text-muted); text-align: center; }
+.stepper-step.active .stepper-label { color: var(--text-primary); }
+.stepper-step:not(:last-child)::after { content: ""; position: absolute; top: 18px; left: 55%; right: -45%; height: 2px; background: var(--border-soft); z-index: 0; }
+.stepper-step.done:not(:last-child)::after { background: var(--color-success); }
+@media (max-width: 640px) { .stepper-label { display: none; } }
+
+.renewal-panel { display: none; }
+.renewal-panel.active { display: block; }
+
+/* ---------- FAQ ---------- */
+.faq-category-tabs { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: var(--space-7); }
+.accordion-item { border: 1px solid var(--border); border-radius: var(--radius-md); margin-bottom: 12px; overflow: hidden; background: var(--surface); }
+.accordion-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 18px 22px; background: none; border: none; text-align: left; font-weight: 600; font-size: 0.95rem; color: var(--text-primary); }
+.accordion-trigger .chev { width: 18px; height: 18px; color: var(--text-muted); transition: transform var(--dur-fast); flex-shrink: 0; }
+.accordion-item.open .accordion-trigger .chev { transform: rotate(180deg); }
+.accordion-panel { max-height: 0; overflow: hidden; transition: max-height var(--dur-med) var(--ease); }
+.accordion-panel-inner { padding: 0 22px 20px; font-size: 0.9rem; color: var(--text-secondary); }
+
+/* ---------- Contact ---------- */
+.contact-info-card { display: flex; gap: 14px; align-items: flex-start; padding: var(--space-5); }
+.contact-info-icon { width: 42px; height: 42px; border-radius: 12px; background: var(--color-primary-100); color: var(--color-primary); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.contact-info-icon svg { width: 20px; height: 20px; }
+
+/* ---------- Auth pages ---------- */
+.auth-shell { min-height: calc(100vh - 0px); display: grid; }
+@media (min-width: 1024px) { .auth-shell { grid-template-columns: 1fr 1fr; } }
+.auth-side { position: relative; background: linear-gradient(150deg, var(--color-ink), #1B2537); color: #fff; display: none; padding: var(--space-8); flex-direction: column; justify-content: space-between; overflow: hidden; }
+@media (min-width: 1024px) { .auth-side { display: flex; } }
+.auth-side-content { position: relative; z-index: 1; max-width: 420px; }
+.auth-side h2 { color: #fff; margin-bottom: 14px; }
+.auth-side p { color: #B6BECC; }
+.auth-form-side { display: flex; align-items: center; justify-content: center; padding: clamp(28px,5vw,64px) var(--container-pad); }
+.auth-form-box { width: 100%; max-width: 420px; }
+.auth-top-toggles { display: flex; justify-content: flex-end; gap: 8px; margin-bottom: var(--space-6); }
+@media (max-width: 1023px) { .auth-top-toggles { justify-content: space-between; } }
+.auth-brand { display: flex; align-items: center; gap: 10px; font-weight: 800; margin-bottom: var(--space-7); }
+.auth-brand .brand-mark { width: 34px; height: 34px; border-radius: 9px; background: linear-gradient(135deg, var(--color-primary), var(--color-primary-600)); display: flex; align-items: center; justify-content: center; color: #fff; }
+.social-login-row { display: flex; flex-direction: column; gap: 10px; margin-top: var(--space-5); }
+.social-btn { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px; border-radius: var(--radius-sm); border: 1.5px solid var(--border); background: var(--surface); font-weight: 600; font-size: 0.9rem; color: var(--text-primary); transition: background var(--dur-fast); }
+.social-btn:hover { background: var(--border-soft); }
+.social-btn svg { width: 18px; height: 18px; }
+.auth-divider { display: flex; align-items: center; gap: 14px; margin-block: var(--space-6); color: var(--text-muted); font-size: 0.82rem; }
+.auth-divider::before, .auth-divider::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+.password-strength { display: flex; gap: 4px; margin-top: 8px; }
+.password-strength span { height: 4px; flex: 1; border-radius: 2px; background: var(--border); }
+.password-strength.weak span:nth-child(1) { background: var(--color-danger); }
+.password-strength.medium span:nth-child(1), .password-strength.medium span:nth-child(2) { background: var(--color-secondary); }
+.password-strength.strong span { background: var(--color-success); }
+.auth-side-badges { display: flex; flex-direction: column; gap: 12px; margin-top: var(--space-6); }
+.auth-side-badge { display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: #E2E6EF; }
+.auth-side-badge svg { width: 17px; height: 17px; color: var(--color-secondary); flex-shrink: 0; }
+
+/* ---------- Skeleton loading ---------- */
+.skeleton { background: linear-gradient(90deg, #EEF1F6 25%, #E5E9F0 37%, #EEF1F6 63%); background-size: 400% 100%; animation: skeleton-loading 1.4s ease infinite; border-radius: var(--radius-sm); }
+@keyframes skeleton-loading { 0% { background-position: 100% 50%; } 100% { background-position: 0 50%; } }

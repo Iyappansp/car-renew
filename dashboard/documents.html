@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Documents — RenewPath Dashboard</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/pages.css">
+<link rel="stylesheet" href="../assets/css/dashboard.css">
+<link rel="stylesheet" href="../assets/css/responsive.css">
+<link rel="stylesheet" href="../assets/css/dark-mode.css">
+<link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body data-dash-page="documents">
+<div class="dash-shell" id="dash-shell-root"></div>
+
+<div id="dash-page-content" style="display:none">
+
+  <div data-tabs>
+    <div class="dash-tabs">
+      <button type="button" class="dash-tab-btn active" data-tab-target="policies-doc" aria-selected="true">Policies</button>
+      <button type="button" class="dash-tab-btn" data-tab-target="certificates" aria-selected="false">Insurance Certificates</button>
+      <button type="button" class="dash-tab-btn" data-tab-target="claim-docs" aria-selected="false">Claim Documents</button>
+      <button type="button" class="dash-tab-btn" data-tab-target="vehicle-docs" aria-selected="false">Vehicle Documents</button>
+      <button type="button" class="dash-tab-btn" data-tab-target="other-docs" aria-selected="false">Other</button>
+    </div>
+
+    <div data-tab-panel="policies-doc" class="active">
+      <div class="grid grid-2" style="gap:var(--space-4)">
+        <div class="doc-card"><span class="doc-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span><div class="doc-card-meta"><p>Policy_2026_Bluewave.pdf</p><span>PDF · 1.2 MB · 12 Sep 2025</span></div><div class="doc-card-actions"><button class="btn btn-ghost btn-sm" data-preview>Preview</button><button class="btn btn-primary btn-sm" data-download>Download</button></div></div>
+        <div class="doc-card"><span class="doc-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span><div class="doc-card-meta"><p>Policy_2025_Shieldcore.pdf</p><span>PDF · 1.1 MB · 11 Sep 2024</span></div><div class="doc-card-actions"><button class="btn btn-ghost btn-sm" data-preview>Preview</button><button class="btn btn-primary btn-sm" data-download>Download</button></div></div>
+      </div>
+    </div>
+    <div data-tab-panel="certificates">
+      <div class="grid grid-2" style="gap:var(--space-4)">
+        <div class="doc-card"><span class="doc-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span><div class="doc-card-meta"><p>Insurance_Certificate.pdf</p><span>PDF · 480 KB · 12 Sep 2025</span></div><div class="doc-card-actions"><button class="btn btn-ghost btn-sm" data-preview>Preview</button><button class="btn btn-primary btn-sm" data-download>Download</button></div></div>
+      </div>
+    </div>
+    <div data-tab-panel="claim-docs">
+      <div class="grid grid-2" style="gap:var(--space-4)">
+        <div class="doc-card"><span class="doc-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span><div class="doc-card-meta"><p>Claim_CLM-4821_Report.pdf</p><span>PDF · 620 KB · 12 Aug 2026</span></div><div class="doc-card-actions"><button class="btn btn-ghost btn-sm" data-preview>Preview</button><button class="btn btn-primary btn-sm" data-download>Download</button></div></div>
+      </div>
+    </div>
+    <div data-tab-panel="vehicle-docs">
+      <div class="grid grid-2" style="gap:var(--space-4)">
+        <div class="doc-card"><span class="doc-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span><div class="doc-card-meta"><p>RC_Book_Copy.pdf</p><span>PDF · 900 KB · 02 Jan 2022</span></div><div class="doc-card-actions"><button class="btn btn-ghost btn-sm" data-preview>Preview</button><button class="btn btn-primary btn-sm" data-download>Download</button></div></div>
+      </div>
+    </div>
+    <div data-tab-panel="other-docs">
+      <p class="text-muted">No other documents yet.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="modal-backdrop" id="doc-preview-modal">
+  <div class="modal-box modal-lg">
+    <div class="flex justify-between items-center" style="margin-bottom:var(--space-5)">
+      <h3 class="h4">Document preview</h3>
+      <button type="button" class="btn-icon" data-modal-close aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <div class="doc-preview-frame">
+      <svg width="90" height="110" viewBox="0 0 90 110" fill="none"><rect width="90" height="110" rx="8" fill="var(--color-primary-100)"/><rect x="14" y="20" width="62" height="8" rx="4" fill="var(--color-primary)"/><rect x="14" y="38" width="46" height="6" rx="3" fill="var(--border)"/><rect x="14" y="50" width="52" height="6" rx="3" fill="var(--border)"/><rect x="14" y="62" width="40" height="6" rx="3" fill="var(--border)"/></svg>
+    </div>
+    <p class="text-muted text-center" style="margin-top:var(--space-4);font-size:0.85rem">Sample document preview for demonstration.</p>
+  </div>
+</div>
+
+<script src="../assets/js/dashboard.js"></script>
+<script src="../assets/js/animations.js"></script>
+<script>
+  document.querySelectorAll('[data-download]').forEach(function (btn) {
+    btn.addEventListener('click', function () { window.RenewPath.toast('Document downloaded.'); });
+  });
+  document.querySelectorAll('[data-preview]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.getElementById('doc-preview-modal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+</script>
+</body>
+</html>

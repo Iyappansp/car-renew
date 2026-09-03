@@ -1,0 +1,68 @@
+/* ============================================================
+   DARK MODE — redesign, not inversion
+   Activated via [data-theme="dark"] on <html>
+   ============================================================ */
+
+[data-theme="dark"] body { background: var(--color-bg); }
+
+[data-theme="dark"] .site-header { background: color-mix(in srgb, var(--surface) 82%, transparent); }
+
+[data-theme="dark"] .card,
+[data-theme="dark"] .input,
+[data-theme="dark"] select.input,
+[data-theme="dark"] textarea.input { background: var(--surface); border-color: var(--border); }
+
+[data-theme="dark"] .brand-mark { box-shadow: 0 0 0 1px rgba(76,140,255,0.3); }
+
+[data-theme="dark"] .hero-glow {
+  background: radial-gradient(600px circle at 70% 20%, rgba(76,140,255,0.16), transparent 60%);
+}
+
+[data-theme="dark"] .btn-secondary { background: var(--surface); }
+
+[data-theme="dark"] .quote-card.is-recommended { box-shadow: 0 0 0 2px var(--color-primary), var(--shadow-lg); }
+
+[data-theme="dark"] .doc-preview-frame { background: #0D1420; }
+
+[data-theme="dark"] img.themed-invert { filter: brightness(0.92) contrast(1.05); }
+
+[data-theme="dark"] .skeleton { background: linear-gradient(90deg, #1B2334 25%, #232C3E 37%, #1B2334 63%); background-size: 400% 100%; }
+
+[data-theme="dark"] .stat-mini { background: var(--surface-raised); }
+
+[data-theme="dark"] .modal-backdrop { background: rgba(0,0,0,0.72); }
+
+[data-theme="dark"] .progress-track { background: var(--border); }
+
+[data-theme="dark"] ::selection { background: var(--color-primary); color: #fff; }
+
+/* Dark mode for extra sections */
+[data-theme="dark"] .extra-stat-card,
+[data-theme="dark"] .extra-hiw-step,
+[data-theme="dark"] .extra-testimonial-card,
+[data-theme="dark"] .extra-faq-item,
+[data-theme="dark"] .calc-box,
+[data-theme="dark"] .garage-card,
+[data-theme="dark"] .benchmark-card,
+[data-theme="dark"] .checklist-card,
+[data-theme="dark"] .timeline-card,
+[data-theme="dark"] .quiz-container,
+[data-theme="dark"] .scenario-card,
+[data-theme="dark"] .ncb-rung,
+[data-theme="dark"] .garage-item-card,
+[data-theme="dark"] .tracker-demo-box,
+[data-theme="dark"] .mistake-card,
+[data-theme="dark"] .sos-card,
+[data-theme="dark"] .usp-card,
+[data-theme="dark"] .reg-trust-card,
+[data-theme="dark"] .addon-toggle-item,
+[data-theme="dark"] .early-perk-card,
+[data-theme="dark"] .guarantee-card {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .transform-col.traditional {
+  background: var(--surface-raised);
+  border-color: var(--border);
+}

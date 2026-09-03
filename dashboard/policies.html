@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Policies — RenewPath Dashboard</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/pages.css">
+<link rel="stylesheet" href="../assets/css/dashboard.css">
+<link rel="stylesheet" href="../assets/css/responsive.css">
+<link rel="stylesheet" href="../assets/css/dark-mode.css">
+<link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body data-dash-page="policies">
+<div class="dash-shell" id="dash-shell-root"></div>
+
+<div id="dash-page-content" style="display:none">
+
+  <div data-tabs>
+    <div class="dash-tabs">
+      <button type="button" class="dash-tab-btn active" data-tab-target="active" aria-selected="true">Active</button>
+      <button type="button" class="dash-tab-btn" data-tab-target="expired" aria-selected="false">Expired</button>
+      <button type="button" class="dash-tab-btn" data-tab-target="past" aria-selected="false">Past</button>
+    </div>
+
+    <div data-tab-panel="active" class="active">
+      <div class="grid grid-2" style="gap:var(--space-5)">
+        <div class="dash-card">
+          <div class="flex justify-between items-start" style="margin-bottom:var(--space-4)"><h4 class="h4">Hyundai Creta SX</h4><span class="pill pill-success">Active</span></div>
+          <div class="wallet-row"><span class="wr-label">Policy</span><span class="wr-value">POL-DEMO-2847</span></div>
+          <div class="wallet-row"><span class="wr-label">Insurer</span><span class="wr-value">Bluewave Insurer</span></div>
+          <div class="wallet-row"><span class="wr-label">Coverage</span><span class="wr-value">Comprehensive</span></div>
+          <div class="wallet-row"><span class="wr-label">Premium</span><span class="wr-value">₹16,200</span></div>
+          <div class="wallet-row"><span class="wr-label">Start date</span><span class="wr-value">12 Sep 2025</span></div>
+          <div class="wallet-row"><span class="wr-label">Expiry date</span><span class="wr-value">12 Sep 2026</span></div>
+          <a href="policy-details.html" class="btn btn-primary btn-block" style="margin-top:var(--space-5)">View Policy</a>
+        </div>
+      </div>
+    </div>
+
+    <div data-tab-panel="expired">
+      <div class="grid grid-2" style="gap:var(--space-5)">
+        <div class="dash-card">
+          <div class="flex justify-between items-start" style="margin-bottom:var(--space-4)"><h4 class="h4">Hyundai Creta SX</h4><span class="pill pill-danger">Expired</span></div>
+          <div class="wallet-row"><span class="wr-label">Policy</span><span class="wr-value">POL-DEMO-1963</span></div>
+          <div class="wallet-row"><span class="wr-label">Insurer</span><span class="wr-value">Shieldcore Insurer</span></div>
+          <div class="wallet-row"><span class="wr-label">Coverage</span><span class="wr-value">Comprehensive</span></div>
+          <div class="wallet-row"><span class="wr-label">Expiry date</span><span class="wr-value">11 Sep 2025</span></div>
+          <a href="renewal.html" class="btn btn-secondary btn-block" style="margin-top:var(--space-5)">Renew Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div data-tab-panel="past">
+      <div class="grid grid-2" style="gap:var(--space-5)">
+        <div class="dash-card">
+          <div class="flex justify-between items-start" style="margin-bottom:var(--space-4)"><h4 class="h4">Hyundai Creta SX</h4><span class="pill pill-neutral">Past</span></div>
+          <div class="wallet-row"><span class="wr-label">Policy</span><span class="wr-value">POL-DEMO-0847</span></div>
+          <div class="wallet-row"><span class="wr-label">Insurer</span><span class="wr-value">Northstar Insurer</span></div>
+          <div class="wallet-row"><span class="wr-label">Coverage</span><span class="wr-value">Third-Party</span></div>
+          <div class="wallet-row"><span class="wr-label">Period</span><span class="wr-value">2023 – 2024</span></div>
+          <a href="documents.html" class="btn btn-ghost btn-block" style="margin-top:var(--space-5)">View Documents</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="../assets/js/dashboard.js"></script>
+<script src="../assets/js/animations.js"></script>
+</body>
+</html>

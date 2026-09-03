@@ -1,0 +1,111 @@
+/* ============================================================
+   DESIGN TOKENS — RenewPath Car Insurance
+   Single source of truth. Do not hardcode colors elsewhere.
+   ============================================================ */
+
+:root {
+  /* Brand */
+  --color-primary: #155EEF;
+  --color-primary-600: #0E4BC7;
+  --color-primary-100: #E5EEFF;
+  --color-primary-50: #F2F6FF;
+
+  --color-secondary: #F59E0B;
+  --color-secondary-600: #C87D06;
+  --color-secondary-100: #FEF3E0;
+
+  --color-success: #16A34A;
+  --color-success-100: #E7F7ED;
+  --color-danger: #DC2626;
+  --color-danger-100: #FDEAEA;
+
+  --color-ink: #111827;
+  --color-ink-soft: #4B5563;
+  --color-ink-mute: #6B7280;
+  --color-bg: #F8FAFC;
+  --color-white: #FFFFFF;
+
+  /* Surface / border */
+  --surface: #FFFFFF;
+  --surface-raised: #FFFFFF;
+  --border: #E5E9F0;
+  --border-soft: #EEF1F6;
+
+  /* Text (theme-aware) */
+  --text-primary: var(--color-ink);
+  --text-secondary: var(--color-ink-soft);
+  --text-muted: var(--color-ink-mute);
+  --text-on-primary: #FFFFFF;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+
+  /* Shadow */
+  --shadow-xs: 0 1px 2px rgba(17, 24, 39, 0.04);
+  --shadow-sm: 0 1px 2px rgba(17, 24, 39, 0.05);
+  --shadow-md: 0 8px 24px rgba(17, 24, 39, 0.08);
+  --shadow-lg: 0 20px 48px rgba(17, 24, 39, 0.12);
+  --shadow-primary: 0 8px 20px rgba(21, 94, 239, 0.25);
+
+  /* Type */
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* Container */
+  --container-max: 1280px;
+  --container-pad: clamp(20px, 5vw, 64px);
+
+  /* Motion */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast: 0.18s;
+  --dur-med: 0.32s;
+
+  /* Logical spacing for RTL */
+  --header-h: 76px;
+}
+
+[data-theme="dark"] {
+  --color-primary: #4C8CFF;
+  --color-primary-600: #6FA1FF;
+  --color-primary-100: #16233F;
+  --color-primary-50: #121B2E;
+
+  --color-secondary: #FBBF3C;
+  --color-secondary-600: #FFCE6A;
+  --color-secondary-100: #2E2410;
+
+  --color-success: #34C978;
+  --color-success-100: #123423;
+  --color-danger: #F16363;
+  --color-danger-100: #3A1717;
+
+  --color-bg: #0B0F17;
+  --surface: #121826;
+  --surface-raised: #161E2E;
+  --border: #232C3E;
+  --border-soft: #1B2334;
+
+  --text-primary: #F3F5F9;
+  --text-secondary: #B6BECC;
+  --text-muted: #8890A0;
+  --text-on-primary: #0B0F17;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 24px 56px rgba(0, 0, 0, 0.45);
+  --shadow-primary: 0 8px 24px rgba(76, 140, 255, 0.3);
+}

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partner Insurers — Compare Options | RenewPath</title>
+<meta name="description" content="Browse and filter illustrative partner insurer profiles by coverage type, add-ons and price band to compare options across a broader network.">
+<meta property="og:title" content="Partner Insurers — RenewPath">
+<meta property="og:description" content="Compare options across a broader insurance network.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="insurers.html">
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/home.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+<link rel="stylesheet" href="assets/css/dark-mode.css">
+<link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<header id="main-header"></header>
+
+<main id="main-content">
+  <section class="inner-hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="grid grid-2" style="align-items:center">
+        <div class="inner-hero-content">
+          <p class="eyebrow">Partner network</p>
+          <h1 class="h1">Compare options across a broader insurance network.</h1>
+          <p class="lede" style="margin-top:14px">Illustrative comparison data across sample partner insurers — filter by coverage, add-ons and price band.</p>
+        </div>
+        <div class="reveal-up">
+          <img src="assets/images/insurers/insurer-network.svg" alt="Illustration of an insurer network diagram" width="640" height="420" style="border-radius:var(--radius-lg);border:1px solid var(--border)">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="filter-bar reveal-up">
+        <div class="filter-group">
+          <span class="fg-label">Coverage</span>
+          <button type="button" class="filter-chip active" data-filter-group="coverage" data-filter-value="all">All</button>
+          <button type="button" class="filter-chip" data-filter-group="coverage" data-filter-value="third-party">Third Party</button>
+          <button type="button" class="filter-chip" data-filter-group="coverage" data-filter-value="comprehensive">Comprehensive</button>
+        </div>
+        <div class="filter-group">
+          <span class="fg-label">Add-ons</span>
+          <button type="button" class="filter-chip active" data-filter-group="addon" data-filter-value="all">All</button>
+          <button type="button" class="filter-chip" data-filter-group="addon" data-filter-value="zero-dep">Zero Depreciation</button>
+          <button type="button" class="filter-chip" data-filter-group="addon" data-filter-value="roadside">Roadside Assistance</button>
+          <button type="button" class="filter-chip" data-filter-group="addon" data-filter-value="engine">Engine Protection</button>
+        </div>
+        <div class="filter-group">
+          <span class="fg-label">Price</span>
+          <button type="button" class="filter-chip active" data-filter-group="price" data-filter-value="all">All</button>
+          <button type="button" class="filter-chip" data-filter-group="price" data-filter-value="low">Low</button>
+          <button type="button" class="filter-chip" data-filter-group="price" data-filter-value="medium">Medium</button>
+          <button type="button" class="filter-chip" data-filter-group="price" data-filter-value="high">High</button>
+        </div>
+        <button type="button" class="filter-clear" id="clear-filters">Clear all</button>
+      </div>
+
+      <p class="demo-data-tag" style="margin-bottom:var(--space-6)">Illustrative comparison data</p>
+
+      <div class="grid grid-3 reveal-stagger" id="insurer-grid">
+        <div class="card insurer-card" data-coverage="comprehensive" data-addon="zero-dep roadside" data-price="high">
+          <div class="insurer-card-head">
+            <img src="assets/images/insurers/insurer-northstar.svg" alt="Northstar Insurer logo">
+            <div><strong>Northstar Insurer</strong><div class="insurer-rating"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>4.6 demo rating</div></div>
+          </div>
+          <div class="insurer-tag-row"><span class="pill pill-primary">Comprehensive</span><span class="pill pill-neutral">Zero Dep</span></div>
+          <p class="text-muted" style="font-size:0.85rem">24x7 claim support with a wide service centre network.</p>
+          <div class="flex justify-between items-center" style="margin-top:auto">
+            <span style="font-weight:700">₹14,900<span class="text-muted" style="font-weight:400;font-size:0.8rem">/yr</span></span>
+            <a href="renewal.html" class="btn btn-ghost btn-sm">View Plans</a>
+          </div>
+        </div>
+
+        <div class="card insurer-card" data-coverage="comprehensive" data-addon="zero-dep roadside engine" data-price="high">
+          <div class="insurer-card-head">
+            <img src="assets/images/insurers/insurer-bluewave.svg" alt="Bluewave Insurer logo">
+            <div><strong>Bluewave Insurer</strong><div class="insurer-rating"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>4.8 demo rating</div></div>
+          </div>
+          <div class="insurer-tag-row"><span class="pill pill-primary">Comprehensive</span><span class="pill pill-neutral">All add-ons</span></div>
+          <p class="text-muted" style="font-size:0.85rem">Priority claim handling with the fullest add-on selection.</p>
+          <div class="flex justify-between items-center" style="margin-top:auto">
+            <span style="font-weight:700">₹16,200<span class="text-muted" style="font-weight:400;font-size:0.8rem">/yr</span></span>
+            <a href="renewal.html" class="btn btn-ghost btn-sm">View Plans</a>
+          </div>
+        </div>
+
+        <div class="card insurer-card" data-coverage="comprehensive" data-addon="" data-price="medium">
+          <div class="insurer-card-head">
+            <img src="assets/images/insurers/insurer-shieldcore.svg" alt="Shieldcore Insurer logo">
+            <div><strong>Shieldcore Insurer</strong><div class="insurer-rating"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>4.3 demo rating</div></div>
+          </div>
+          <div class="insurer-tag-row"><span class="pill pill-primary">Comprehensive</span></div>
+          <p class="text-muted" style="font-size:0.85rem">Straightforward comprehensive cover at a moderate premium.</p>
+          <div class="flex justify-between items-center" style="margin-top:auto">
+            <span style="font-weight:700">₹13,600<span class="text-muted" style="font-weight:400;font-size:0.8rem">/yr</span></span>
+            <a href="renewal.html" class="btn btn-ghost btn-sm">View Plans</a>
+          </div>
+        </div>
+
+        <div class="card insurer-card" data-coverage="third-party" data-addon="" data-price="low">
+          <div class="insurer-card-head">
+            <img src="assets/images/insurers/insurer-vantage.svg" alt="Vantage Insurer logo">
+            <div><strong>Vantage Insurer</strong><div class="insurer-rating"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>4.1 demo rating</div></div>
+          </div>
+          <div class="insurer-tag-row"><span class="pill pill-neutral">Third Party</span></div>
+          <p class="text-muted" style="font-size:0.85rem">Budget-friendly minimum cover for legal compliance.</p>
+          <div class="flex justify-between items-center" style="margin-top:auto">
+            <span style="font-weight:700">₹4,900<span class="text-muted" style="font-weight:400;font-size:0.8rem">/yr</span></span>
+            <a href="renewal.html" class="btn btn-ghost btn-sm">View Plans</a>
+          </div>
+        </div>
+
+        <div class="card insurer-card" data-coverage="comprehensive" data-addon="engine" data-price="medium">
+          <div class="insurer-card-head">
+            <img src="assets/images/insurers/insurer-anchorpoint.svg" alt="Anchorpoint Insurer logo">
+            <div><strong>Anchorpoint Insurer</strong><div class="insurer-rating"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>4.4 demo rating</div></div>
+          </div>
+          <div class="insurer-tag-row"><span class="pill pill-primary">Comprehensive</span><span class="pill pill-neutral">Engine Protect</span></div>
+          <p class="text-muted" style="font-size:0.85rem">Strong engine protection add-on, popular in flood-prone regions.</p>
+          <div class="flex justify-between items-center" style="margin-top:auto">
+            <span style="font-weight:700">₹15,100<span class="text-muted" style="font-weight:400;font-size:0.8rem">/yr</span></span>
+            <a href="renewal.html" class="btn btn-ghost btn-sm">View Plans</a>
+          </div>
+        </div>
+
+        <div class="card insurer-card" data-coverage="third-party" data-addon="roadside" data-price="low">
+          <div class="insurer-card-head">
+            <img src="assets/images/insurers/insurer-summit.svg" alt="Summit Insurer logo">
+            <div><strong>Summit Insurer</strong><div class="insurer-rating"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>4.0 demo rating</div></div>
+          </div>
+          <div class="insurer-tag-row"><span class="pill pill-neutral">Third Party</span><span class="pill pill-neutral">Roadside</span></div>
+          <p class="text-muted" style="font-size:0.85rem">Minimum cover with optional roadside assistance bundled in.</p>
+          <div class="flex justify-between items-center" style="margin-top:auto">
+            <span style="font-weight:700">₹5,600<span class="text-muted" style="font-weight:400;font-size:0.8rem">/yr</span></span>
+            <a href="renewal.html" class="btn btn-ghost btn-sm">View Plans</a>
+          </div>
+        </div>
+      </div>
+      <p class="text-center text-muted" id="no-results-msg" style="display:none;margin-top:var(--space-7)">No insurers match the selected filters. Try clearing a filter.</p>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--surface);border-block:1px solid var(--border)">
+    <div class="container">
+      <div class="cta-banner reveal-up">
+        <h2 class="h2">Ready to see full quotes?</h2>
+        <div class="btn-row"><a href="renewal.html" class="btn btn-primary btn-lg">Start Renewal</a></div>
+      </div>
+    </div>
+  </section>
+  <!-- ============ SECTION 5: FINANCIAL CSR SCORECARD ============ -->
+  <section class="section scorecard-section" id="csr-scorecard">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow" style="justify-content:center">Underwriter Transparency</p>
+        <h2 class="h2">Claim settlement audit scorecard.</h2>
+        <p class="lede" style="margin-top:12px;margin-inline:auto">We pull verified annual IRDAI solvency and Claim Settlement Ratios (CSR) so you can compare financial stability side by side.</p>
+      </div>
+      <div class="scorecard-wrap reveal-up">
+        <table class="scorecard-table">
+          <thead>
+            <tr>
+              <th>Insurer Name</th>
+              <th>Claim Settlement Ratio (CSR)</th>
+              <th>Avg. Turnaround Time</th>
+              <th>Solvency Ratio</th>
+              <th>Incurred Claim Ratio (ICR)</th>
+              <th>Network Garages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>National Shield Insurance</strong></td>
+              <td><span class="pill pill-success">98.9% CSR</span></td>
+              <td>2.8 Days</td>
+              <td><strong>2.15x</strong> (High buffer)</td>
+              <td>78%</td>
+              <td>1,240+ Workshops</td>
+            </tr>
+            <tr>
+              <td><strong>Apex General Insurance</strong></td>
+              <td><span class="pill pill-success">98.2% CSR</span></td>
+              <td>3.1 Days</td>
+              <td><strong>1.95x</strong></td>
+              <td>82%</td>
+              <td>980+ Workshops</td>
+            </tr>
+            <tr>
+              <td><strong>Horizon Motor Cover</strong></td>
+              <td><span class="pill pill-success">97.8% CSR</span></td>
+              <td>2.4 Days (Fastest)</td>
+              <td><strong>1.88x</strong></td>
+              <td>80%</td>
+              <td>860+ Workshops</td>
+            </tr>
+            <tr>
+              <td><strong>BluePeak General</strong></td>
+              <td><span class="pill pill-neutral">97.4% CSR</span></td>
+              <td>3.5 Days</td>
+              <td><strong>1.80x</strong></td>
+              <td>84%</td>
+              <td>740+ Workshops</td>
+            </tr>
+            <tr>
+              <td><strong>Summit Underwriters</strong></td>
+              <td><span class="pill pill-neutral">96.9% CSR</span></td>
+              <td>4.0 Days</td>
+              <td><strong>1.76x</strong></td>
+              <td>85%</td>
+              <td>610+ Workshops</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-muted text-center" style="font-size:0.8rem;margin-top:var(--space-4)">*Data compiled from illustrative prototype audit metrics based on standard general insurance benchmarks.</p>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 6: VEHICLE SEGMENT PRICING BENCHMARK ============ -->
+  <section class="section segment-pricing-section" id="price-variance-matrix" style="background:var(--surface);border-block:1px solid var(--border)">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow" style="justify-content:center">Rate Guide</p>
+        <h2 class="h2">Typical annual premiums by car segment.</h2>
+        <p class="lede" style="margin-top:12px;margin-inline:auto">Understand average renewal pricing across body styles so you know whether your quote is competitive.</p>
+      </div>
+      <div class="extra-stats-grid reveal-stagger">
+        <div class="extra-stat-card">
+          <span class="pill pill-primary" style="margin-bottom:8px">Hatchbacks</span>
+          <div class="extra-stat-value" style="font-size:1.7rem">₹2,800 – ₹4,500</div>
+          <div class="extra-stat-label" style="font-size:0.9rem">Maruti Swift, i10, Tiago</div>
+          <p class="extra-stat-desc">Low cubic capacity (under 1,200cc) keeps third-party tariff at the lowest legal tier.</p>
+        </div>
+        <div class="extra-stat-card">
+          <span class="pill pill-primary" style="margin-bottom:8px">Mid-Size Sedans</span>
+          <div class="extra-stat-value" style="font-size:1.7rem">₹5,400 – ₹8,900</div>
+          <div class="extra-stat-label" style="font-size:0.9rem">Honda City, Verna, Ciaz</div>
+          <p class="extra-stat-desc">Moderate IDV depreciation with Zero Dep and Engine Safe recommended for optimal balance.</p>
+        </div>
+        <div class="extra-stat-card">
+          <span class="pill pill-primary" style="margin-bottom:8px">Compact SUVs</span>
+          <div class="extra-stat-value" style="font-size:1.7rem">₹6,800 – ₹11,200</div>
+          <div class="extra-stat-label" style="font-size:0.9rem">Creta, Seltos, Brezza, Nexon</div>
+          <p class="extra-stat-desc">High ground clearance and plastic cladding benefits heavily from Zero Depreciation add-on.</p>
+        </div>
+        <div class="extra-stat-card">
+          <span class="pill pill-primary" style="margin-bottom:8px">Electric Vehicles</span>
+          <div class="extra-stat-value" style="font-size:1.7rem">₹7,900 – ₹13,500</div>
+          <div class="extra-stat-label" style="font-size:0.9rem">Nexon EV, Punch EV, MG ZS</div>
+          <p class="extra-stat-desc">15% discount on third-party tariff for EVs; includes battery degradation &amp; charger cover.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 7: INSURER USP MATRIX ============ -->
+  <section class="section usps-section" id="insurer-usps">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow" style="justify-content:center">Specialist Advantages</p>
+        <h2 class="h2">What each partner insurer does best.</h2>
+        <p class="lede" style="margin-top:12px;margin-inline:auto">Every underwriter has a distinct competitive advantage. Pick the one aligned with your vehicle priorities.</p>
+      </div>
+      <div class="usp-grid reveal-stagger">
+        <div class="usp-card">
+          <div class="extra-stat-icon" style="background:var(--color-primary-100);color:var(--color-primary)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h4 class="h4" style="margin-bottom:8px">Horizon: AI Video Inspection</h4>
+          <p class="text-muted" style="font-size:0.86rem;line-height:1.5">Record a 30-second walkaround on your smartphone to approve break-in lapsed policies with zero inspector waiting.</p>
+        </div>
+        <div class="usp-card">
+          <div class="extra-stat-icon" style="background:var(--color-success-100);color:var(--color-success)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h4 class="h4" style="margin-bottom:8px">Apex: 4-Hour Express Claims</h4>
+          <p class="text-muted" style="font-size:0.86rem;line-height:1.5">Minor scratch, glass, or single-panel dent repairs under ₹25,000 are digitally approved within 4 hours flat.</p>
+        </div>
+        <div class="usp-card">
+          <div class="extra-stat-icon" style="background:var(--color-secondary-100);color:var(--color-secondary-600)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1 .4-1 1v7c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+          </div>
+          <h4 class="h4" style="margin-bottom:8px">BluePeak: Unlimited Towing</h4>
+          <p class="text-muted" style="font-size:0.86rem;line-height:1.5">Includes free flatbed transport to the nearest city garage with no kilometre cap, perfect for long highway commuters.</p>
+        </div>
+        <div class="usp-card">
+          <div class="extra-stat-icon" style="background:var(--color-primary-100);color:var(--color-primary)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 6v6c0 5 4 9 9 10 5-1 9-5 9-10V6z"/></svg>
+          </div>
+          <h4 class="h4" style="margin-bottom:8px">National Shield: EV Battery Guard</h4>
+          <p class="text-muted" style="font-size:0.86rem;line-height:1.5">Full replacement cover for expensive EV lithium-ion battery packs damaged in water-logging or underbody scrapes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 8: REGULATORY COMPLIANCE & TRUST ============ -->
+  <section class="section trust-guarantee-section" id="regulatory-trust" style="background:var(--surface);border-block:1px solid var(--border)">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow" style="justify-content:center">Consumer Protection</p>
+        <h2 class="h2">Our commitment to 100% fair renewals.</h2>
+        <p class="lede" style="margin-top:12px;margin-inline:auto">RenewPath operates under strict consumer advocacy principles so your interests are always prioritized.</p>
+      </div>
+      <div class="reg-trust-grid reveal-stagger">
+        <div class="reg-trust-card">
+          <div style="font-weight:700;font-size:1.05rem;color:var(--text-primary);margin-bottom:6px">Zero Hidden Markups</div>
+          <p class="text-muted" style="font-size:0.86rem;line-height:1.5">You receive pure underwriter net rates. We do not inflate quote figures to make fake discounts appear larger.</p>
+        </div>
+        <div class="reg-trust-card">
+          <div style="font-weight:700;font-size:1.05rem;color:var(--text-primary);margin-bottom:6px">IRDAI Guidelines Adherence</div>
+          <p class="text-muted" style="font-size:0.86rem;line-height:1.5">All policy wording, mandatory deductibles and add-on classifications strictly follow Insurance Regulatory authority standards.</p>
+        </div>
+        <div class="reg-trust-card">
+          <div style="font-weight:700;font-size:1.05rem;color:var(--text-primary);margin-bottom:6px">End-to-End Encryption</div>
+          <p class="text-muted" style="font-size:0.86rem;line-height:1.5">Your vehicle registration, chassis number and contact info are safeguarded with bank-grade 256-bit SSL encryption.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="main-footer"></footer>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/animations.js"></script>
+<script>
+  (function () {
+    var state = { coverage: 'all', addon: 'all', price: 'all' };
+    var chips = document.querySelectorAll('.filter-chip');
+    var cards = document.querySelectorAll('#insurer-grid .insurer-card');
+    var noResults = document.getElementById('no-results-msg');
+
+    function applyFilters() {
+      var visibleCount = 0;
+      cards.forEach(function (card) {
+        var matchCoverage = state.coverage === 'all' || card.dataset.coverage === state.coverage;
+        var matchAddon = state.addon === 'all' || (card.dataset.addon || '').split(' ').indexOf(state.addon) !== -1;
+        var matchPrice = state.price === 'all' || card.dataset.price === state.price;
+        var visible = matchCoverage && matchAddon && matchPrice;
+        card.style.display = visible ? '' : 'none';
+        if (visible) visibleCount++;
+      });
+      noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        var group = chip.dataset.filterGroup;
+        state[group] = chip.dataset.filterValue;
+        document.querySelectorAll('.filter-chip[data-filter-group="' + group + '"]').forEach(function (c) {
+          c.classList.toggle('active', c === chip);
+        });
+        applyFilters();
+      });
+    });
+
+    document.getElementById('clear-filters').addEventListener('click', function () {
+      state = { coverage: 'all', addon: 'all', price: 'all' };
+      chips.forEach(function (c) { c.classList.toggle('active', c.dataset.filterValue === 'all'); });
+      applyFilters();
+    });
+  })();
+</script>
+</body>
+</html>

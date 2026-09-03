@@ -1,0 +1,168 @@
+/* ============================================================
+   HOME PAGE STYLES (index.html + shared marketing patterns)
+   ============================================================ */
+
+/* ---------- Hero ---------- */
+.hero { position: relative; padding-block: clamp(40px, 6vw, 88px) clamp(56px, 8vw, 96px); overflow: hidden; }
+.hero-glow { position: absolute; inset: 0; background: radial-gradient(600px circle at 78% 15%, var(--color-primary-100), transparent 60%); pointer-events: none; z-index: 0; }
+.hero-grid { position: relative; z-index: 1; }
+.hero-copy .h1 { margin-bottom: var(--space-4); }
+.hero-copy .lede { margin-bottom: var(--space-6); }
+.hero-cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: var(--space-6); }
+.hero-disclaimer { font-size: 0.8rem; color: var(--text-muted); }
+
+.hero-visual { position: relative; }
+.hero-visual-frame { position: relative; border-radius: var(--radius-lg); overflow: visible; }
+.hero-visual-frame img { border-radius: var(--radius-lg); }
+
+.floating-card {
+  position: absolute;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 168px;
+}
+.floating-card-icon { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.floating-card-icon svg { width: 19px; height: 19px; }
+.floating-card .fc-label { font-size: 0.72rem; color: var(--text-muted); font-weight: 600; margin-bottom: 2px; }
+.floating-card .fc-value { font-size: 1rem; font-weight: 700; color: var(--text-primary); }
+
+.floating-card-primary { top: 6%; inset-inline-start: -6%; }
+.floating-card-secondary { bottom: 20%; inset-inline-end: -4%; }
+.floating-card-tertiary { bottom: -4%; inset-inline-start: 12%; }
+
+@media (max-width: 1023px) {
+  .floating-card-primary { top: -4%; inset-inline-start: 2%; }
+  .floating-card-secondary { bottom: 10%; inset-inline-end: 0; }
+  .floating-card-tertiary { display: none; }
+}
+
+/* ---------- Trust strip ---------- */
+.trust-strip { padding-block: var(--space-6); border-block: 1px solid var(--border); }
+.trust-strip-list { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-7); }
+.trust-strip-item { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 600; color: var(--text-secondary); }
+.trust-strip-item svg { width: 18px; height: 18px; color: var(--color-success); flex-shrink: 0; }
+
+/* ---------- Quick renewal (two options) ---------- */
+.renewal-option-card { padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-4); }
+.renewal-option-num { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: var(--radius-pill); background: var(--color-primary-100); color: var(--color-primary); font-weight: 700; font-size: 0.85rem; }
+.renewal-upload-zone {
+  border: 1.5px dashed var(--border); border-radius: var(--radius-md); padding: var(--space-6);
+  text-align: center; color: var(--text-muted); transition: border-color var(--dur-fast);
+}
+.renewal-upload-zone.drag-over { border-color: var(--color-primary); background: var(--color-primary-50); }
+.renewal-upload-zone svg { width: 30px; height: 30px; margin-inline: auto; margin-bottom: 10px; color: var(--color-primary); }
+.renewal-lookup-result {
+  display: none; margin-top: var(--space-5); padding: var(--space-5); border-radius: var(--radius-md);
+  background: var(--color-success-100); border: 1px solid var(--color-success);
+}
+.renewal-lookup-result.show { display: block; }
+.renewal-lookup-result .rl-row { display: flex; justify-content: space-between; padding: 6px 0; font-size: 0.88rem; }
+.renewal-lookup-result .rl-row span:first-child { color: var(--text-secondary); }
+.renewal-lookup-result .rl-row span:last-child { font-weight: 600; color: var(--text-primary); }
+
+/* ---------- Coverage cards ---------- */
+.coverage-card { padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-4); height: 100%; }
+.coverage-card-icon { width: 46px; height: 46px; border-radius: 12px; background: var(--color-primary-100); color: var(--color-primary); display: flex; align-items: center; justify-content: center; }
+.coverage-card-icon svg { width: 22px; height: 22px; }
+.coverage-list { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
+.coverage-list li { display: flex; gap: 8px; font-size: 0.87rem; color: var(--text-secondary); align-items: flex-start; }
+.coverage-list.limitation li svg { color: var(--color-danger); }
+.coverage-list svg { width: 15px; height: 15px; color: var(--color-success); flex-shrink: 0; margin-top: 3px; }
+.coverage-card.is-featured { border-color: var(--color-primary); box-shadow: var(--shadow-primary); }
+
+/* ---------- Savings dark panel ---------- */
+.savings-panel {
+  background: linear-gradient(135deg, var(--color-ink), #1B2537);
+  border-radius: var(--radius-lg);
+  padding: clamp(28px, 5vw, 56px);
+  color: #fff;
+  display: grid;
+  gap: var(--space-7);
+}
+@media (min-width: 1024px) { .savings-panel { grid-template-columns: 1fr 1fr; align-items: center; } }
+.savings-panel h2 { color: #fff; }
+.savings-panel p { color: #B6BECC; }
+.savings-stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-5); margin-top: var(--space-6); }
+.savings-stat { background: rgba(255,255,255,0.06); border-radius: var(--radius-md); padding: var(--space-5); }
+.savings-stat .ss-label { font-size: 0.76rem; color: #8891A3; margin-bottom: 6px; font-weight: 600; }
+.savings-stat .ss-value { font-size: 1.35rem; font-weight: 700; color: #fff; }
+@media (max-width: 767px) { .savings-stat-row { grid-template-columns: 1fr; } }
+
+/* ---------- Quote "boarding pass" cards ---------- */
+.quote-card {
+  position: relative; display: flex; background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm);
+}
+.quote-card-main { flex: 1; padding: var(--space-5) var(--space-6); }
+.quote-card-stub {
+  width: 130px; flex-shrink: 0; padding: var(--space-5); background: var(--color-primary-50);
+  border-inline-start: 2px dashed var(--border); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; text-align: center;
+}
+.quote-card.is-recommended { border-color: var(--color-primary); }
+.quote-card.is-recommended .quote-card-stub { background: var(--color-primary-100); }
+.quote-badge { position: absolute; top: 14px; inset-inline-start: 14px; }
+.quote-insurer-row { display: flex; align-items: center; gap: 10px; margin-bottom: var(--space-4); }
+.quote-insurer-logo { width: 40px; height: 40px; border-radius: 10px; overflow: hidden; flex-shrink: 0; }
+.quote-spec-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 20px; }
+.quote-spec { }
+.quote-spec .qs-label { font-size: 0.72rem; color: var(--text-muted); margin-bottom: 3px; }
+.quote-spec .qs-value { font-size: 0.9rem; font-weight: 600; color: var(--text-primary); }
+@media (max-width: 640px) {
+  .quote-card { flex-direction: column; }
+  .quote-card-stub { width: 100%; border-inline-start: none; border-top: 2px dashed var(--border); flex-direction: row; padding: var(--space-4); }
+}
+
+.demo-data-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.02em; color: var(--color-secondary-600); background: var(--color-secondary-100); padding: 4px 10px; border-radius: var(--radius-pill); }
+
+/* ---------- Claims strip ---------- */
+.claims-strip-item { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; padding: var(--space-5); }
+.claims-strip-icon { width: 52px; height: 52px; border-radius: 14px; background: var(--color-danger-100); color: var(--color-danger); display: flex; align-items: center; justify-content: center; }
+.claims-strip-icon svg { width: 24px; height: 24px; }
+
+/* ---------- Dashboard preview (marketing) ---------- */
+.dash-preview-card { border-radius: var(--radius-lg); overflow: hidden; }
+.dash-preview-head { display: flex; justify-content: space-between; align-items: center; padding: var(--space-5) var(--space-6); background: var(--color-primary); color: #fff; }
+.dash-preview-body { padding: var(--space-6); display: grid; gap: var(--space-4); }
+@media (min-width: 640px) { .dash-preview-body { grid-template-columns: 1fr 1fr; } }
+
+/* ---------- Final CTA banner ---------- */
+.cta-banner {
+  background: linear-gradient(120deg, var(--color-primary), var(--color-primary-600));
+  border-radius: var(--radius-lg); padding: clamp(36px, 6vw, 64px); text-align: center; color: #fff;
+}
+.cta-banner h2 { color: #fff; }
+.cta-banner p { color: rgba(255,255,255,0.85); }
+.cta-banner .btn-primary { background: #fff; color: var(--color-primary); box-shadow: none; }
+.cta-banner .btn-primary:hover { background: #F1F5FF; }
+.cta-banner .btn-secondary { border-color: rgba(255,255,255,0.5); color: #fff; }
+.cta-banner .btn-secondary:hover { background: rgba(255,255,255,0.12); }
+.cta-banner .btn-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: var(--space-6); }
+
+/* ---------- Editorial blocks (Home 2) ---------- */
+.editorial-block { display: grid; gap: var(--space-6); align-items: center; }
+@media (min-width: 1024px) { .editorial-block { grid-template-columns: 1fr 1fr; gap: var(--space-8); } }
+.editorial-block.reverse .editorial-media { order: 2; }
+.editorial-num { font-size: 0.85rem; font-weight: 700; color: var(--color-primary); margin-bottom: var(--space-3); }
+.editorial-media img { border-radius: var(--radius-lg); }
+
+.wallet-card { padding: var(--space-6); }
+.wallet-row { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--border-soft); }
+.wallet-row:last-child { border-bottom: none; }
+.wallet-row .wr-label { font-size: 0.85rem; color: var(--text-muted); }
+.wallet-row .wr-value { font-size: 0.92rem; font-weight: 600; color: var(--text-primary); }
+
+/* ---------- Timeline (claim story) ---------- */
+.timeline { position: relative; padding-inline-start: 48px; }
+.timeline::before { content: ""; position: absolute; inset-inline-start: 19px; top: 6px; bottom: 6px; width: 2px; background: var(--border); }
+.timeline-item { position: relative; padding-bottom: var(--space-6); }
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-dot { position: absolute; inset-inline-start: -48px; top: 2px; width: 40px; height: 40px; border-radius: 50%; background: var(--color-primary-100); color: var(--color-primary); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; border: 3px solid var(--surface); }
+.timeline-item.is-done .timeline-dot { background: var(--color-success-100); color: var(--color-success); }
+.timeline-content h4 { margin-bottom: 4px; }
+.timeline-content p { font-size: 0.88rem; color: var(--text-secondary); }

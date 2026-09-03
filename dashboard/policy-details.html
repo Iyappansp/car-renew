@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Policy Details — RenewPath Dashboard</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/pages.css">
+<link rel="stylesheet" href="../assets/css/dashboard.css">
+<link rel="stylesheet" href="../assets/css/responsive.css">
+<link rel="stylesheet" href="../assets/css/dark-mode.css">
+<link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body data-dash-page="policies">
+<div class="dash-shell" id="dash-shell-root"></div>
+
+<div id="dash-page-content" style="display:none">
+
+  <a href="policies.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--color-primary);font-weight:600;font-size:0.88rem;margin-bottom:var(--space-6)">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="icon-flip"><path d="M15 18l-6-6 6-6"/></svg> Back to policies
+  </a>
+
+  <div class="grid grid-2" style="gap:var(--space-6);align-items:start">
+    <div class="dash-card">
+      <div class="flex justify-between items-start" style="margin-bottom:var(--space-5)">
+        <div><h3 class="h4">Hyundai Creta SX</h3><span class="text-muted" style="font-size:0.85rem">TN-07-AB-4521</span></div>
+        <span class="pill pill-success">Active</span>
+      </div>
+      <div class="wallet-row"><span class="wr-label">Policy number</span><span class="wr-value">POL-DEMO-2847</span></div>
+      <div class="wallet-row"><span class="wr-label">Insurer</span><span class="wr-value">Bluewave Insurer</span></div>
+      <div class="wallet-row"><span class="wr-label">Coverage</span><span class="wr-value">Comprehensive + Add-ons</span></div>
+      <div class="wallet-row"><span class="wr-label">Premium</span><span class="wr-value">₹16,200</span></div>
+      <div class="wallet-row"><span class="wr-label">IDV</span><span class="wr-value">₹6.8L</span></div>
+      <div class="wallet-row"><span class="wr-label">Deductible</span><span class="wr-value">₹500</span></div>
+      <div class="wallet-row"><span class="wr-label">Add-ons</span><span class="wr-value">Zero Dep, Roadside</span></div>
+      <div class="wallet-row"><span class="wr-label">Start date</span><span class="wr-value">12 Sep 2025</span></div>
+      <div class="wallet-row"><span class="wr-label">Renewal date</span><span class="wr-value">12 Sep 2026</span></div>
+      <div class="flex gap-3" style="margin-top:var(--space-6)">
+        <button type="button" class="btn btn-secondary w-100" id="download-policy-btn">Download Policy</button>
+        <a href="renewal.html" class="btn btn-primary w-100 text-center">Renew Policy</a>
+      </div>
+    </div>
+
+    <div class="dash-card">
+      <h4 class="h4" style="margin-bottom:var(--space-4)">Vehicle information</h4>
+      <div class="wallet-row"><span class="wr-label">Make &amp; model</span><span class="wr-value">Hyundai Creta SX</span></div>
+      <div class="wallet-row"><span class="wr-label">Registration year</span><span class="wr-value">2022</span></div>
+      <div class="wallet-row"><span class="wr-label">Fuel type</span><span class="wr-value">Petrol</span></div>
+      <h4 class="h4" style="margin:var(--space-6) 0 var(--space-4)">Documents</h4>
+      <div class="doc-card" style="margin-bottom:10px">
+        <span class="doc-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span>
+        <div class="doc-card-meta"><p>Policy_Certificate.pdf</p><span>1.2 MB</span></div>
+        <div class="doc-card-actions"><button type="button" class="btn btn-ghost btn-sm" data-download>Download</button></div>
+      </div>
+      <div class="doc-card">
+        <span class="doc-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span>
+        <div class="doc-card-meta"><p>Premium_Receipt.pdf</p><span>340 KB</span></div>
+        <div class="doc-card-actions"><button type="button" class="btn btn-ghost btn-sm" data-download>Download</button></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="../assets/js/dashboard.js"></script>
+<script src="../assets/js/animations.js"></script>
+<script>
+  document.getElementById('download-policy-btn').addEventListener('click', function () {
+    window.RenewPath.toast('Document downloaded.');
+  });
+  document.querySelectorAll('[data-download]').forEach(function (btn) {
+    btn.addEventListener('click', function () { window.RenewPath.toast('Document downloaded.'); });
+  });
+</script>
+</body>
+</html>

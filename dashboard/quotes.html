@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compare Your Quotes — RenewPath Dashboard</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/pages.css">
+<link rel="stylesheet" href="../assets/css/dashboard.css">
+<link rel="stylesheet" href="../assets/css/responsive.css">
+<link rel="stylesheet" href="../assets/css/dark-mode.css">
+<link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body data-dash-page="quotes">
+<div class="dash-shell" id="dash-shell-root"></div>
+
+<div id="dash-page-content" style="display:none">
+
+  <p class="text-muted" style="margin-bottom:var(--space-6)">Compare illustrative quotes side by side before selecting your renewal plan.</p>
+
+  <div class="dash-card table-responsive-cards">
+    <div style="overflow-x:auto">
+      <table class="data-table">
+        <thead>
+          <tr><th>Insurer</th><th>Premium</th><th>IDV</th><th>Deductible</th><th>Own Damage</th><th>Zero Dep.</th><th>Roadside</th><th>Engine Protect</th><th></th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="display:flex;align-items:center;gap:10px"><img src="../assets/images/insurers/insurer-northstar.svg" alt="Northstar Insurer logo" width="28" height="28" style="border-radius:6px">Northstar</td>
+            <td>₹14,900</td><td>₹6.8L</td><td>₹1,000</td>
+            <td><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-success)" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></td>
+            <td>—</td><td>—</td><td>—</td>
+            <td><a href="quote-details.html" class="btn btn-ghost btn-sm">Details</a></td>
+          </tr>
+          <tr style="background:var(--color-primary-50)">
+            <td style="display:flex;align-items:center;gap:10px"><img src="../assets/images/insurers/insurer-bluewave.svg" alt="Bluewave Insurer logo" width="28" height="28" style="border-radius:6px">Bluewave <span class="pill pill-primary" style="margin-inline-start:6px">Best</span></td>
+            <td>₹16,200</td><td>₹6.8L</td><td>₹500</td>
+            <td><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-success)" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></td>
+            <td><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-success)" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></td>
+            <td><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-success)" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></td>
+            <td>—</td>
+            <td><a href="quote-details.html" class="btn btn-primary btn-sm">Select</a></td>
+          </tr>
+          <tr>
+            <td style="display:flex;align-items:center;gap:10px"><img src="../assets/images/insurers/insurer-shieldcore.svg" alt="Shieldcore Insurer logo" width="28" height="28" style="border-radius:6px">Shieldcore</td>
+            <td>₹13,600</td><td>₹6.5L</td><td>₹1,500</td>
+            <td><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-success)" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></td>
+            <td>—</td><td>—</td><td>—</td>
+            <td><a href="quote-details.html" class="btn btn-ghost btn-sm">Details</a></td>
+          </tr>
+          <tr>
+            <td style="display:flex;align-items:center;gap:10px"><img src="../assets/images/insurers/insurer-anchorpoint.svg" alt="Anchorpoint Insurer logo" width="28" height="28" style="border-radius:6px">Anchorpoint</td>
+            <td>₹15,100</td><td>₹6.8L</td><td>₹1,000</td>
+            <td><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-success)" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></td>
+            <td>—</td><td>—</td>
+            <td><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-success)" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></td>
+            <td><a href="quote-details.html" class="btn btn-ghost btn-sm">Details</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card-rows">
+      <div class="data-card-row">
+        <div class="flex justify-between items-center" style="margin-bottom:8px"><strong>Northstar</strong><a href="quote-details.html" class="btn btn-ghost btn-sm">Details</a></div>
+        <div class="dcr-line"><span>Premium</span><span>₹14,900</span></div>
+        <div class="dcr-line"><span>IDV</span><span>₹6.8L</span></div>
+        <div class="dcr-line"><span>Deductible</span><span>₹1,000</span></div>
+      </div>
+      <div class="data-card-row" style="border-color:var(--color-primary)">
+        <div class="flex justify-between items-center" style="margin-bottom:8px"><strong>Bluewave</strong><a href="quote-details.html" class="btn btn-primary btn-sm">Select</a></div>
+        <div class="dcr-line"><span>Premium</span><span>₹16,200</span></div>
+        <div class="dcr-line"><span>IDV</span><span>₹6.8L</span></div>
+        <div class="dcr-line"><span>Deductible</span><span>₹500</span></div>
+      </div>
+      <div class="data-card-row">
+        <div class="flex justify-between items-center" style="margin-bottom:8px"><strong>Shieldcore</strong><a href="quote-details.html" class="btn btn-ghost btn-sm">Details</a></div>
+        <div class="dcr-line"><span>Premium</span><span>₹13,600</span></div>
+        <div class="dcr-line"><span>IDV</span><span>₹6.5L</span></div>
+        <div class="dcr-line"><span>Deductible</span><span>₹1,500</span></div>
+      </div>
+      <div class="data-card-row">
+        <div class="flex justify-between items-center" style="margin-bottom:8px"><strong>Anchorpoint</strong><a href="quote-details.html" class="btn btn-ghost btn-sm">Details</a></div>
+        <div class="dcr-line"><span>Premium</span><span>₹15,100</span></div>
+        <div class="dcr-line"><span>IDV</span><span>₹6.8L</span></div>
+        <div class="dcr-line"><span>Deductible</span><span>₹1,000</span></div>
+      </div>
+    </div>
+  </div>
+  <p class="text-muted" style="margin-top:var(--space-4);font-size:0.8rem">Demo comparison data for illustration only.</p>
+</div>
+
+<script src="../assets/js/dashboard.js"></script>
+<script src="../assets/js/animations.js"></script>
+</body>
+</html>

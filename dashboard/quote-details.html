@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quote Details — RenewPath Dashboard</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/pages.css">
+<link rel="stylesheet" href="../assets/css/dashboard.css">
+<link rel="stylesheet" href="../assets/css/responsive.css">
+<link rel="stylesheet" href="../assets/css/dark-mode.css">
+<link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body data-dash-page="quotes">
+<div class="dash-shell" id="dash-shell-root"></div>
+
+<div id="dash-page-content" style="display:none">
+
+  <a href="quotes.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--color-primary);font-weight:600;font-size:0.88rem;margin-bottom:var(--space-6)">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="icon-flip"><path d="M15 18l-6-6 6-6"/></svg> Back to quotes
+  </a>
+
+  <div class="grid grid-2" style="gap:var(--space-6);align-items:start">
+    <div class="dash-card">
+      <div class="flex items-center gap-3" style="margin-bottom:var(--space-5)">
+        <img src="../assets/images/insurers/insurer-bluewave.svg" alt="Bluewave Insurer logo" width="48" height="48" style="border-radius:12px">
+        <div><h3 class="h4">Bluewave Insurer</h3><span class="pill pill-primary">Recommended</span></div>
+      </div>
+      <div class="wallet-row"><span class="wr-label">Plan</span><span class="wr-value">Comprehensive + Add-ons</span></div>
+      <div class="wallet-row"><span class="wr-label">Premium</span><span class="wr-value">₹16,200 / year</span></div>
+      <div class="wallet-row"><span class="wr-label">IDV</span><span class="wr-value">₹6.8L</span></div>
+      <div class="wallet-row"><span class="wr-label">Deductible</span><span class="wr-value">₹500</span></div>
+      <div class="wallet-row"><span class="wr-label">Claim support</span><span class="wr-value">24x7 priority</span></div>
+      <button type="button" class="btn btn-primary btn-block" id="select-plan-btn" style="margin-top:var(--space-6)">Select This Plan</button>
+    </div>
+
+    <div class="dash-card">
+      <h4 class="h4" style="margin-bottom:var(--space-4)">Coverage</h4>
+      <ul class="coverage-list" style="margin-bottom:var(--space-6)">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-success)" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Third-party liability</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-success)" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Own-damage protection</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-success)" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Zero depreciation</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-success)" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Roadside assistance</li>
+      </ul>
+      <h4 class="h4" style="margin-bottom:var(--space-4)">Exclusions</h4>
+      <ul class="coverage-list limitation" style="margin-bottom:var(--space-6)">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-danger)" stroke-width="2.4"><path d="M18 6L6 18M6 6l12 12"/></svg>Consequential wear and tear</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-danger)" stroke-width="2.4"><path d="M18 6L6 18M6 6l12 12"/></svg>Driving without a valid licence</li>
+      </ul>
+      <h4 class="h4" style="margin-bottom:var(--space-4)">Key conditions</h4>
+      <p class="text-muted" style="font-size:0.87rem">Coverage is subject to the terms of the illustrative sample policy shown here. Actual policy wording varies by insurer.</p>
+    </div>
+  </div>
+
+</div>
+
+<script src="../assets/js/dashboard.js"></script>
+<script src="../assets/js/animations.js"></script>
+<script>
+  document.getElementById('select-plan-btn').addEventListener('click', function () {
+    window.RenewPath.toast('Quote selected.');
+  });
+</script>
+</body>
+</html>

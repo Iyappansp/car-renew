@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Renewal Reminders — RenewPath Dashboard</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/pages.css">
+<link rel="stylesheet" href="../assets/css/dashboard.css">
+<link rel="stylesheet" href="../assets/css/responsive.css">
+<link rel="stylesheet" href="../assets/css/dark-mode.css">
+<link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body data-dash-page="reminders">
+<div class="dash-shell" id="dash-shell-root"></div>
+
+<div id="dash-page-content" style="display:none">
+
+  <div class="grid grid-2" style="gap:var(--space-6);align-items:start">
+    <div class="dash-card">
+      <div class="dash-card-head"><h3>Policy</h3><span class="pill pill-success">Active</span></div>
+      <div class="wallet-row"><span class="wr-label">Vehicle</span><span class="wr-value">Hyundai Creta SX</span></div>
+      <div class="wallet-row"><span class="wr-label">Policy</span><span class="wr-value">POL-DEMO-2847</span></div>
+      <div class="wallet-row"><span class="wr-label">Renewal date</span><span class="wr-value">12 Sep 2026</span></div>
+      <div class="wallet-row"><span class="wr-label">Reminder status</span><span class="wr-value" id="reminder-status-value">Enabled</span></div>
+    </div>
+
+    <div class="dash-card">
+      <h4 class="h4" style="margin-bottom:var(--space-5)">Notification preferences</h4>
+      <div class="settings-row"><div class="settings-row-label"><p>Email</p><span>Get renewal reminders by email</span></div><label class="switch"><input type="checkbox" checked data-pref="email"><span class="switch-track"></span></label></div>
+      <div class="settings-row"><div class="settings-row-label"><p>SMS</p><span>Get renewal reminders by text message</span></div><label class="switch"><input type="checkbox" checked data-pref="sms"><span class="switch-track"></span></label></div>
+      <div class="settings-row"><div class="settings-row-label"><p>Dashboard</p><span>Show reminders in your notification bell</span></div><label class="switch"><input type="checkbox" checked data-pref="dashboard"><span class="switch-track"></span></label></div>
+    </div>
+  </div>
+
+  <div class="dash-card" style="margin-top:var(--space-6)">
+    <h4 class="h4" style="margin-bottom:var(--space-5)">Reminder timing</h4>
+    <div class="filter-group" style="min-width:auto">
+      <button type="button" class="filter-chip active" data-timing="30">30 days</button>
+      <button type="button" class="filter-chip" data-timing="15">15 days</button>
+      <button type="button" class="filter-chip" data-timing="7">7 days</button>
+      <button type="button" class="filter-chip" data-timing="1">1 day</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="../assets/js/dashboard.js"></script>
+<script src="../assets/js/animations.js"></script>
+<script>
+  document.querySelectorAll('[data-pref]').forEach(function (input) {
+    var key = 'rp-reminder-' + input.dataset.pref;
+    var stored = localStorage.getItem(key);
+    if (stored !== null) input.checked = stored === '1';
+    input.addEventListener('change', function () {
+      localStorage.setItem(key, input.checked ? '1' : '0');
+      window.RenewPath.toast('Reminder preference updated.');
+    });
+  });
+  document.querySelectorAll('[data-timing]').forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      document.querySelectorAll('[data-timing]').forEach(function (c) { c.classList.remove('active'); });
+      chip.classList.add('active');
+      localStorage.setItem('rp-reminder-timing', chip.dataset.timing);
+      window.RenewPath.toast('Reminder preference updated.');
+    });
+  });
+</script>
+</body>
+</html>

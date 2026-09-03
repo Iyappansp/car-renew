@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment History — RenewPath Dashboard</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/pages.css">
+<link rel="stylesheet" href="../assets/css/dashboard.css">
+<link rel="stylesheet" href="../assets/css/responsive.css">
+<link rel="stylesheet" href="../assets/css/dark-mode.css">
+<link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body data-dash-page="payments">
+<div class="dash-shell" id="dash-shell-root"></div>
+
+<div id="dash-page-content" style="display:none">
+
+  <div class="stat-strip" style="grid-template-columns:repeat(3,1fr)">
+    <div class="stat-mini"><span class="stat-mini-icon" style="background:var(--color-primary-100);color:var(--color-primary)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span><div><div class="sm-label">Total paid</div><div class="sm-value">₹36,500</div></div></div>
+    <div class="stat-mini"><span class="stat-mini-icon" style="background:var(--color-success-100);color:var(--color-success)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span><div><div class="sm-label">Current policy</div><div class="sm-value">₹16,200</div></div></div>
+    <div class="stat-mini"><span class="stat-mini-icon" style="background:var(--color-secondary-100);color:var(--color-secondary-600)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span><div><div class="sm-label">Next payment</div><div class="sm-value">12 Sep 2026</div></div></div>
+  </div>
+
+  <div class="dash-card table-responsive-cards">
+    <div class="dash-card-head"><h3>Payment history</h3></div>
+    <div style="overflow-x:auto">
+      <table class="data-table">
+        <thead><tr><th>Date</th><th>Policy</th><th>Amount</th><th>Status</th><th>Receipt</th></tr></thead>
+        <tbody>
+          <tr><td>12 Sep 2025</td><td>POL-DEMO-2847</td><td>₹16,200</td><td><span class="pill pill-success">Paid</span></td><td><a href="receipts.html" class="btn btn-ghost btn-sm">View</a></td></tr>
+          <tr><td>11 Sep 2024</td><td>POL-DEMO-1963</td><td>₹15,400</td><td><span class="pill pill-success">Paid</span></td><td><a href="receipts.html" class="btn btn-ghost btn-sm">View</a></td></tr>
+          <tr><td>02 Jan 2023</td><td>POL-DEMO-0847</td><td>₹4,900</td><td><span class="pill pill-success">Paid</span></td><td><a href="receipts.html" class="btn btn-ghost btn-sm">View</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card-rows">
+      <div class="data-card-row"><div class="flex justify-between items-center" style="margin-bottom:8px"><strong>12 Sep 2025</strong><span class="pill pill-success">Paid</span></div><div class="dcr-line"><span>Policy</span><span>POL-DEMO-2847</span></div><div class="dcr-line"><span>Amount</span><span>₹16,200</span></div></div>
+      <div class="data-card-row"><div class="flex justify-between items-center" style="margin-bottom:8px"><strong>11 Sep 2024</strong><span class="pill pill-success">Paid</span></div><div class="dcr-line"><span>Policy</span><span>POL-DEMO-1963</span></div><div class="dcr-line"><span>Amount</span><span>₹15,400</span></div></div>
+    </div>
+  </div>
+
+</div>
+
+<script src="../assets/js/dashboard.js"></script>
+<script src="../assets/js/animations.js"></script>
+</body>
+</html>

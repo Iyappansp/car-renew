@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Profile — RenewPath Dashboard</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/pages.css">
+<link rel="stylesheet" href="../assets/css/dashboard.css">
+<link rel="stylesheet" href="../assets/css/responsive.css">
+<link rel="stylesheet" href="../assets/css/dark-mode.css">
+<link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body data-dash-page="profile">
+<div class="dash-shell" id="dash-shell-root"></div>
+
+<div id="dash-page-content" style="display:none">
+
+  <div class="grid grid-2" style="gap:var(--space-6);align-items:start">
+    <form class="dash-card" id="profile-form" style="grid-column:1/-1;max-width:640px">
+      <div class="flex items-center gap-3" style="margin-bottom:var(--space-6)">
+        <span class="dash-avatar" style="width:56px;height:56px;font-size:1.1rem">P</span>
+        <div><h3 class="h4">Priya Sharma</h3><span class="text-muted" style="font-size:0.85rem">Member since Jan 2023</span></div>
+      </div>
+      <div class="grid grid-2" style="gap:var(--space-4)">
+        <div class="field"><label for="pf-name">Full name</label><input type="text" id="pf-name" class="input" value="Priya Sharma"></div>
+        <div class="field"><label for="pf-email">Email</label><input type="email" id="pf-email" class="input" value="priya.sharma@example.com"></div>
+      </div>
+      <div class="grid grid-2" style="gap:var(--space-4)">
+        <div class="field"><label for="pf-mobile">Mobile</label><input type="tel" id="pf-mobile" class="input" value="+91 98XXX XXX00"></div>
+        <div class="field"><label for="pf-lang">Preferred language</label>
+          <select id="pf-lang" class="input">
+            <option>English</option><option>Hindi</option><option>Tamil</option><option>Telugu</option>
+          </select>
+        </div>
+      </div>
+      <div class="field"><label for="pf-address">Address</label><textarea id="pf-address" class="input">221B, Anna Nagar, Chennai, Tamil Nadu</textarea></div>
+      <div class="field mb-0"><label for="pf-vehicle">Vehicle information</label><input type="text" id="pf-vehicle" class="input" value="Hyundai Creta SX — TN-07-AB-4521"></div>
+      <button type="submit" class="btn btn-primary" style="margin-top:var(--space-6)">Save Changes</button>
+    </form>
+  </div>
+
+</div>
+
+<script src="../assets/js/dashboard.js"></script>
+<script src="../assets/js/animations.js"></script>
+<script>
+  document.getElementById('profile-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    window.RenewPath.toast('Profile changes saved.');
+  });
+</script>
+</body>
+</html>

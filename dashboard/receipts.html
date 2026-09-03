@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tax &amp; Payment Receipts — RenewPath Dashboard</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/pages.css">
+<link rel="stylesheet" href="../assets/css/dashboard.css">
+<link rel="stylesheet" href="../assets/css/responsive.css">
+<link rel="stylesheet" href="../assets/css/dark-mode.css">
+<link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body data-dash-page="receipts">
+<div class="dash-shell" id="dash-shell-root"></div>
+
+<div id="dash-page-content" style="display:none">
+
+  <div class="dash-card table-responsive-cards">
+    <div style="overflow-x:auto">
+      <table class="data-table">
+        <thead><tr><th>Receipt No.</th><th>Policy</th><th>Date</th><th>Amount</th><th>Status</th><th></th></tr></thead>
+        <tbody>
+          <tr><td>RCPT-2847-01</td><td>POL-DEMO-2847</td><td>12 Sep 2025</td><td>₹16,200</td><td><span class="pill pill-success">Paid</span></td><td><button class="btn btn-ghost btn-sm" data-preview>View</button> <button class="btn btn-ghost btn-sm" data-download>Download</button></td></tr>
+          <tr><td>RCPT-1963-01</td><td>POL-DEMO-1963</td><td>11 Sep 2024</td><td>₹15,400</td><td><span class="pill pill-success">Paid</span></td><td><button class="btn btn-ghost btn-sm" data-preview>View</button> <button class="btn btn-ghost btn-sm" data-download>Download</button></td></tr>
+          <tr><td>RCPT-0847-01</td><td>POL-DEMO-0847</td><td>02 Jan 2023</td><td>₹4,900</td><td><span class="pill pill-success">Paid</span></td><td><button class="btn btn-ghost btn-sm" data-preview>View</button> <button class="btn btn-ghost btn-sm" data-download>Download</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card-rows">
+      <div class="data-card-row"><div class="flex justify-between items-center" style="margin-bottom:8px"><strong>RCPT-2847-01</strong><span class="pill pill-success">Paid</span></div><div class="dcr-line"><span>Policy</span><span>POL-DEMO-2847</span></div><div class="dcr-line"><span>Date</span><span>12 Sep 2025</span></div><div class="dcr-line"><span>Amount</span><span>₹16,200</span></div><div class="flex gap-2" style="margin-top:10px"><button class="btn btn-ghost btn-sm" data-preview>View</button><button class="btn btn-ghost btn-sm" data-download>Download</button></div></div>
+      <div class="data-card-row"><div class="flex justify-between items-center" style="margin-bottom:8px"><strong>RCPT-1963-01</strong><span class="pill pill-success">Paid</span></div><div class="dcr-line"><span>Policy</span><span>POL-DEMO-1963</span></div><div class="dcr-line"><span>Date</span><span>11 Sep 2024</span></div><div class="dcr-line"><span>Amount</span><span>₹15,400</span></div><div class="flex gap-2" style="margin-top:10px"><button class="btn btn-ghost btn-sm" data-preview>View</button><button class="btn btn-ghost btn-sm" data-download>Download</button></div></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="modal-backdrop" id="receipt-preview-modal">
+  <div class="modal-box">
+    <div class="flex justify-between items-center" style="margin-bottom:var(--space-5)">
+      <h3 class="h4">Receipt preview</h3>
+      <button type="button" class="btn-icon" data-modal-close aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <div class="wallet-row"><span class="wr-label">Receipt</span><span class="wr-value">RCPT-2847-01</span></div>
+    <div class="wallet-row"><span class="wr-label">Amount</span><span class="wr-value">₹16,200</span></div>
+    <div class="wallet-row"><span class="wr-label">Status</span><span class="wr-value">Paid</span></div>
+  </div>
+</div>
+
+<script src="../assets/js/dashboard.js"></script>
+<script src="../assets/js/animations.js"></script>
+<script>
+  document.querySelectorAll('[data-download]').forEach(function (btn) {
+    btn.addEventListener('click', function () { window.RenewPath.toast('Document downloaded.'); });
+  });
+  document.querySelectorAll('[data-preview]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.getElementById('receipt-preview-modal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Account — RenewPath</title>
+<meta name="description" content="Create your RenewPath account to keep your policies, renewal dates, quotes and documents together in one secure place.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="signup.html">
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+<link rel="stylesheet" href="assets/css/dark-mode.css">
+<link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+<div class="auth-shell">
+
+  <aside class="auth-side">
+    <div class="hero-glow" aria-hidden="true" style="background:radial-gradient(500px circle at 80% 10%, rgba(76,140,255,0.25), transparent 60%)"></div>
+    <div class="auth-side-content">
+      <a href="index.html" class="brand" style="color:#fff;margin-bottom:var(--space-7)">
+        <span class="brand-mark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l1.5-4.5A2 2 0 0 1 6.4 7h11.2a2 2 0 0 1 1.9 1.5L21 13"/><path d="M3 13h18v4a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H6v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4z"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg></span>
+        <span>RenewPath</span>
+      </a>
+      <h2 class="h2">Keep every policy detail in one place.</h2>
+      <p style="margin-top:14px">Create an account to save your vehicle details, track renewal dates and revisit past quotes whenever you need them.</p>
+      <div class="auth-side-badges">
+        <div class="auth-side-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Free to create, no obligation</div>
+        <div class="auth-side-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>One dashboard for every policy</div>
+        <div class="auth-side-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Cancel or edit anytime</div>
+      </div>
+    </div>
+    <p style="position:relative;z-index:1;color:#6B7280;font-size:0.8rem">&copy; 2026 RenewPath Insurance Advisory</p>
+  </aside>
+
+  <div class="auth-form-side">
+    <div class="auth-form-box">
+      <div class="auth-top-toggles">
+        <button type="button" class="toggle-btn" id="theme-toggle-standalone" aria-label="Toggle dark mode">
+          <span class="icon-sun"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span>
+          <span class="icon-moon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></span>
+        </button>
+        <button type="button" class="toggle-btn" id="rtl-toggle-standalone" aria-label="Toggle right-to-left layout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg></button>
+      </div>
+
+      <h1 class="h2" style="margin-bottom:8px">Create your insurance account.</h1>
+      <p class="text-muted" style="margin-bottom:var(--space-7)">Keep your policies, renewal dates, quotes and documents together in one secure place.</p>
+
+      <form id="signup-form" novalidate>
+        <div class="field"><label for="su-name">Full name</label><input type="text" id="su-name" class="input" required></div>
+        <div class="field"><label for="su-email">Email</label><input type="email" id="su-email" class="input" required></div>
+        <div class="field"><label for="su-mobile">Mobile number</label><input type="tel" id="su-mobile" class="input" required></div>
+        <div class="field">
+          <label for="su-password">Password</label>
+          <div class="input-group">
+            <input type="password" id="su-password" class="input" required minlength="8">
+            <button type="button" class="input-suffix-btn" data-password-toggle="su-password" aria-label="Show password">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+          <div class="password-strength" id="strength-meter"><span></span><span></span><span></span></div>
+          <span class="hint" id="strength-label">Use 8+ characters with a number and symbol.</span>
+        </div>
+        <div class="field">
+          <label for="su-confirm">Confirm password</label>
+          <div class="input-group">
+            <input type="password" id="su-confirm" class="input" required>
+            <button type="button" class="input-suffix-btn" data-password-toggle="su-confirm" aria-label="Show password">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+          <span class="error-text" id="confirm-error">Passwords do not match.</span>
+        </div>
+        <div class="field"><label for="su-reg">Vehicle registration</label><input type="text" id="su-reg" class="input" placeholder="e.g. TN 07 AB 4521"></div>
+        <div class="field">
+          <label class="checkbox-row"><input type="checkbox" id="su-terms" required> I agree to the Terms and Privacy Policy.</label>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block btn-lg">Create Account</button>
+      </form>
+
+      <p class="text-center text-muted" style="margin-top:var(--space-7);font-size:0.85rem">
+        Already have an account? <a href="login.html" style="color:var(--color-primary);font-weight:600">Login</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/animations.js"></script>
+<script>
+  document.getElementById('theme-toggle-standalone').addEventListener('click', function () {
+    var current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('rp-theme', next);
+  });
+  document.getElementById('rtl-toggle-standalone').addEventListener('click', function () {
+    var isRTL = document.documentElement.getAttribute('dir') === 'rtl';
+    document.documentElement.setAttribute('dir', isRTL ? 'ltr' : 'rtl');
+    localStorage.setItem('rp-rtl', isRTL ? '0' : '1');
+  });
+
+  var pwInput = document.getElementById('su-password');
+  var meter = document.getElementById('strength-meter');
+  var label = document.getElementById('strength-label');
+  pwInput.addEventListener('input', function () {
+    var v = pwInput.value;
+    var score = 0;
+    if (v.length >= 8) score++;
+    if (/[0-9]/.test(v)) score++;
+    if (/[^A-Za-z0-9]/.test(v) || /[A-Z]/.test(v)) score++;
+    meter.className = 'password-strength';
+    if (v.length === 0) { label.textContent = 'Use 8+ characters with a number and symbol.'; }
+    else if (score <= 1) { meter.classList.add('weak'); label.textContent = 'Weak password.'; }
+    else if (score === 2) { meter.classList.add('medium'); label.textContent = 'Medium strength.'; }
+    else { meter.classList.add('strong'); label.textContent = 'Strong password.'; }
+  });
+
+  document.getElementById('signup-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var pass = document.getElementById('su-password').value;
+    var confirm = document.getElementById('su-confirm');
+    if (pass !== confirm.value) {
+      confirm.classList.add('is-invalid');
+      document.getElementById('confirm-error').classList.add('show');
+      return;
+    }
+    confirm.classList.remove('is-invalid');
+    document.getElementById('confirm-error').classList.remove('show');
+    if (!this.checkValidity()) { this.reportValidity(); return; }
+
+    var btn = this.querySelector('button[type="submit"]');
+    btn.textContent = 'Creating account…';
+    btn.disabled = true;
+    window.RenewPath.toast('Demo account created successfully.');
+    setTimeout(function () { window.location.href = 'dashboard/index.html'; }, 1100);
+  });
+</script>
+</body>
+</html>

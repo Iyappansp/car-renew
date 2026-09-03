@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Start Your Renewal — RenewPath Car Insurance</title>
+<meta name="description" content="Renew your car insurance in five guided steps — vehicle details, current policy, coverage selection, quote preview and review.">
+<meta property="og:title" content="Let's Get Your Renewal Started — RenewPath">
+<meta property="og:description" content="A guided, step-by-step car insurance renewal flow.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="renewal.html">
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/home.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+<link rel="stylesheet" href="assets/css/dark-mode.css">
+<link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<header id="main-header"></header>
+
+<main id="main-content">
+  <section class="inner-hero" style="padding-bottom:0">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="inner-hero-content center">
+        <p class="eyebrow center-eyebrow">Renewal</p>
+        <h1 class="h1">Let's get your renewal started.</h1>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="stepper" id="stepper">
+        <div class="stepper-step active" data-step="1"><span class="stepper-circle">1</span><span class="stepper-label">Vehicle</span></div>
+        <div class="stepper-step" data-step="2"><span class="stepper-circle">2</span><span class="stepper-label">Policy</span></div>
+        <div class="stepper-step" data-step="3"><span class="stepper-circle">3</span><span class="stepper-label">Coverage</span></div>
+        <div class="stepper-step" data-step="4"><span class="stepper-circle">4</span><span class="stepper-label">Quotes</span></div>
+        <div class="stepper-step" data-step="5"><span class="stepper-circle">5</span><span class="stepper-label">Review</span></div>
+      </div>
+
+      <div class="container-narrow">
+
+        <!-- STEP 1: VEHICLE -->
+        <div class="renewal-panel active" data-panel="1">
+          <div class="card card-pad">
+            <h3 class="h3" style="margin-bottom:6px">Vehicle details</h3>
+            <p class="text-muted" style="margin-bottom:var(--space-6)">Enter your registration number, or upload your existing policy instead.</p>
+            <div class="field">
+              <label for="rn-reg">Registration number</label>
+              <input type="text" id="rn-reg" class="input" placeholder="TN-07-AB-4521" value="TN-07-AB-4521">
+            </div>
+            <div class="auth-divider">or</div>
+            <div class="renewal-upload-zone" style="margin-bottom:var(--space-6)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:26px;height:26px;margin-bottom:8px"><path d="M12 16V4M6 10l6-6 6 6"/><path d="M4 20h16"/></svg>
+              <p style="font-size:0.85rem">Upload existing policy — demo only</p>
+              <input type="file" class="sr-only">
+            </div>
+            <button type="button" class="btn btn-primary btn-block renewal-next" data-next="2">Continue</button>
+          </div>
+        </div>
+
+        <!-- STEP 2: POLICY -->
+        <div class="renewal-panel" data-panel="2">
+          <div class="card card-pad">
+            <h3 class="h3" style="margin-bottom:6px">Policy details</h3>
+            <span class="demo-data-tag" style="margin-bottom:var(--space-5)">Demo data</span>
+            <div class="wallet-row"><span class="wr-label">Vehicle</span><span class="wr-value">Demo Hyundai Creta</span></div>
+            <div class="wallet-row"><span class="wr-label">Current insurer</span><span class="wr-value">Demo Insurer</span></div>
+            <div class="wallet-row"><span class="wr-label">Policy expiry</span><span class="wr-value">12 Sep 2026</span></div>
+            <div class="wallet-row"><span class="wr-label">Previous premium</span><span class="wr-value">₹18,400</span></div>
+            <div class="flex gap-3" style="margin-top:var(--space-6)">
+              <button type="button" class="btn btn-ghost renewal-prev" data-prev="1">Back</button>
+              <button type="button" class="btn btn-primary w-100 renewal-next" data-next="3">Continue</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 3: COVERAGE -->
+        <div class="renewal-panel" data-panel="3">
+          <div class="card card-pad">
+            <h3 class="h3" style="margin-bottom:6px">Choose coverage</h3>
+            <p class="text-muted" style="margin-bottom:var(--space-6)">Select the plan you'd like quotes for.</p>
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <label class="card" style="display:flex;align-items:center;gap:14px;padding:16px 18px;cursor:pointer">
+                <input type="radio" name="coverage" value="third-party" style="accent-color:var(--color-primary)">
+                <span><strong>Third-Party</strong><br><span class="text-muted" style="font-size:0.82rem">Minimum legal coverage</span></span>
+              </label>
+              <label class="card" style="display:flex;align-items:center;gap:14px;padding:16px 18px;cursor:pointer;border-color:var(--color-primary)">
+                <input type="radio" name="coverage" value="comprehensive" checked style="accent-color:var(--color-primary)">
+                <span><strong>Comprehensive</strong><br><span class="text-muted" style="font-size:0.82rem">Balanced cover, most popular</span></span>
+              </label>
+              <label class="card" style="display:flex;align-items:center;gap:14px;padding:16px 18px;cursor:pointer">
+                <input type="radio" name="coverage" value="comprehensive-addons" style="accent-color:var(--color-primary)">
+                <span><strong>Comprehensive + Add-ons</strong><br><span class="text-muted" style="font-size:0.82rem">Fullest available protection</span></span>
+              </label>
+            </div>
+            <div class="flex gap-3" style="margin-top:var(--space-6)">
+              <button type="button" class="btn btn-ghost renewal-prev" data-prev="2">Back</button>
+              <button type="button" class="btn btn-primary w-100 renewal-next" data-next="4">See Quotes</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 4: QUOTES -->
+        <div class="renewal-panel" data-panel="4">
+          <h3 class="h3 text-center" style="margin-bottom:var(--space-6)">Illustrative quote options</h3>
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <label class="quote-card" style="cursor:pointer">
+              <input type="radio" name="quote" class="sr-only" value="northstar">
+              <div class="quote-card-main">
+                <div class="quote-insurer-row"><span class="quote-insurer-logo"><img src="assets/images/insurers/insurer-northstar.svg" alt="Northstar Insurer logo"></span><strong>Northstar Insurer</strong></div>
+                <div class="quote-spec-grid"><div class="quote-spec"><div class="qs-label">Premium</div><div class="qs-value">₹14,900</div></div><div class="quote-spec"><div class="qs-label">Deductible</div><div class="qs-value">₹1,000</div></div></div>
+              </div>
+              <div class="quote-card-stub"><span class="pill pill-neutral">Standard</span></div>
+            </label>
+            <label class="quote-card is-recommended" style="cursor:pointer">
+              <input type="radio" name="quote" class="sr-only" value="bluewave" checked>
+              <span class="pill pill-primary quote-badge">Recommended</span>
+              <div class="quote-card-main" style="padding-top:var(--space-7)">
+                <div class="quote-insurer-row"><span class="quote-insurer-logo"><img src="assets/images/insurers/insurer-bluewave.svg" alt="Bluewave Insurer logo"></span><strong>Bluewave Insurer</strong></div>
+                <div class="quote-spec-grid"><div class="quote-spec"><div class="qs-label">Premium</div><div class="qs-value">₹16,200</div></div><div class="quote-spec"><div class="qs-label">Deductible</div><div class="qs-value">₹500</div></div></div>
+              </div>
+              <div class="quote-card-stub"><span class="pill pill-success">Best value</span></div>
+            </label>
+            <label class="quote-card" style="cursor:pointer">
+              <input type="radio" name="quote" class="sr-only" value="shieldcore">
+              <div class="quote-card-main">
+                <div class="quote-insurer-row"><span class="quote-insurer-logo"><img src="assets/images/insurers/insurer-shieldcore.svg" alt="Shieldcore Insurer logo"></span><strong>Shieldcore Insurer</strong></div>
+                <div class="quote-spec-grid"><div class="quote-spec"><div class="qs-label">Premium</div><div class="qs-value">₹13,600</div></div><div class="quote-spec"><div class="qs-label">Deductible</div><div class="qs-value">₹1,500</div></div></div>
+              </div>
+              <div class="quote-card-stub"><span class="pill pill-neutral">Budget</span></div>
+            </label>
+          </div>
+          <div class="flex gap-3" style="margin-top:var(--space-6)">
+            <button type="button" class="btn btn-ghost renewal-prev" data-prev="3">Back</button>
+            <button type="button" class="btn btn-primary w-100 renewal-next" data-next="5">Review</button>
+          </div>
+        </div>
+
+        <!-- STEP 5: REVIEW -->
+        <div class="renewal-panel" data-panel="5">
+          <div class="card card-pad">
+            <h3 class="h3" style="margin-bottom:var(--space-5)">Review your renewal</h3>
+            <div class="wallet-row"><span class="wr-label">Vehicle</span><span class="wr-value">Demo Hyundai Creta</span></div>
+            <div class="wallet-row"><span class="wr-label">Coverage</span><span class="wr-value">Comprehensive</span></div>
+            <div class="wallet-row"><span class="wr-label">Insurer</span><span class="wr-value">Bluewave Insurer</span></div>
+            <div class="wallet-row"><span class="wr-label">Premium</span><span class="wr-value">₹16,200</span></div>
+            <div class="wallet-row"><span class="wr-label">Add-ons</span><span class="wr-value">Zero Depreciation</span></div>
+            <div class="wallet-row"><span class="wr-label">Deductible</span><span class="wr-value">₹500</span></div>
+            <div class="flex gap-3" style="margin-top:var(--space-6)">
+              <button type="button" class="btn btn-ghost renewal-prev" data-prev="4">Back</button>
+              <button type="button" class="btn btn-primary w-100" id="purchase-btn">Continue to Purchase</button>
+            </div>
+            <p class="text-muted text-center" style="margin-top:var(--space-4);font-size:0.8rem">Demo purchase flow — no real transaction.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ============ SECTION 5: EXPIRED POLICY BREAK-IN GUIDE ============ -->
+  <section class="section grace-guide-section" id="expired-policy-guide" style="background:var(--surface);border-block:1px solid var(--border)">
+    <div class="container">
+      <div class="grace-period-box reveal-up">
+        <div class="section-head center" style="margin-bottom:var(--space-6)">
+          <span class="badge" style="background:rgba(255,107,74,0.15);color:var(--color-secondary);font-weight:700">Policy Already Lapsed?</span>
+          <h2 class="h2" style="margin-top:8px">How to renew an expired car insurance policy.</h2>
+          <p class="lede" style="margin-top:10px;margin-inline:auto">Don't panic if your policy has lapsed. RenewPath offers self-inspection tools to restore full coverage quickly.</p>
+        </div>
+        <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:var(--space-5)">
+          <div class="card" style="padding:var(--space-5);border-color:var(--color-primary)">
+            <h4 class="h4" style="color:var(--color-primary);margin-bottom:6px">Within 90 Days of Expiry</h4>
+            <p class="text-muted" style="font-size:0.86rem;line-height:1.5">You are within the statutory 90-day grace period. You can retain <strong>100% of your accrued No Claim Bonus (NCB)</strong>. Record a 30-second video on your phone to complete renewal.</p>
+            <div style="margin-top:12px;font-size:0.82rem;font-weight:600;color:var(--color-success)">✓ 100% NCB discount preserved</div>
+          </div>
+          <div class="card" style="padding:var(--space-5)">
+            <h4 class="h4" style="margin-bottom:6px">Over 90 Days Lapsed</h4>
+            <p class="text-muted" style="font-size:0.86rem;line-height:1.5">NCB resets to 0% as per regulatory rules, but you can still purchase fresh Comprehensive or Third-Party cover immediately without an in-person physical surveyor visit.</p>
+            <div style="margin-top:12px;font-size:0.82rem;font-weight:600;color:var(--color-primary)">✓ Instant AI video approval</div>
+          </div>
+          <div class="card" style="padding:var(--space-5);background:var(--surface-raised)">
+            <h4 class="h4" style="margin-bottom:6px">Avoid Driving Uninsured</h4>
+            <p class="text-muted" style="font-size:0.86rem;line-height:1.5">Driving without valid insurance incurs a <strong>₹2,000 to ₹4,000 fine</strong> and potential vehicle seizure under Motor Vehicles Act Sec 196. Renew online before hitting the road.</p>
+            <div style="margin-top:12px;font-size:0.82rem;font-weight:600;color:var(--color-secondary)">⚠ High risk of highway fines</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 6: INTERACTIVE ADD-ON CUSTOMIZER ============ -->
+  <section class="section customizer-section" id="addon-customizer">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow" style="justify-content:center">Plan Builder</p>
+        <h2 class="h2">Customize add-on protections with live pricing.</h2>
+        <p class="lede" style="margin-top:12px;margin-inline:auto">Tap any rider to toggle it on or off. See the dynamic additional cost calculate in real time.</p>
+      </div>
+      <div class="card reveal-up" style="padding:clamp(20px, 4vw, 36px);max-width:860px;margin-inline:auto">
+        <div class="addon-toggle-grid" id="addon-toggle-list">
+          <div class="addon-toggle-item selected" data-cost="1850">
+            <div>
+              <div style="font-weight:700;font-size:0.95rem">Zero Depreciation Cover</div>
+              <div class="text-muted" style="font-size:0.82rem">100% reimbursement on bumper, fibre and rubber parts</div>
+            </div>
+            <div style="text-align:end">
+              <strong style="color:var(--color-primary);font-size:1rem">+₹1,850</strong>
+              <div class="badge" style="background:var(--color-success-100);color:var(--color-success);font-size:0.75rem;margin-top:4px">Added</div>
+            </div>
+          </div>
+          <div class="addon-toggle-item selected" data-cost="499">
+            <div>
+              <div style="font-weight:700;font-size:0.95rem">24x7 Roadside Assistance</div>
+              <div class="text-muted" style="font-size:0.82rem">Towing, puncture assistance and emergency jump-start</div>
+            </div>
+            <div style="text-align:end">
+              <strong style="color:var(--color-primary);font-size:1rem">+₹499</strong>
+              <div class="badge" style="background:var(--color-success-100);color:var(--color-success);font-size:0.75rem;margin-top:4px">Added</div>
+            </div>
+          </div>
+          <div class="addon-toggle-item" data-cost="1120">
+            <div>
+              <div style="font-weight:700;font-size:0.95rem">Engine &amp; Gearbox Hydro-Lock</div>
+              <div class="text-muted" style="font-size:0.82rem">Protects water-logging damage during rainy seasons</div>
+            </div>
+            <div style="text-align:end">
+              <strong style="color:var(--text-secondary);font-size:1rem">+₹1,120</strong>
+              <div class="badge" style="background:var(--border);color:var(--text-muted);font-size:0.75rem;margin-top:4px">Tap to Add</div>
+            </div>
+          </div>
+          <div class="addon-toggle-item" data-cost="390">
+            <div>
+              <div style="font-weight:700;font-size:0.95rem">Key &amp; Lock Replacement</div>
+              <div class="text-muted" style="font-size:0.82rem">Covers smart key reprogramming up to ₹20,000</div>
+            </div>
+            <div style="text-align:end">
+              <strong style="color:var(--text-secondary);font-size:1rem">+₹390</strong>
+              <div class="badge" style="background:var(--border);color:var(--text-muted);font-size:0.75rem;margin-top:4px">Tap to Add</div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:var(--space-6);padding-top:var(--space-5);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+          <div>
+            <span class="text-muted" style="font-size:0.88rem">Selected Add-ons Subtotal:</span>
+            <div style="font-size:1.6rem;font-weight:800;color:var(--color-primary)" id="addon-total-display">₹2,349<span style="font-size:0.85rem;font-weight:500;color:var(--text-muted)">/yr</span></div>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="window.RenewPath.toast('Add-on bundle applied to your renewal quote.')">Apply To My Renewal</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 7: WHY RENEW EARLY ============ -->
+  <section class="section early-benefits-section" id="early-renewal-benefits" style="background:var(--surface);border-block:1px solid var(--border)">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow" style="justify-content:center">Smart Timing</p>
+        <h2 class="h2">4 tangible reasons to renew early.</h2>
+        <p class="lede" style="margin-top:12px;margin-inline:auto">Renewing 10 to 30 days before expiry saves real money and eliminates unnecessary inspection friction.</p>
+      </div>
+      <div class="early-perks-grid reveal-stagger">
+        <div class="early-perk-card">
+          <div class="extra-stat-icon" style="background:var(--color-primary-100);color:var(--color-primary)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h4 class="h4" style="margin-bottom:8px">Rate Lock Guarantee</h4>
+          <p class="text-muted" style="font-size:0.85rem;line-height:1.5">Insurer pricing algorithms frequently adjust. Renewing early locks the lowest live quote rate up to 30 days in advance.</p>
+        </div>
+        <div class="early-perk-card">
+          <div class="extra-stat-icon" style="background:var(--color-success-100);color:var(--color-success)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+          <h4 class="h4" style="margin-bottom:8px">Zero Vehicle Inspection</h4>
+          <p class="text-muted" style="font-size:0.85rem;line-height:1.5">As long as your current policy hasn't expired, insurers issue renewals instantly with zero photos or vehicle checks required.</p>
+        </div>
+        <div class="early-perk-card">
+          <div class="extra-stat-icon" style="background:var(--color-secondary-100);color:var(--color-secondary-600)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h4 class="h4" style="margin-bottom:8px">Uninterrupted NCB Discount</h4>
+          <p class="text-muted" style="font-size:0.85rem;line-height:1.5">Safe drivers advance seamlessly to the next bonus bracket (e.g. 35% to 45%), keeping premiums lower every single year.</p>
+        </div>
+        <div class="early-perk-card">
+          <div class="extra-stat-icon" style="background:var(--color-primary-100);color:var(--color-primary)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h4 class="h4" style="margin-bottom:8px">Zero Legal Exposure</h4>
+          <p class="text-muted" style="font-size:0.85rem;line-height:1.5">Avoid traffic police challans, impounded vehicles, and catastrophic personal liability if an accident occurs during a lapse.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 8: INSTANT DELIVERABLES GUARANTEE ============ -->
+  <section class="section deliverables-section" id="post-renewal-guarantee">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow" style="justify-content:center">Instant Fulfillment</p>
+        <h2 class="h2">What you receive in 60 seconds.</h2>
+        <p class="lede" style="margin-top:12px;margin-inline:auto">Once you complete the demo renewal, all verified policy documents and digital benefits are ready immediately.</p>
+      </div>
+      <div class="guarantee-grid reveal-stagger">
+        <div class="guarantee-card">
+          <div style="font-size:2rem;margin-bottom:8px">📄</div>
+          <h4 class="h4" style="margin-bottom:6px">Instant PDF Policy</h4>
+          <p class="text-muted" style="font-size:0.84rem">Digital digitally-signed certificate sent to your Email and WhatsApp instantly.</p>
+        </div>
+        <div class="guarantee-card">
+          <div style="font-size:2rem;margin-bottom:8px">📲</div>
+          <h4 class="h4" style="margin-bottom:6px">DigiLocker Auto-Sync</h4>
+          <p class="text-muted" style="font-size:0.84rem">Directly accessible in official government transport and DigiLocker portals.</p>
+        </div>
+        <div class="guarantee-card">
+          <div style="font-size:2rem;margin-bottom:8px">💳</div>
+          <h4 class="h4" style="margin-bottom:6px">Digital Cashless Card</h4>
+          <p class="text-muted" style="font-size:0.84rem">Save cashless membership card to your smartphone wallet for instant workshop check-in.</p>
+        </div>
+        <div class="guarantee-card">
+          <div style="font-size:2rem;margin-bottom:8px">🔔</div>
+          <h4 class="h4" style="margin-bottom:6px">365-Day Reminder Bot</h4>
+          <p class="text-muted" style="font-size:0.84rem">Never forget again with gentle automated alerts 30, 15 and 2 days before next renewal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="main-footer"></footer>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/animations.js"></script>
+<script>
+  (function () {
+    function goToStep(n) {
+      document.querySelectorAll('.renewal-panel').forEach(function (p) {
+        p.classList.toggle('active', p.dataset.panel === String(n));
+      });
+      document.querySelectorAll('.stepper-step').forEach(function (s) {
+        var step = parseInt(s.dataset.step, 10);
+        s.classList.toggle('active', step === n);
+        s.classList.toggle('done', step < n);
+      });
+      document.querySelector('.container-narrow').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    document.querySelectorAll('.renewal-next').forEach(function (btn) {
+      btn.addEventListener('click', function () { goToStep(parseInt(btn.dataset.next, 10)); });
+    });
+    document.querySelectorAll('.renewal-prev').forEach(function (btn) {
+      btn.addEventListener('click', function () { goToStep(parseInt(btn.dataset.prev, 10)); });
+    });
+    document.getElementById('purchase-btn').addEventListener('click', function () {
+      window.RenewPath.toast('Demo purchase flow — no real transaction.');
+      setTimeout(function () { window.location.href = 'dashboard/index.html'; }, 1400);
+    });
+
+    // Add-on customizer interactive toggle
+    var addonItems = document.querySelectorAll('#addon-toggle-list .addon-toggle-item');
+    var totalDisplay = document.getElementById('addon-total-display');
+
+    function updateAddonTotal() {
+      var sum = 0;
+      addonItems.forEach(function (item) {
+        if (item.classList.contains('selected')) {
+          sum += parseFloat(item.dataset.cost || 0);
+        }
+      });
+      if (totalDisplay) {
+        totalDisplay.innerHTML = '₹' + sum.toLocaleString('en-IN') + '<span style="font-size:0.85rem;font-weight:500;color:var(--text-muted)">/yr</span>';
+      }
+    }
+
+    addonItems.forEach(function (item) {
+      item.addEventListener('click', function () {
+        item.classList.toggle('selected');
+        var badge = item.querySelector('.badge');
+        if (item.classList.contains('selected')) {
+          badge.textContent = 'Added';
+          badge.style.background = 'var(--color-success-100)';
+          badge.style.color = 'var(--color-success)';
+        } else {
+          badge.textContent = 'Tap to Add';
+          badge.style.background = 'var(--border)';
+          badge.style.color = 'var(--text-muted)';
+        }
+        updateAddonTotal();
+      });
+    });
+  })();
+</script>
+</body>
+</html>

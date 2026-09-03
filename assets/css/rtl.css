@@ -1,0 +1,45 @@
+/* ============================================================
+   RTL SUPPORT
+   Activated via [dir="rtl"] on <html>
+   Most layout already uses logical properties (margin-inline,
+   padding-inline, inset-inline, border-start/end) so this file
+   only handles the exceptions that need explicit mirroring.
+   ============================================================ */
+
+[dir="rtl"] body { text-align: right; }
+
+[dir="rtl"] .icon-flip { transform: scaleX(-1); }
+
+[dir="rtl"] .eyebrow::before { order: 2; }
+
+[dir="rtl"] .footer-social { direction: ltr; justify-content: flex-end; }
+
+[dir="rtl"] .breadcrumb-arrow { transform: scaleX(-1); }
+
+[dir="rtl"] .step-line { background: linear-gradient(to left, var(--color-primary), var(--border)); }
+
+[dir="rtl"] .timeline::before { inset-inline-start: unset; inset-inline-end: 19px; }
+
+[dir="rtl"] .toast svg { margin-inline-start: 0; }
+
+[dir="rtl"] .quote-stub { border-inline-start: none; border-inline-end: 2px dashed var(--border); }
+
+[dir="rtl"] .compare-scroll { direction: rtl; }
+
+[dir="rtl"] .dash-shell { direction: rtl; }
+
+[dir="rtl"] .password-toggle-icon { transform: scaleX(-1); }
+
+[dir="rtl"] .chevron-next { transform: scaleX(-1); }
+
+[dir="rtl"] .extra-stat-card,
+[dir="rtl"] .extra-hiw-step,
+[dir="rtl"] .extra-faq-btn,
+[dir="rtl"] .checklist-card,
+[dir="rtl"] .timeline-card,
+[dir="rtl"] .usp-card,
+[dir="rtl"] .early-perk-card,
+[dir="rtl"] .reg-trust-card { text-align: right; }
+
+[dir="rtl"] .scorecard-table th,
+[dir="rtl"] .scorecard-table td { text-align: right; }
