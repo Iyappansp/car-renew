@@ -20,7 +20,6 @@
     { label: "Claims", href: root + "claims.html", match: "claims.html" },
     { label: "Insurers", href: root + "insurers.html", match: "insurers.html" },
     { label: "Renew", href: root + "renewal.html", match: "renewal.html" },
-    { label: "FAQ", href: root + "faq.html", match: "faq.html" },
     { label: "Contact", href: root + "contact.html", match: "contact.html" }
   ];
 
@@ -58,11 +57,8 @@
     header.className = "site-header";
     header.innerHTML =
       '<div class="container header-inner">' +
-        '<a href="' + root + 'index.html" class="brand">' +
-          '<span class="brand-mark">' +
-            '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l1.5-4.5A2 2 0 0 1 6.4 7h11.2a2 2 0 0 1 1.9 1.5L21 13"/><path d="M3 13h18v4a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H6v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4z"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg>' +
-          "</span>" +
-          "<span>RenewPath</span>" +
+        '<a href="' + root + 'index.html" class="brand" aria-label="RenewPath Home">' +
+          '<img src="' + root + 'assets/images/logo1.png" alt="RenewPath" class="brand-logo-img">' +
         "</a>" +
         '<nav class="main-nav" aria-label="Primary">' + navHtml + "</nav>" +
         '<div class="header-actions">' +
@@ -78,9 +74,9 @@
       "</div>" +
       '<div class="mobile-panel" id="mobile-panel">' +
         '<div class="mobile-panel-head">' +
-          '<a href="' + root + 'index.html" class="brand"><span class="brand-mark">' +
-            '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l1.5-4.5A2 2 0 0 1 6.4 7h11.2a2 2 0 0 1 1.9 1.5L21 13"/><path d="M3 13h18v4a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H6v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4z"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg>' +
-          "</span><span>RenewPath</span></a>" +
+          '<a href="' + root + 'index.html" class="brand" aria-label="RenewPath Home">' +
+            '<img src="' + root + 'assets/images/logo1.png" alt="RenewPath" class="brand-logo-img">' +
+          "</a>" +
           '<button type="button" class="nav-toggle" id="nav-close" aria-label="Close menu">' + ICONS.close + "</button>" +
         "</div>" +
         '<div class="mobile-panel-toggles">' +
@@ -137,51 +133,120 @@
     var footer = document.getElementById("main-footer");
     if (!footer) return;
 
+    footer.className = "site-footer";
     var year = new Date().getFullYear();
 
     footer.innerHTML =
       '<div class="container">' +
         '<div class="footer-grid">' +
+          '<!-- Brand Column -->' +
           '<div class="footer-brand">' +
-            '<a href="' + root + 'index.html" class="brand" style="color:#fff">' +
-              '<span class="brand-mark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l1.5-4.5A2 2 0 0 1 6.4 7h11.2a2 2 0 0 1 1.9 1.5L21 13"/><path d="M3 13h18v4a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H6v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4z"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg></span>' +
-              "<span>RenewPath</span>" +
+            '<a href="' + root + 'index.html" class="brand" aria-label="RenewPath Home">' +
+              '<img src="' + root + 'assets/images/logo1.png" alt="RenewPath" class="brand-logo-img brand-logo-footer">' +
             "</a>" +
-            "<p>Renew smarter, compare better and manage every car insurance document from one connected place.</p>" +
+            '<p class="footer-desc">Renew smarter, compare better and manage every car insurance document from one connected place.</p>' +
+            '<div class="footer-contact-list">' +
+              '<a href="tel:18008904422" class="footer-contact-item">' +
+                '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>' +
+                '<span>1800-890-4422 <small>(24/7 Helpline)</small></span>' +
+              '</a>' +
+              '<a href="mailto:support@renewpath.com" class="footer-contact-item">' +
+                '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>' +
+                '<span>support@renewpath.com</span>' +
+              '</a>' +
+            '</div>' +
             '<div class="footer-social">' +
               '<a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg></a>' +
               '<a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>' +
               '<a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-.9 1.8-1.9 3.7-1.9 4 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21H9z"/></svg></a>' +
-            "</div>" +
-          "</div>" +
+              '<a href="#" aria-label="X Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>' +
+            '</div>' +
+          '</div>' +
+
+          '<!-- Insurance Links -->' +
           '<div class="footer-col"><h4>Insurance</h4><ul>' +
             '<li><a href="' + root + 'renewal.html">Renew Insurance</a></li>' +
             '<li><a href="' + root + 'policy-types.html">Policy Types</a></li>' +
             '<li><a href="' + root + 'insurers.html">Compare Quotes</a></li>' +
             '<li><a href="' + root + 'claims.html">Claims Assistance</a></li>' +
-          "</ul></div>" +
+            '<li><a href="' + root + 'policy-types.html">Comprehensive Cover</a></li>' +
+            '<li><a href="' + root + 'policy-types.html">Third-Party Policy</a></li>' +
+          '</ul></div>' +
+
+          '<!-- Customers Links -->' +
           '<div class="footer-col"><h4>Customers</h4><ul>' +
             '<li><a href="' + root + 'login.html">Login</a></li>' +
             '<li><a href="' + root + 'signup.html">Sign Up</a></li>' +
             '<li><a href="' + root + 'dashboard/policies.html">My Policies</a></li>' +
-            '<li><a href="' + root + 'dashboard/documents.html">Documents</a></li>' +
+            '<li><a href="' + root + 'dashboard/documents.html">Documents Vault</a></li>' +
             '<li><a href="' + root + 'dashboard/reminders.html">Renewal Reminders</a></li>' +
-          "</ul></div>" +
+            '<li><a href="' + root + 'claims.html">Claims Status</a></li>' +
+          '</ul></div>' +
+
+          '<!-- Company Links -->' +
           '<div class="footer-col"><h4>Company</h4><ul>' +
             '<li><a href="' + root + 'how-it-works.html">How It Works</a></li>' +
             '<li><a href="' + root + 'insurers.html">Partner Insurers</a></li>' +
-            '<li><a href="' + root + 'faq.html">FAQ</a></li>' +
-            '<li><a href="' + root + 'contact.html">Contact</a></li>' +
-          "</ul></div>" +
-        "</div>" +
-        '<p class="footer-disclaimer">RenewPath is a frontend product demonstration. Insurer names, quotes, premiums, policy numbers and claim records shown throughout this site are illustrative sample data for prototype purposes only and do not represent real insurance offers, transactions or coverage.</p>' +
+            '<li><a href="' + root + 'faq.html">FAQ & Help</a></li>' +
+            '<li><a href="' + root + 'contact.html">Contact Us</a></li>' +
+            '<li><a href="' + root + 'how-it-works.html">Renewal Process</a></li>' +
+          '</ul></div>' +
+
+          '<!-- Renewal Alerts / Newsletter -->' +
+          '<div class="footer-col footer-col-newsletter">' +
+            '<h4>Renewal Alerts</h4>' +
+            '<p class="footer-newsletter-text">Never miss policy expiry. Get timely renewal reminders & exclusive premium drop alerts in your inbox.</p>' +
+            '<form class="footer-newsletter-form" id="footer-newsletter-form">' +
+              '<div class="footer-input-wrap">' +
+                '<input type="email" id="footer-email-input" placeholder="Enter your email" required aria-label="Your email address" autocomplete="email">' +
+                '<button type="submit" class="btn btn-primary btn-sm">Subscribe</button>' +
+              '</div>' +
+            '</form>' +
+            '<div class="footer-trust-row">' +
+              '<span class="trust-badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> IRDAI Licensed</span>' +
+              '<span class="trust-badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> 256-Bit SSL</span>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+
+        '<!-- Divider -->' +
+
+        '<!-- Bottom Bar -->' +
         '<div class="footer-bottom">' +
-          "<span>&copy; " + year + " RenewPath Insurance Advisory. All rights reserved.</span>" +
+          '<div class="footer-bottom-copy">&copy; 2026 RenewPath Insurance Advisory. All rights reserved.</div>' +
           '<div class="footer-bottom-links">' +
-            '<a href="' + root + 'faq.html">Privacy</a><a href="' + root + 'faq.html">Terms</a><a href="' + root + 'faq.html">Insurance Disclaimer</a>' +
-          "</div>" +
-        "</div>" +
-      "</div>";
+            '<a href="' + root + 'faq.html">Privacy Policy</a>' +
+            '<a href="' + root + 'faq.html">Terms of Service</a>' +
+            '<a href="' + root + 'faq.html">Insurance Disclaimer</a>' +
+            '<a href="' + root + 'faq.html">Cookie Policy</a>' +
+            '<a href="#main-header" class="footer-back-top-link" id="footer-back-top-link">Back to top &uarr;</a>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+
+    // Interactive newsletter submit
+    var form = document.getElementById("footer-newsletter-form");
+    if (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var input = document.getElementById("footer-email-input");
+        if (input && input.value.trim()) {
+          if (window.RenewPath && window.RenewPath.toast) {
+            window.RenewPath.toast("Subscribed to renewal alerts! Check your inbox.");
+          }
+          input.value = "";
+        }
+      });
+    }
+
+    // Interactive back-to-top footer link
+    var topLink = document.getElementById("footer-back-top-link");
+    if (topLink) {
+      topLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
   }
 
   // ---------- Theme ----------

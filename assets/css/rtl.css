@@ -13,6 +13,8 @@
 [dir="rtl"] .eyebrow::before { order: 2; }
 
 [dir="rtl"] .footer-social { direction: ltr; justify-content: flex-end; }
+[dir="rtl"] .footer-col a:hover { transform: translateX(-4px); }
+[dir="rtl"] .footer-input-wrap { padding: 4px 12px 4px 4px; }
 
 [dir="rtl"] .breadcrumb-arrow { transform: scaleX(-1); }
 

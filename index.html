@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/images/about/og-cover.svg">
 <link rel="canonical" href="index.html">
-<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/images/favicons.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/tokens.css">
@@ -201,11 +201,18 @@
       </div>
       <div class="grid grid-3 reveal-stagger" style="align-items:stretch">
 
+        <!-- Card 1: Northstar -->
         <div class="quote-card">
           <div class="quote-card-main">
+            <div class="quote-top-bar">
+              <span class="pill pill-neutral">Standard Plan</span>
+            </div>
             <div class="quote-insurer-row">
               <span class="quote-insurer-logo"><img src="assets/images/insurers/insurer-northstar.svg" alt="Northstar Insurer logo" width="40" height="40"></span>
-              <div><strong>Northstar Insurer</strong><div class="text-muted" style="font-size:0.78rem">Comprehensive</div></div>
+              <div>
+                <strong class="quote-insurer-name">Northstar Insurer</strong>
+                <div class="text-muted quote-insurer-type">Comprehensive Cover</div>
+              </div>
             </div>
             <div class="quote-spec-grid">
               <div class="quote-spec"><div class="qs-label">Premium</div><div class="qs-value">₹14,900</div></div>
@@ -216,16 +223,22 @@
           </div>
           <div class="quote-card-stub">
             <span class="pill pill-neutral">Standard</span>
-            <a href="dashboard/quote-details.html" class="btn btn-ghost btn-sm w-100">View Quote</a>
+            <a href="dashboard/quote-details.html" class="btn btn-secondary btn-sm w-100">View Quote</a>
           </div>
         </div>
 
+        <!-- Card 2: Bluewave (Recommended) -->
         <div class="quote-card is-recommended">
-          <span class="pill pill-primary quote-badge">Recommended</span>
-          <div class="quote-card-main" style="padding-top:var(--space-7)">
+          <div class="quote-card-main">
+            <div class="quote-top-bar">
+              <span class="pill pill-primary">&#9733; Recommended</span>
+            </div>
             <div class="quote-insurer-row">
               <span class="quote-insurer-logo"><img src="assets/images/insurers/insurer-bluewave.svg" alt="Bluewave Insurer logo" width="40" height="40"></span>
-              <div><strong>Bluewave Insurer</strong><div class="text-muted" style="font-size:0.78rem">Comprehensive + Add-ons</div></div>
+              <div>
+                <strong class="quote-insurer-name">Bluewave Insurer</strong>
+                <div class="text-muted quote-insurer-type">Comprehensive + Add-ons</div>
+              </div>
             </div>
             <div class="quote-spec-grid">
               <div class="quote-spec"><div class="qs-label">Premium</div><div class="qs-value">₹16,200</div></div>
@@ -235,16 +248,23 @@
             </div>
           </div>
           <div class="quote-card-stub">
-            <span class="pill pill-success">Best value</span>
+            <span class="pill pill-success">Best Value</span>
             <a href="dashboard/quote-details.html" class="btn btn-primary btn-sm w-100">View Quote</a>
           </div>
         </div>
 
+        <!-- Card 3: Shieldcore -->
         <div class="quote-card">
           <div class="quote-card-main">
+            <div class="quote-top-bar">
+              <span class="pill pill-neutral">Budget Saver</span>
+            </div>
             <div class="quote-insurer-row">
               <span class="quote-insurer-logo"><img src="assets/images/insurers/insurer-shieldcore.svg" alt="Shieldcore Insurer logo" width="40" height="40"></span>
-              <div><strong>Shieldcore Insurer</strong><div class="text-muted" style="font-size:0.78rem">Comprehensive</div></div>
+              <div>
+                <strong class="quote-insurer-name">Shieldcore Insurer</strong>
+                <div class="text-muted quote-insurer-type">Comprehensive Cover</div>
+              </div>
             </div>
             <div class="quote-spec-grid">
               <div class="quote-spec"><div class="qs-label">Premium</div><div class="qs-value">₹13,600</div></div>
@@ -255,7 +275,7 @@
           </div>
           <div class="quote-card-stub">
             <span class="pill pill-neutral">Budget</span>
-            <a href="dashboard/quote-details.html" class="btn btn-ghost btn-sm w-100">View Quote</a>
+            <a href="dashboard/quote-details.html" class="btn btn-secondary btn-sm w-100">View Quote</a>
           </div>
         </div>
       </div>
@@ -511,7 +531,7 @@
 
 </main>
 
-<footer id="main-footer"></footer>
+<footer id="main-footer" class="site-footer"></footer>
 
 <script src="assets/js/main.js"></script>
 <script src="assets/js/animations.js"></script>

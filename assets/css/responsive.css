@@ -4,11 +4,12 @@
    ============================================================ */
 
 /* ---- Base / Mobile (<768px) ---- */
-.main-nav, .header-actions .toggle-btn { display: none; }
+.main-nav, .header-actions .toggle-btn, .header-actions .rtl-text-btn { display: none; }
 .nav-toggle { display: flex; }
 .header-actions { gap: 8px; }
 
 .footer-grid { grid-template-columns: 1fr; gap: var(--space-6); }
+.footer-col h4 { min-height: auto; }
 .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
 
 .hero-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-7); }
@@ -17,26 +18,33 @@
 .table-responsive-cards .data-table { display: none; }
 .table-responsive-cards .card-rows { display: flex; flex-direction: column; gap: var(--space-4); }
 
-.footer-bottom { flex-direction: column; align-items: flex-start; }
+.footer-bottom { flex-direction: column; align-items: flex-start; gap: 14px; }
+
+/* ---- Tablet 640px+ ---- */
+@media (min-width: 640px) {
+  .footer-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-6); }
+  .footer-brand, .footer-col-newsletter { grid-column: 1 / -1; }
+}
 
 /* ---- Tablet 768px+ ---- */
 @media (min-width: 768px) {
   .main-nav-wrap { display: block; }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-bottom { flex-direction: row; align-items: center; }
   .grid-2 { grid-template-columns: repeat(2, 1fr); }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
-  .footer-bottom { flex-direction: row; align-items: center; }
   .stat-strip { grid-template-columns: repeat(4, 1fr) !important; }
 }
 
 /* ---- Desktop 1024px+ ---- */
 @media (min-width: 1024px) {
   .main-nav { display: flex; }
-  .header-actions .toggle-btn { display: flex; }
+  .header-actions .toggle-btn, .header-actions .rtl-text-btn { display: inline-flex; }
   .nav-toggle { display: none; }
 
-  .footer-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1.5fr 1fr 1fr 1fr 1.35fr; gap: clamp(24px, 2.5vw, 44px); }
+  .footer-brand, .footer-col-newsletter { grid-column: auto; }
+  .footer-col h4 { min-height: 34px; }
   .grid-3 { grid-template-columns: repeat(3, 1fr); }
   .grid-4 { grid-template-columns: repeat(4, 1fr); }
 

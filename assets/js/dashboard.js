@@ -56,9 +56,8 @@
       '<div class="dash-sidebar-backdrop" id="dash-backdrop"></div>' +
       '<aside class="dash-sidebar" id="dash-sidebar">' +
         '<div class="dash-sidebar-head">' +
-          '<a href="../index.html" class="brand">' +
-            '<span class="brand-mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l1.5-4.5A2 2 0 0 1 6.4 7h11.2a2 2 0 0 1 1.9 1.5L21 13"/><path d="M3 13h18v4a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H6v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4z"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg></span>' +
-            '<span>RenewPath</span>' +
+          '<a href="../index.html" class="brand" aria-label="RenewPath Home">' +
+            '<img src="../assets/images/logo1.png" alt="RenewPath" class="brand-logo-img">' +
           '</a>' +
         '</div>' +
         '<nav class="dash-sidebar-nav" aria-label="Dashboard">' + navHtml + '</nav>' +

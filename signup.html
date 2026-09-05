@@ -7,7 +7,7 @@
 <meta name="description" content="Create your RenewPath account to keep your policies, renewal dates, quotes and documents together in one secure place.">
 <meta name="robots" content="noindex">
 <link rel="canonical" href="signup.html">
-<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/images/favicons.png" type="image/png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/tokens.css">
 <link rel="stylesheet" href="assets/css/style.css">
@@ -17,109 +17,182 @@
 <link rel="stylesheet" href="assets/css/rtl.css">
 </head>
 <body>
-<div class="auth-shell">
+<div class="auth-vertical-shell">
 
-  <aside class="auth-side">
-    <div class="hero-glow" aria-hidden="true" style="background:radial-gradient(500px circle at 80% 10%, rgba(76,140,255,0.25), transparent 60%)"></div>
-    <div class="auth-side-content">
-      <a href="index.html" class="brand" style="color:#fff;margin-bottom:var(--space-7)">
-        <span class="brand-mark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l1.5-4.5A2 2 0 0 1 6.4 7h11.2a2 2 0 0 1 1.9 1.5L21 13"/><path d="M3 13h18v4a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H6v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4z"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg></span>
-        <span>RenewPath</span>
-      </a>
-      <h2 class="h2">Keep every policy detail in one place.</h2>
-      <p style="margin-top:14px">Create an account to save your vehicle details, track renewal dates and revisit past quotes whenever you need them.</p>
-      <div class="auth-side-badges">
-        <div class="auth-side-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Free to create, no obligation</div>
-        <div class="auth-side-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>One dashboard for every policy</div>
-        <div class="auth-side-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Cancel or edit anytime</div>
-      </div>
+  <!-- Top Navigation Header -->
+  <header class="auth-vertical-header">
+    <div class="auth-top-toggles">
+      <button type="button" class="toggle-btn" id="theme-toggle-standalone" aria-label="Toggle dark mode">
+        <span class="icon-sun"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span>
+        <span class="icon-moon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></span>
+      </button>
+      <button type="button" class="rtl-text-btn" id="rtl-toggle-standalone" aria-label="Toggle right-to-left layout">RTL</button>
     </div>
-    <p style="position:relative;z-index:1;color:#6B7280;font-size:0.8rem">&copy; 2026 RenewPath Insurance Advisory</p>
-  </aside>
+  </header>
 
-  <div class="auth-form-side">
-    <div class="auth-form-box">
-      <div class="auth-top-toggles">
-        <button type="button" class="toggle-btn" id="theme-toggle-standalone" aria-label="Toggle dark mode">
-          <span class="icon-sun"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span>
-          <span class="icon-moon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></span>
-        </button>
-        <button type="button" class="toggle-btn" id="rtl-toggle-standalone" aria-label="Toggle right-to-left layout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg></button>
+  <!-- Vertical Centered Card -->
+  <main class="auth-vertical-main">
+    <div class="auth-vertical-card signup-card card">
+      <div class="auth-card-header">
+        <div class="auth-card-logo-wrap">
+          <a href="index.html" class="brand" aria-label="RenewPath Home">
+            <img src="assets/images/logo1.png" alt="RenewPath" class="auth-card-logo-img">
+          </a>
+        </div>
+        <h1 class="h2">Create your account</h1>
+        <p class="text-muted">Keep all your car insurance policies and renewals in one place</p>
       </div>
 
-      <h1 class="h2" style="margin-bottom:8px">Create your insurance account.</h1>
-      <p class="text-muted" style="margin-bottom:var(--space-7)">Keep your policies, renewal dates, quotes and documents together in one secure place.</p>
-
+      <!-- Form First -->
       <form id="signup-form" novalidate>
-        <div class="field"><label for="su-name">Full name</label><input type="text" id="su-name" class="input" required></div>
-        <div class="field"><label for="su-email">Email</label><input type="email" id="su-email" class="input" required></div>
-        <div class="field"><label for="su-mobile">Mobile number</label><input type="tel" id="su-mobile" class="input" required></div>
-        <div class="field">
-          <label for="su-password">Password</label>
-          <div class="input-group">
-            <input type="password" id="su-password" class="input" required minlength="8">
-            <button type="button" class="input-suffix-btn" data-password-toggle="su-password" aria-label="Show password">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-            </button>
+        <div class="grid grid-2" style="gap:10px">
+          <div class="field">
+            <label for="su-name">Full name</label>
+            <input type="text" id="su-name" class="input" placeholder="Rahul Sharma" required autocomplete="name">
           </div>
-          <div class="password-strength" id="strength-meter"><span></span><span></span><span></span></div>
-          <span class="hint" id="strength-label">Use 8+ characters with a number and symbol.</span>
-        </div>
-        <div class="field">
-          <label for="su-confirm">Confirm password</label>
-          <div class="input-group">
-            <input type="password" id="su-confirm" class="input" required>
-            <button type="button" class="input-suffix-btn" data-password-toggle="su-confirm" aria-label="Show password">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-            </button>
+          <div class="field">
+            <label for="su-mobile">Mobile number</label>
+            <input type="tel" id="su-mobile" class="input" placeholder="+91 98765 43210" required autocomplete="tel">
           </div>
-          <span class="error-text" id="confirm-error">Passwords do not match.</span>
         </div>
-        <div class="field"><label for="su-reg">Vehicle registration</label><input type="text" id="su-reg" class="input" placeholder="e.g. TN 07 AB 4521"></div>
-        <div class="field">
-          <label class="checkbox-row"><input type="checkbox" id="su-terms" required> I agree to the Terms and Privacy Policy.</label>
+
+        <div class="grid grid-2" style="gap:10px">
+          <div class="field">
+            <label for="su-email">Email address</label>
+            <input type="email" id="su-email" class="input" placeholder="you@example.com" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="su-reg">Vehicle reg. <small class="text-muted">(Optional)</small></label>
+            <input type="text" id="su-reg" class="input" placeholder="DL 01 AB 1234">
+          </div>
         </div>
+
+        <div class="grid grid-2" style="gap:10px">
+          <div class="field">
+            <label for="su-password">Password</label>
+            <div class="input-group">
+              <input type="password" id="su-password" class="input" placeholder="Create password" required minlength="8" autocomplete="new-password">
+              <button type="button" class="input-suffix-btn" data-password-toggle="su-password" aria-label="Show password">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+            </div>
+            <div class="password-strength" id="strength-meter" style="height:2px;margin-top:3px"><span></span><span></span><span></span></div>
+          </div>
+
+          <div class="field">
+            <label for="su-confirm">Confirm password</label>
+            <div class="input-group">
+              <input type="password" id="su-confirm" class="input" placeholder="Re-enter password" required autocomplete="new-password">
+              <button type="button" class="input-suffix-btn" data-password-toggle="su-confirm" aria-label="Show password">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+            </div>
+            <span class="error-text" id="confirm-error">Passwords do not match.</span>
+          </div>
+        </div>
+
+        <div class="field" style="margin-top:4px;margin-bottom:12px">
+          <label class="checkbox-row" style="margin-bottom:0;font-size:0.78rem;line-height:1.4"><input type="checkbox" id="su-terms" required checked> I agree to the <a href="faq.html" style="color:var(--color-primary);text-decoration:underline;">Terms</a> and <a href="faq.html" style="color:var(--color-primary);text-decoration:underline;">Privacy Policy</a>.</label>
+        </div>
+
         <button type="submit" class="btn btn-primary btn-block btn-lg">Create Account</button>
       </form>
 
-      <p class="text-center text-muted" style="margin-top:var(--space-7);font-size:0.85rem">
+      <!-- Divider -->
+      <div class="auth-divider"><span>or register with</span></div>
+
+      <!-- Social Signup Buttons: Google, Facebook, Apple at the LAST of container -->
+      <div class="auth-social-row">
+        <button type="button" class="auth-social-btn" id="signup-google-btn" aria-label="Sign up with Google">
+          <svg width="15" height="15" viewBox="0 0 24 24">
+            <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+            <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.26v3.15C3.29 21.43 7.37 24 12 24z"/>
+            <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.26C.46 8.16 0 9.94 0 12c0 2.06.46 3.84 1.26 5.42l4.02-3.15z"/>
+            <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.37 0 3.29 2.57 1.26 6.58l4.02 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+          </svg>
+          <span>Google</span>
+        </button>
+
+        <button type="button" class="auth-social-btn" id="signup-facebook-btn" aria-label="Sign up with Facebook">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="#1877F2">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+          <span>Facebook</span>
+        </button>
+
+        <button type="button" class="auth-social-btn" id="signup-apple-btn" aria-label="Sign up with Apple">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.99.6-2.63 1.35-.57.65-1.07 1.72-.94 2.74 1.01.08 2.03-.49 2.65-1.24z"/>
+          </svg>
+          <span>Apple</span>
+        </button>
+      </div>
+
+      <p class="auth-switch-link text-muted">
         Already have an account? <a href="login.html" style="color:var(--color-primary);font-weight:600">Login</a>
       </p>
     </div>
-  </div>
+  </main>
+
+  <!-- Bottom Badges & Footer -->
+  
 </div>
 
 <script src="assets/js/main.js"></script>
 <script src="assets/js/animations.js"></script>
 <script>
+  // Standalone Theme toggle
   document.getElementById('theme-toggle-standalone').addEventListener('click', function () {
     var current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
     var next = current === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', next);
     localStorage.setItem('rp-theme', next);
   });
+
+  // Standalone RTL toggle
   document.getElementById('rtl-toggle-standalone').addEventListener('click', function () {
     var isRTL = document.documentElement.getAttribute('dir') === 'rtl';
     document.documentElement.setAttribute('dir', isRTL ? 'ltr' : 'rtl');
     localStorage.setItem('rp-rtl', isRTL ? '0' : '1');
   });
 
+  // Social signup buttons simulation
+  ['signup-google-btn', 'signup-facebook-btn', 'signup-apple-btn'].forEach(function(id) {
+    var btn = document.getElementById(id);
+    if (btn) {
+      btn.addEventListener('click', function() {
+        var provider = id.replace('signup-', '').replace('-btn', '');
+        provider = provider.charAt(0).toUpperCase() + provider.slice(1);
+        if (window.RenewPath && window.RenewPath.toast) {
+          window.RenewPath.toast('Connecting to ' + provider + '...');
+        }
+        setTimeout(function() {
+          window.location.href = 'dashboard/index.html';
+        }, 1100);
+      });
+    }
+  });
+
+  // Password strength meter
   var pwInput = document.getElementById('su-password');
   var meter = document.getElementById('strength-meter');
   var label = document.getElementById('strength-label');
-  pwInput.addEventListener('input', function () {
-    var v = pwInput.value;
-    var score = 0;
-    if (v.length >= 8) score++;
-    if (/[0-9]/.test(v)) score++;
-    if (/[^A-Za-z0-9]/.test(v) || /[A-Z]/.test(v)) score++;
-    meter.className = 'password-strength';
-    if (v.length === 0) { label.textContent = 'Use 8+ characters with a number and symbol.'; }
-    else if (score <= 1) { meter.classList.add('weak'); label.textContent = 'Weak password.'; }
-    else if (score === 2) { meter.classList.add('medium'); label.textContent = 'Medium strength.'; }
-    else { meter.classList.add('strong'); label.textContent = 'Strong password.'; }
-  });
+  if (pwInput && meter && label) {
+    pwInput.addEventListener('input', function () {
+      var v = pwInput.value;
+      var score = 0;
+      if (v.length >= 8) score++;
+      if (/[0-9]/.test(v)) score++;
+      if (/[^A-Za-z0-9]/.test(v) || /[A-Z]/.test(v)) score++;
+      meter.className = 'password-strength';
+      if (v.length === 0) { label.textContent = '8+ chars, 1 number & 1 symbol.'; }
+      else if (score <= 1) { meter.classList.add('weak'); label.textContent = 'Weak password.'; }
+      else if (score === 2) { meter.classList.add('medium'); label.textContent = 'Medium strength.'; }
+      else { meter.classList.add('strong'); label.textContent = 'Strong password.'; }
+    });
+  }
 
+  // Signup form validation
   document.getElementById('signup-form').addEventListener('submit', function (e) {
     e.preventDefault();
     var pass = document.getElementById('su-password').value;
@@ -136,7 +209,9 @@
     var btn = this.querySelector('button[type="submit"]');
     btn.textContent = 'Creating account…';
     btn.disabled = true;
-    window.RenewPath.toast('Demo account created successfully.');
+    if (window.RenewPath && window.RenewPath.toast) {
+      window.RenewPath.toast('Account created successfully!');
+    }
     setTimeout(function () { window.location.href = 'dashboard/index.html'; }, 1100);
   });
 </script>

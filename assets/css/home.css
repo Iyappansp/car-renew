@@ -96,23 +96,64 @@
 
 /* ---------- Quote "boarding pass" cards ---------- */
 .quote-card {
-  position: relative; display: flex; background: var(--surface); border: 1px solid var(--border);
+  position: relative; display: flex; background: var(--surface); border: 1.5px solid var(--border);
   border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm);
+  transition: transform var(--dur-med) var(--ease), box-shadow var(--dur-med) var(--ease), border-color var(--dur-med);
 }
-.quote-card-main { flex: 1; padding: var(--space-5) var(--space-6); }
-.quote-card-stub {
-  width: 130px; flex-shrink: 0; padding: var(--space-5); background: var(--color-primary-50);
-  border-inline-start: 2px dashed var(--border); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; text-align: center;
+.quote-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary);
 }
-.quote-card.is-recommended { border-color: var(--color-primary); }
-.quote-card.is-recommended .quote-card-stub { background: var(--color-primary-100); }
-.quote-badge { position: absolute; top: 14px; inset-inline-start: 14px; }
-.quote-insurer-row { display: flex; align-items: center; gap: 10px; margin-bottom: var(--space-4); }
-.quote-insurer-logo { width: 40px; height: 40px; border-radius: 10px; overflow: hidden; flex-shrink: 0; }
-.quote-spec-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 20px; }
-.quote-spec { }
+.quote-card-main {
+  flex: 1; padding: var(--space-5) var(--space-6);
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.quote-top-bar {
+  margin-bottom: var(--space-3);
+  min-height: 26px;
+  display: flex; align-items: center;
+}
+.quote-insurer-row {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: var(--space-4);
+  min-height: 48px;
+}
+.quote-insurer-logo {
+  width: 40px; height: 40px; border-radius: 10px; overflow: hidden; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--surface-raised);
+}
+.quote-insurer-logo img { width: 100%; height: 100%; object-fit: contain; }
+.quote-insurer-name {
+  display: block; font-size: 0.96rem; color: var(--text-primary); line-height: 1.25;
+}
+.quote-insurer-type {
+  font-size: 0.78rem; margin-top: 2px;
+}
+.quote-spec-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px 20px;
+  padding-top: var(--space-3); border-top: 1px solid var(--border-soft);
+}
 .quote-spec .qs-label { font-size: 0.72rem; color: var(--text-muted); margin-bottom: 3px; }
-.quote-spec .qs-value { font-size: 0.9rem; font-weight: 600; color: var(--text-primary); }
+.quote-spec .qs-value { font-size: 0.94rem; font-weight: 700; color: var(--text-primary); }
+.quote-card-stub {
+  width: 140px; flex-shrink: 0; padding: var(--space-5);
+  background: var(--surface-raised);
+  border-inline-start: 1.5px dashed var(--border);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 12px; text-align: center;
+}
+.quote-card.is-recommended {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 1.5px var(--color-primary), var(--shadow-md);
+}
+.quote-card.is-recommended .quote-card-stub {
+  background: rgba(21, 94, 239, 0.08);
+}
+[data-theme="dark"] .quote-card.is-recommended .quote-card-stub {
+  background: rgba(76, 140, 255, 0.12);
+}
 @media (max-width: 640px) {
   .quote-card { flex-direction: column; }
   .quote-card-stub { width: 100%; border-inline-start: none; border-top: 2px dashed var(--border); flex-direction: row; padding: var(--space-4); }
