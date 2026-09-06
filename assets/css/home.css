@@ -320,7 +320,24 @@
 .demo-data-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.02em; color: var(--color-secondary-600); background: var(--color-secondary-100); padding: 4px 10px; border-radius: var(--radius-pill); }
 
 /* ---------- Claims strip ---------- */
-.claims-strip-item { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; padding: var(--space-5); }
+.claims-strip-item {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  padding: var(--space-5);
+  text-align: start;
+  gap: 6px;
+  transition: transform var(--dur-fast), box-shadow var(--dur-fast), border-color var(--dur-fast);
+  height: 100%;
+}
+.claims-strip-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary);
+}
 .claims-strip-icon { width: 52px; height: 52px; border-radius: 14px; background: var(--color-secondary-100); color: var(--color-secondary-600); display: flex; align-items: center; justify-content: center; }
 .claims-strip-icon svg { width: 24px; height: 24px; }
 

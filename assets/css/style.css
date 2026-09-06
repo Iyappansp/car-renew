@@ -1357,10 +1357,23 @@ textarea.input { resize: vertical; min-height: 120px; }
 .garage-search-box { display: flex; gap: 10px; margin-bottom: var(--space-5); flex-wrap: wrap; }
 .garage-filter-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: var(--space-5); }
 .garage-list-grid { display: grid; gap: var(--space-5); grid-template-columns: 1fr; }
-@media (min-width: 768px) { .garage-list-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 640px) { .garage-list-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .garage-list-grid { grid-template-columns: repeat(4, 1fr); } }
 .garage-item-card {
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
   padding: var(--space-5); display: flex; flex-direction: column; justify-content: space-between;
+  transition: transform var(--dur-fast), border-color var(--dur-fast), box-shadow var(--dur-fast);
+}
+.garage-item-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+}
+.garage-item-card .h4 {
+  font-size: 1.06rem;
+  line-height: 1.35;
+  min-height: 2.7em;
+  margin-top: 4px;
 }
 
 .tracker-demo-box {
@@ -1722,4 +1735,165 @@ textarea.input { resize: vertical; min-height: 120px; }
   gap: 12px;
   padding-bottom: var(--space-3);
   border-bottom: 1px solid var(--border-soft);
+}
+
+/* ============================================================
+   AI IMAGE CONTAINER — 1:1 Square Shape with Perfect Fit
+   ============================================================ */
+.ai-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--surface-raised);
+  margin-bottom: var(--space-4);
+  display: block;
+  box-sizing: border-box;
+}
+
+.ai-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover micro-zoom */
+.card:hover .ai-img-wrap img,
+.why-card:hover .ai-img-wrap img,
+.security-card:hover .ai-img-wrap img,
+.step-card:hover .ai-img-wrap img,
+.checklist-card:hover .ai-img-wrap img,
+.timeline-card:hover .ai-img-wrap img,
+.extra-stat-card:hover .ai-img-wrap img,
+.extra-hiw-step:hover .ai-img-wrap img,
+.garage-item-card:hover .ai-img-wrap img,
+.garage-card:hover .ai-img-wrap img,
+.mistake-card:hover .ai-img-wrap img,
+.usp-card:hover .ai-img-wrap img,
+.reg-trust-card:hover .ai-img-wrap img,
+.early-perk-card:hover .ai-img-wrap img,
+.guarantee-card:hover .ai-img-wrap img,
+.scenario-card:hover .ai-img-wrap img,
+.claim-flow-step:hover .ai-img-wrap img,
+.addon-card:hover .ai-img-wrap img,
+.coverage-card:hover .ai-img-wrap img,
+.quote-card:hover .ai-img-wrap img,
+.benchmark-card:hover .ai-img-wrap img,
+.claims-strip-item:hover .ai-img-wrap img {
+  transform: scale(1.05);
+}
+
+/* ============================================================
+   FLUSH-TOP AI IMAGE CONTAINERS — Touch Top, Left & Right Borders
+   ============================================================ */
+.card,
+.garage-card,
+.benchmark-card,
+.early-perk-card,
+.guarantee-card,
+.checklist-card,
+.timeline-card,
+.usp-card,
+.reg-trust-card,
+.mistake-card,
+.scenario-card,
+.addon-card,
+.step-card,
+.why-card,
+.security-card,
+.claims-strip-item,
+.extra-stat-card,
+.extra-hiw-step,
+.coverage-card,
+.quote-card {
+  overflow: hidden;
+}
+
+/* Cards with var(--space-5) (20px) padding: pull image flush to top, left & right borders */
+.garage-card > .ai-img-wrap:first-child,
+.benchmark-card > .ai-img-wrap:first-child,
+.early-perk-card > .ai-img-wrap:first-child,
+.guarantee-card > .ai-img-wrap:first-child,
+.checklist-card > .ai-img-wrap:first-child,
+.timeline-card > .ai-img-wrap:first-child,
+.usp-card > .ai-img-wrap:first-child,
+.reg-trust-card > .ai-img-wrap:first-child,
+.mistake-card > .ai-img-wrap:first-child,
+.scenario-card > .ai-img-wrap:first-child,
+.addon-card > .ai-img-wrap:first-child,
+.claims-strip-item > .ai-img-wrap:first-child,
+.card[style*="var(--space-5)"] > .ai-img-wrap:first-child,
+.card[style*="20px"] > .ai-img-wrap:first-child,
+.ai-img-wrap.flush-top {
+  margin-top: calc(-1 * var(--space-5));
+  margin-inline: calc(-1 * var(--space-5));
+  width: calc(100% + (2 * var(--space-5)));
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  margin-bottom: var(--space-4);
+}
+
+/* Cards with var(--space-6) (24px) padding: pull image flush to top, left & right borders */
+.coverage-card > .ai-img-wrap:first-child,
+.extra-stat-card > .ai-img-wrap:first-child,
+.extra-hiw-step > .ai-img-wrap:first-child,
+.step-card > .ai-img-wrap:first-child,
+.why-card > .ai-img-wrap:first-child,
+.security-card > .ai-img-wrap:first-child,
+.card[style*="var(--space-6)"] > .ai-img-wrap:first-child,
+.card[style*="24px"] > .ai-img-wrap:first-child,
+.card-pad > .ai-img-wrap:first-child {
+  margin-top: calc(-1 * var(--space-6));
+  margin-inline: calc(-1 * var(--space-6));
+  width: calc(100% + (2 * var(--space-6)));
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  margin-bottom: var(--space-4);
+}
+
+/* Direct unpadded child (e.g. .quote-card) */
+.quote-card > .ai-img-wrap:first-child {
+  margin: 0;
+  width: 100%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+/* Specific alignments for checklist grid & claim flow */
+.claim-flow-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-4);
+  width: 100%;
+}
+@media (min-width: 992px) {
+  .claim-flow-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.checklist-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-5);
+  width: 100%;
+}
+@media (min-width: 992px) {
+  .checklist-card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

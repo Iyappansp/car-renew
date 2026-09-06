@@ -41,6 +41,44 @@
   .table-responsive-cards .card-rows { display: flex; flex-direction: column; gap: var(--space-4); }
 
   .footer-bottom { flex-direction: column; align-items: flex-start; gap: 14px; }
+
+  /* Mobile Auth Pages: One-by-One Social Buttons & Full Scrollability */
+  .auth-vertical-shell {
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding: 16px 14px 44px !important;
+    background-attachment: scroll !important;
+  }
+  .auth-vertical-main {
+    flex: 1 0 auto !important;
+    padding: var(--space-3) 0 !important;
+    margin: auto 0 !important;
+  }
+  .auth-vertical-card,
+  .auth-vertical-card.signup-card {
+    padding: 24px 18px !important;
+    max-width: 100% !important;
+    border-radius: var(--radius-lg) !important;
+  }
+  .auth-social-row {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+  .auth-social-btn {
+    width: 100% !important;
+    height: 42px !important;
+    font-size: 0.88rem !important;
+    justify-content: center !important;
+    padding: 0 16px !important;
+    box-sizing: border-box !important;
+  }
 }
 
 /* ---- Tablet 640px+ ---- */
@@ -96,7 +134,7 @@
   .grid-3 { grid-template-columns: repeat(3, 1fr) !important; }
   .grid-4 { grid-template-columns: repeat(4, 1fr) !important; }
   .extra-testimonials-grid { grid-template-columns: repeat(3, 1fr) !important; }
-  .garage-list-grid { grid-template-columns: repeat(3, 1fr) !important; }
+  .garage-list-grid { grid-template-columns: repeat(4, 1fr) !important; }
 
   .hero-grid { grid-template-columns: 1.05fr 0.95fr; align-items: center; }
   .hero-visual { order: 0; }

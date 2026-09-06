@@ -308,27 +308,23 @@
 .contact-info-icon { width: 42px; height: 42px; border-radius: 12px; background: var(--color-secondary-100); color: var(--color-secondary-600); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .contact-info-icon svg { width: 20px; height: 20px; }
 
-/* ---------- Auth pages (Vertical View with Background Image - Balanced & Scroll-Free) ---------- */
+/* ---------- Auth pages (Vertical View with Background Image - Fully Scrollable on All Devices) ---------- */
 .auth-vertical-shell {
   min-height: 100vh;
-  height: 100vh;
-  max-height: 100vh;
+  min-height: 100dvh;
+  height: auto;
+  max-height: none;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   position: relative;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
   box-sizing: border-box;
   background: linear-gradient(180deg, rgba(7, 10, 16, 0.78) 0%, rgba(11, 15, 23, 0.90) 100%),
               url('../images/auth-bg.jpg') center center / cover no-repeat fixed;
-  padding: 22px 32px;
-}
-@media (max-height: 640px) {
-  .auth-vertical-shell {
-    height: auto;
-    max-height: none;
-    overflow-y: auto;
-  }
+  padding: 24px 32px 48px;
 }
 [data-theme="light"] .auth-vertical-shell {
   background: linear-gradient(180deg, rgba(248, 250, 252, 0.88) 0%, rgba(241, 245, 249, 0.94) 100%),
@@ -359,13 +355,13 @@
   padding: 6px 12px;
 }
 .auth-vertical-main {
-  flex: 1;
+  flex: 1 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
+  padding: var(--space-4) 0;
   width: 100%;
-  min-height: 0;
+  margin: auto 0;
 }
 .auth-vertical-card {
   width: 100%;
@@ -505,6 +501,41 @@
   font-size: 0.70rem;
   color: #7E8799;
   flex-shrink: 0;
+}
+
+/* Mobile Responsive Auth Styles (< 768px): One-by-One Social Buttons & Smooth Full Scroll */
+@media (max-width: 767px) {
+  .auth-vertical-shell {
+    padding: 16px 14px 44px;
+    background-attachment: scroll;
+  }
+  .auth-vertical-card,
+  .auth-vertical-card.signup-card {
+    padding: 24px 18px;
+    border-radius: var(--radius-lg);
+    max-width: 100%;
+  }
+  .auth-card-header {
+    margin-bottom: 14px;
+  }
+  .auth-card-header h1,
+  .auth-card-header .h2 {
+    font-size: 1.32rem;
+  }
+  .auth-social-row {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+  .auth-social-btn {
+    width: 100% !important;
+    height: 42px !important;
+    font-size: 0.88rem !important;
+    justify-content: center !important;
+    padding: 0 16px !important;
+    box-sizing: border-box !important;
+  }
 }
 .auth-trust-badges {
   display: flex;
