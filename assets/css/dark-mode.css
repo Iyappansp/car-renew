@@ -66,3 +66,34 @@
   background: var(--surface-raised);
   border-color: var(--border);
 }
+
+/* Secondary palette unification in dark mode */
+[data-theme="dark"] .eyebrow {
+  color: var(--color-secondary);
+}
+[data-theme="dark"] .badge,
+[data-theme="dark"] .pill,
+[data-theme="dark"] .pill-success,
+[data-theme="dark"] .pill-warning,
+[data-theme="dark"] .pill-primary {
+  background: var(--color-secondary-100);
+  color: var(--color-secondary);
+}
+[data-theme="dark"] .stat-mini-icon,
+[data-theme="dark"] .activity-icon,
+[data-theme="dark"] .quick-action-icon,
+[data-theme="dark"] .doc-card-icon,
+[data-theme="dark"] .dash-notif-item-icon,
+[data-theme="dark"] .step-card .step-icon,
+[data-theme="dark"] .contact-info-icon,
+[data-theme="dark"] .coverage-card-icon,
+[data-theme="dark"] .claims-strip-icon,
+[data-theme="dark"] .floating-card-icon,
+[data-theme="dark"] .extra-stat-icon {
+  background: var(--color-secondary-100) !important;
+  color: var(--color-secondary) !important;
+}
+[data-theme="dark"] .extra-stat-label,
+[data-theme="dark"] .timeline-day {
+  color: var(--color-secondary);
+}

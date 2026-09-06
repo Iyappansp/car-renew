@@ -24,12 +24,13 @@
 <header id="main-header"></header>
 
 <main id="main-content">
-  <section class="inner-hero" style="padding-bottom:0">
+  <section class="inner-hero inner-hero-renewal" style="padding-bottom:clamp(32px, 4vw, 48px)">
     <div class="hero-glow" aria-hidden="true"></div>
     <div class="container">
-      <div class="inner-hero-content center">
-        <p class="eyebrow center-eyebrow">Renewal</p>
+      <div class="inner-hero-content center reveal-up">
+        <p class="eyebrow center-eyebrow">Instant Renewal</p>
         <h1 class="h1">Let's get your renewal started.</h1>
+        <p class="lede" style="margin-top:12px">Complete your quick 5-step vehicle policy review and lock in your renewal rate.</p>
       </div>
     </div>
   </section>
@@ -211,7 +212,7 @@
             </div>
             <div style="text-align:end">
               <strong style="color:var(--color-primary);font-size:1rem">+₹1,850</strong>
-              <div class="badge" style="background:var(--color-success-100);color:var(--color-success);font-size:0.75rem;margin-top:4px">Added</div>
+              <div class="badge" style="background:var(--color-secondary-100);color:var(--color-secondary-600);font-size:0.75rem;margin-top:4px">Added</div>
             </div>
           </div>
           <div class="addon-toggle-item selected" data-cost="499">
@@ -221,7 +222,7 @@
             </div>
             <div style="text-align:end">
               <strong style="color:var(--color-primary);font-size:1rem">+₹499</strong>
-              <div class="badge" style="background:var(--color-success-100);color:var(--color-success);font-size:0.75rem;margin-top:4px">Added</div>
+              <div class="badge" style="background:var(--color-secondary-100);color:var(--color-secondary-600);font-size:0.75rem;margin-top:4px">Added</div>
             </div>
           </div>
           <div class="addon-toggle-item" data-cost="1120">
@@ -266,14 +267,14 @@
       </div>
       <div class="early-perks-grid reveal-stagger">
         <div class="early-perk-card">
-          <div class="extra-stat-icon" style="background:var(--color-primary-100);color:var(--color-primary)">
+          <div class="extra-stat-icon" style="background:var(--color-secondary-100);color:var(--color-secondary-600)">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
           </div>
           <h4 class="h4" style="margin-bottom:8px">Rate Lock Guarantee</h4>
           <p class="text-muted" style="font-size:0.85rem;line-height:1.5">Insurer pricing algorithms frequently adjust. Renewing early locks the lowest live quote rate up to 30 days in advance.</p>
         </div>
         <div class="early-perk-card">
-          <div class="extra-stat-icon" style="background:var(--color-success-100);color:var(--color-success)">
+          <div class="extra-stat-icon" style="background:var(--color-secondary-100);color:var(--color-secondary-600)">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
           </div>
           <h4 class="h4" style="margin-bottom:8px">Zero Vehicle Inspection</h4>
@@ -287,7 +288,7 @@
           <p class="text-muted" style="font-size:0.85rem;line-height:1.5">Safe drivers advance seamlessly to the next bonus bracket (e.g. 35% to 45%), keeping premiums lower every single year.</p>
         </div>
         <div class="early-perk-card">
-          <div class="extra-stat-icon" style="background:var(--color-primary-100);color:var(--color-primary)">
+          <div class="extra-stat-icon" style="background:var(--color-secondary-100);color:var(--color-secondary-600)">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
           <h4 class="h4" style="margin-bottom:8px">Zero Legal Exposure</h4>
@@ -327,6 +328,9 @@
           <p class="text-muted" style="font-size:0.84rem">Never forget again with gentle automated alerts 30, 15 and 2 days before next renewal.</p>
         </div>
       </div>
+    </div>
+  </section>
+
   <!-- ============ SECTION 9: NCB RETENTION & PROGRESSION GUIDE ============ -->
   <section class="section ncb-guide-section" id="ncb-retention-guide" style="background:var(--surface);border-block:1px solid var(--border)">
     <div class="container">
@@ -351,7 +355,7 @@
         <div class="card" style="background:var(--surface-raised);border-color:var(--color-primary);padding:var(--space-5);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px">
           <div>
             <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
-              <span class="badge" style="background:var(--color-success-100);color:var(--color-success);font-weight:700" id="ncb-badge">50% NCB Applied</span>
+              <span class="badge" style="background:var(--color-secondary-100);color:var(--color-secondary-600);font-weight:700" id="ncb-badge">50% NCB Applied</span>
               <strong id="ncb-tier-title" style="font-size:1.05rem">Maximum Legal Bonus Bracket</strong>
             </div>
             <p class="text-muted" id="ncb-tier-desc" style="font-size:0.86rem;line-height:1.5;margin:0">5+ consecutive claim-free years. Maximum permissible legal bonus!</p>
@@ -450,8 +454,8 @@
         var badge = item.querySelector('.badge');
         if (item.classList.contains('selected')) {
           badge.textContent = 'Added';
-          badge.style.background = 'var(--color-success-100)';
-          badge.style.color = 'var(--color-success)';
+          badge.style.background = 'var(--color-secondary-100)';
+          badge.style.color = 'var(--color-secondary-600)';
         } else {
           badge.textContent = 'Tap to Add';
           badge.style.background = 'var(--border)';

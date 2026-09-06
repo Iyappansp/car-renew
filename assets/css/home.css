@@ -3,8 +3,98 @@
    ============================================================ */
 
 /* ---------- Hero ---------- */
-.hero { position: relative; padding-block: clamp(40px, 6vw, 88px) clamp(56px, 8vw, 96px); overflow: hidden; }
-.hero-glow { position: absolute; inset: 0; background: radial-gradient(600px circle at 78% 15%, var(--color-primary-100), transparent 60%); pointer-events: none; z-index: 0; }
+.hero {
+  position: relative;
+  padding-block: clamp(40px, 6vw, 88px) clamp(56px, 8vw, 96px);
+  overflow: hidden;
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--color-bg) 0%, rgba(11, 15, 25, 0.88) 55%, rgba(11, 15, 25, 0.55) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+[data-theme="light"] .hero::before {
+  background: linear-gradient(90deg, var(--color-bg) 0%, rgba(255, 255, 255, 0.9) 55%, rgba(255, 255, 255, 0.6) 100%);
+}
+.hero-home {
+  background-image: url('../images/hero/hero-bg-home.jpg');
+  background-position: center;
+  background-size: cover;
+}
+.hero-home-2 {
+  position: relative;
+  background-image: url('../images/hero/hero-bg-home-2.jpg');
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  min-height: clamp(500px, 62vh, 660px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: clamp(64px, 8vw, 110px);
+}
+.hero-home-2::before {
+  display: none;
+}
+.hero-home-2 .hero-center-content {
+  max-width: 860px;
+  margin-inline: auto;
+  text-align: center;
+}
+.hero-home-2 .eyebrow {
+  display: inline-flex;
+  justify-content: center;
+  margin-inline: auto;
+  margin-bottom: var(--space-3);
+}
+.hero-home-2 .h1 {
+  text-align: center;
+  margin-inline: auto;
+  line-height: 1.18;
+  margin-bottom: var(--space-4);
+}
+.hero-home-2 .lede {
+  text-align: center;
+  margin-inline: auto;
+  max-width: 680px;
+}
+.hero-video-bg-wrap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+.hero-video-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(9, 13, 22, 0.72) 0%, rgba(11, 15, 25, 0.88) 100%);
+  z-index: 1;
+}
+[data-theme="light"] .hero-video-overlay {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.82) 0%, rgba(246, 248, 252, 0.92) 100%);
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-video-bg {
+    display: none;
+  }
+}
+.hero-glow { position: absolute; inset: 0; background: radial-gradient(600px circle at 78% 15%, var(--color-primary-100), transparent 60%); pointer-events: none; z-index: 1; }
 .hero-grid { position: relative; z-index: 1; }
 .hero-copy .h1 { margin-bottom: var(--space-4); }
 .hero-copy .lede { margin-bottom: var(--space-6); }
@@ -27,7 +117,7 @@
   gap: 12px;
   min-width: 168px;
 }
-.floating-card-icon { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.floating-card-icon { width: 38px; height: 38px; border-radius: 10px; background: var(--color-secondary-100); color: var(--color-secondary-600); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .floating-card-icon svg { width: 19px; height: 19px; }
 .floating-card .fc-label { font-size: 0.72rem; color: var(--text-muted); font-weight: 600; margin-bottom: 2px; }
 .floating-card .fc-value { font-size: 1rem; font-weight: 700; color: var(--text-primary); }
@@ -50,13 +140,13 @@
 
 /* ---------- Quick renewal (two options) ---------- */
 .renewal-option-card { padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-4); }
-.renewal-option-num { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: var(--radius-pill); background: var(--color-primary-100); color: var(--color-primary); font-weight: 700; font-size: 0.85rem; }
+.renewal-option-num { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: var(--radius-pill); background: var(--color-secondary-100); color: var(--color-secondary-600); font-weight: 700; font-size: 0.85rem; }
 .renewal-upload-zone {
   border: 1.5px dashed var(--border); border-radius: var(--radius-md); padding: var(--space-6);
   text-align: center; color: var(--text-muted); transition: border-color var(--dur-fast);
 }
 .renewal-upload-zone.drag-over { border-color: var(--color-primary); background: var(--color-primary-50); }
-.renewal-upload-zone svg { width: 30px; height: 30px; margin-inline: auto; margin-bottom: 10px; color: var(--color-primary); }
+.renewal-upload-zone svg { width: 30px; height: 30px; margin-inline: auto; margin-bottom: 10px; color: var(--color-secondary-600); }
 .renewal-lookup-result {
   display: none; margin-top: var(--space-5); padding: var(--space-5); border-radius: var(--radius-md);
   background: var(--color-success-100); border: 1px solid var(--color-success);
@@ -68,7 +158,7 @@
 
 /* ---------- Coverage cards ---------- */
 .coverage-card { padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-4); height: 100%; }
-.coverage-card-icon { width: 46px; height: 46px; border-radius: 12px; background: var(--color-primary-100); color: var(--color-primary); display: flex; align-items: center; justify-content: center; }
+.coverage-card-icon { width: 46px; height: 46px; border-radius: 12px; background: var(--color-secondary-100); color: var(--color-secondary-600); display: flex; align-items: center; justify-content: center; }
 .coverage-card-icon svg { width: 22px; height: 22px; }
 .coverage-list { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
 .coverage-list li { display: flex; gap: 8px; font-size: 0.87rem; color: var(--text-secondary); align-items: flex-start; }
@@ -96,9 +186,10 @@
 
 /* ---------- Quote "boarding pass" cards ---------- */
 .quote-card {
-  position: relative; display: flex; background: var(--surface); border: 1.5px solid var(--border);
+  position: relative; display: flex; flex-direction: column; background: var(--surface); border: 1.5px solid var(--border);
   border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm);
   transition: transform var(--dur-med) var(--ease), box-shadow var(--dur-med) var(--ease), border-color var(--dur-med);
+  height: 100%;
 }
 .quote-card:hover {
   transform: translateY(-4px);
@@ -106,7 +197,7 @@
   border-color: var(--color-primary);
 }
 .quote-card-main {
-  flex: 1; padding: var(--space-5) var(--space-6);
+  flex: 1; padding: var(--space-6);
   display: flex; flex-direction: column; justify-content: space-between;
 }
 .quote-top-bar {
@@ -115,34 +206,39 @@
   display: flex; align-items: center;
 }
 .quote-insurer-row {
-  display: flex; align-items: center; gap: 12px;
-  margin-bottom: var(--space-4);
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: var(--space-5);
   min-height: 48px;
 }
 .quote-insurer-logo {
-  width: 40px; height: 40px; border-radius: 10px; overflow: hidden; flex-shrink: 0;
+  width: 44px; height: 44px; border-radius: 10px; overflow: hidden; flex-shrink: 0;
   display: flex; align-items: center; justify-content: center;
   background: var(--surface-raised);
 }
 .quote-insurer-logo img { width: 100%; height: 100%; object-fit: contain; }
 .quote-insurer-name {
-  display: block; font-size: 0.96rem; color: var(--text-primary); line-height: 1.25;
+  display: block; font-size: 1.05rem; color: var(--text-primary); line-height: 1.25; font-weight: 700;
 }
 .quote-insurer-type {
-  font-size: 0.78rem; margin-top: 2px;
+  font-size: 0.8rem; margin-top: 3px;
 }
 .quote-spec-grid {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px 20px;
-  padding-top: var(--space-3); border-top: 1px solid var(--border-soft);
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 20px;
+  padding-top: var(--space-4); border-top: 1px solid var(--border-soft);
 }
-.quote-spec .qs-label { font-size: 0.72rem; color: var(--text-muted); margin-bottom: 3px; }
-.quote-spec .qs-value { font-size: 0.94rem; font-weight: 700; color: var(--text-primary); }
+.quote-spec .qs-label { font-size: 0.74rem; color: var(--text-muted); margin-bottom: 4px; }
+.quote-spec .qs-value { font-size: 1rem; font-weight: 700; color: var(--text-primary); }
 .quote-card-stub {
-  width: 140px; flex-shrink: 0; padding: var(--space-5);
+  width: 100%; flex-shrink: 0; padding: var(--space-4) var(--space-6);
   background: var(--surface-raised);
-  border-inline-start: 1.5px dashed var(--border);
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 12px; text-align: center;
+  border-inline-start: none;
+  border-top: 1.5px dashed var(--border);
+  display: flex; flex-direction: row; align-items: center; justify-content: space-between;
+  gap: 14px; text-align: start; margin-top: auto;
+}
+.quote-card-stub .btn {
+  flex: 0 0 auto;
+  min-width: 130px;
 }
 .quote-card.is-recommended {
   border-color: var(--color-primary);
@@ -155,15 +251,14 @@
   background: rgba(76, 140, 255, 0.12);
 }
 @media (max-width: 640px) {
-  .quote-card { flex-direction: column; }
-  .quote-card-stub { width: 100%; border-inline-start: none; border-top: 2px dashed var(--border); flex-direction: row; padding: var(--space-4); }
+  .quote-card-stub { flex-direction: row; padding: var(--space-4); }
 }
 
 .demo-data-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.02em; color: var(--color-secondary-600); background: var(--color-secondary-100); padding: 4px 10px; border-radius: var(--radius-pill); }
 
 /* ---------- Claims strip ---------- */
 .claims-strip-item { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; padding: var(--space-5); }
-.claims-strip-icon { width: 52px; height: 52px; border-radius: 14px; background: var(--color-danger-100); color: var(--color-danger); display: flex; align-items: center; justify-content: center; }
+.claims-strip-icon { width: 52px; height: 52px; border-radius: 14px; background: var(--color-secondary-100); color: var(--color-secondary-600); display: flex; align-items: center; justify-content: center; }
 .claims-strip-icon svg { width: 24px; height: 24px; }
 
 /* ---------- Dashboard preview (marketing) ---------- */

@@ -68,22 +68,17 @@
           "</button>" +
           '<button type="button" class="rtl-text-btn" id="rtl-toggle" aria-label="Toggle right-to-left layout">RTL</button>' +
           '<a href="' + root + 'login.html" class="btn btn-secondary btn-sm header-login-btn">Login</a>' +
-          '<a href="' + root + 'dashboard/index.html" class="btn btn-primary btn-sm">Dashboard</a>' +
+          '<a href="' + root + 'dashboard/index.html" class="btn btn-primary btn-sm header-dash-btn">Dashboard</a>' +
           '<button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">' + ICONS.menu + "</button>" +
         "</div>" +
       "</div>" +
+      '<div class="mobile-panel-backdrop" id="mobile-backdrop"></div>' +
       '<div class="mobile-panel" id="mobile-panel">' +
         '<div class="mobile-panel-head">' +
           '<a href="' + root + 'index.html" class="brand" aria-label="RenewPath Home">' +
             '<img src="' + root + 'assets/images/logo1.png" alt="RenewPath" class="brand-logo-img">' +
           "</a>" +
           '<button type="button" class="nav-toggle" id="nav-close" aria-label="Close menu">' + ICONS.close + "</button>" +
-        "</div>" +
-        '<div class="mobile-panel-toggles">' +
-          '<button type="button" class="toggle-btn" id="theme-toggle-m" aria-label="Toggle dark mode">' +
-            '<span class="icon-sun">' + ICONS.sun + "</span><span class=\"icon-moon\">" + ICONS.moon + "</span>" +
-          "</button>" +
-          '<button type="button" class="rtl-text-btn" id="rtl-toggle-m" aria-label="Toggle right-to-left layout">RTL</button>' +
         "</div>" +
         '<nav aria-label="Mobile">' + mobileNavHtml + "</nav>" +
         '<div class="mobile-panel-actions">' +
@@ -99,33 +94,33 @@
 
     // Mobile panel
     var panel = document.getElementById("mobile-panel");
+    var backdrop = document.getElementById("mobile-backdrop");
     var openBtn = document.getElementById("nav-toggle");
     var closeBtn = document.getElementById("nav-close");
     function openPanel() {
       panel.classList.add("open");
+      if (backdrop) backdrop.classList.add("open");
       document.body.style.overflow = "hidden";
-      openBtn.setAttribute("aria-expanded", "true");
+      if (openBtn) openBtn.setAttribute("aria-expanded", "true");
     }
     function closePanel() {
       panel.classList.remove("open");
+      if (backdrop) backdrop.classList.remove("open");
       document.body.style.overflow = "";
-      openBtn.setAttribute("aria-expanded", "false");
+      if (openBtn) openBtn.setAttribute("aria-expanded", "false");
     }
     if (openBtn) openBtn.addEventListener("click", openPanel);
     if (closeBtn) closeBtn.addEventListener("click", closePanel);
+    if (backdrop) backdrop.addEventListener("click", closePanel);
     panel.querySelectorAll("nav a").forEach(function (a) {
       a.addEventListener("click", closePanel);
     });
 
-    // Theme + RTL toggles (desktop + mobile duplicates)
-    ["theme-toggle", "theme-toggle-m"].forEach(function (id) {
-      var btn = document.getElementById(id);
-      if (btn) btn.addEventListener("click", toggleTheme);
-    });
-    ["rtl-toggle", "rtl-toggle-m"].forEach(function (id) {
-      var btn = document.getElementById(id);
-      if (btn) btn.addEventListener("click", toggleRTL);
-    });
+    // Theme + RTL toggles
+    var themeBtn = document.getElementById("theme-toggle");
+    if (themeBtn) themeBtn.addEventListener("click", toggleTheme);
+    var rtlBtn = document.getElementById("rtl-toggle");
+    if (rtlBtn) rtlBtn.addEventListener("click", toggleRTL);
   }
 
   // ---------- Build footer ----------
@@ -171,16 +166,6 @@
             '<li><a href="' + root + 'claims.html">Claims Assistance</a></li>' +
             '<li><a href="' + root + 'policy-types.html">Comprehensive Cover</a></li>' +
             '<li><a href="' + root + 'policy-types.html">Third-Party Policy</a></li>' +
-          '</ul></div>' +
-
-          '<!-- Customers Links -->' +
-          '<div class="footer-col"><h4>Customers</h4><ul>' +
-            '<li><a href="' + root + 'login.html">Login</a></li>' +
-            '<li><a href="' + root + 'signup.html">Sign Up</a></li>' +
-            '<li><a href="' + root + 'dashboard/policies.html">My Policies</a></li>' +
-            '<li><a href="' + root + 'dashboard/documents.html">Documents Vault</a></li>' +
-            '<li><a href="' + root + 'dashboard/reminders.html">Renewal Reminders</a></li>' +
-            '<li><a href="' + root + 'claims.html">Claims Status</a></li>' +
           '</ul></div>' +
 
           '<!-- Company Links -->' +
