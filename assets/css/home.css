@@ -5,7 +5,11 @@
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
-  padding-block: clamp(40px, 6vw, 88px) clamp(56px, 8vw, 96px);
+  padding-top: clamp(140px, 16vw, 195px);
+  padding-bottom: clamp(64px, 8vw, 110px);
+  min-height: clamp(580px, 72vh, 760px);
+  display: flex;
+  align-items: center;
   overflow: hidden;
   background-size: cover;
   background-position: center right;
@@ -33,11 +37,12 @@
   background-position: center;
   background-size: cover;
   overflow: hidden;
-  min-height: clamp(500px, 62vh, 660px);
+  min-height: clamp(580px, 72vh, 760px);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-block: clamp(64px, 8vw, 110px);
+  padding-top: clamp(145px, 17vw, 205px);
+  padding-bottom: clamp(70px, 8vw, 115px);
 }
 .hero-home-2::before {
   display: none;
@@ -229,16 +234,56 @@
 .quote-spec .qs-label { font-size: 0.74rem; color: var(--text-muted); margin-bottom: 4px; }
 .quote-spec .qs-value { font-size: 1rem; font-weight: 700; color: var(--text-primary); }
 .quote-card-stub {
-  width: 100%; flex-shrink: 0; padding: var(--space-4) var(--space-6);
+  width: 100%;
+  flex-shrink: 0;
+  padding: 14px 20px;
   background: var(--surface-raised);
   border-inline-start: none;
   border-top: 1.5px dashed var(--border);
-  display: flex; flex-direction: row; align-items: center; justify-content: space-between;
-  gap: 14px; text-align: start; margin-top: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  min-height: 66px;
+  box-sizing: border-box;
 }
-.quote-card-stub .btn {
-  flex: 0 0 auto;
-  min-width: 130px;
+.quote-card-stub .pill,
+.quote-stub-badge {
+  flex: 0 0 96px;
+  width: 96px;
+  min-width: 96px;
+  height: 32px;
+  padding: 0 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  border-radius: var(--radius-pill);
+  box-sizing: border-box;
+}
+.quote-card-stub .btn,
+.quote-stub-btn {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 16px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  white-space: nowrap !important;
+  border-radius: var(--radius-sm);
+  transition: all var(--dur-fast);
+  box-sizing: border-box;
 }
 .quote-card.is-recommended {
   border-color: var(--color-primary);
@@ -250,8 +295,26 @@
 [data-theme="dark"] .quote-card.is-recommended .quote-card-stub {
   background: rgba(76, 140, 255, 0.12);
 }
-@media (max-width: 640px) {
-  .quote-card-stub { flex-direction: row; padding: var(--space-4); }
+@media (max-width: 480px) {
+  .quote-card-stub {
+    padding: 12px 14px;
+    gap: 10px;
+    min-height: 58px;
+  }
+  .quote-card-stub .pill,
+  .quote-stub-badge {
+    flex: 0 0 86px;
+    width: 86px;
+    min-width: 86px;
+    height: 30px;
+    font-size: 0.74rem;
+  }
+  .quote-card-stub .btn,
+  .quote-stub-btn {
+    height: 34px;
+    font-size: 0.82rem;
+    padding: 0 10px;
+  }
 }
 
 .demo-data-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.02em; color: var(--color-secondary-600); background: var(--color-secondary-100); padding: 4px 10px; border-radius: var(--radius-pill); }
@@ -267,18 +330,7 @@
 .dash-preview-body { padding: var(--space-6); display: grid; gap: var(--space-4); }
 @media (min-width: 640px) { .dash-preview-body { grid-template-columns: 1fr 1fr; } }
 
-/* ---------- Final CTA banner ---------- */
-.cta-banner {
-  background: linear-gradient(120deg, var(--color-primary), var(--color-primary-600));
-  border-radius: var(--radius-lg); padding: clamp(36px, 6vw, 64px); text-align: center; color: #fff;
-}
-.cta-banner h2 { color: #fff; }
-.cta-banner p { color: rgba(255,255,255,0.85); }
-.cta-banner .btn-primary { background: #fff; color: var(--color-primary); box-shadow: none; }
-.cta-banner .btn-primary:hover { background: #F1F5FF; }
-.cta-banner .btn-secondary { border-color: rgba(255,255,255,0.5); color: #fff; }
-.cta-banner .btn-secondary:hover { background: rgba(255,255,255,0.12); }
-.cta-banner .btn-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: var(--space-6); }
+/* ---------- Final CTA banner handled globally in style.css ---------- */
 
 /* ---------- Editorial blocks (Home 2) ---------- */
 .editorial-block { display: grid; gap: var(--space-6); align-items: center; }

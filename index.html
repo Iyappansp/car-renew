@@ -184,7 +184,7 @@
         <div class="savings-stat-row" style="margin-top:0">
           <div class="savings-stat"><div class="ss-label">Current premium</div><div class="ss-value">₹18,400</div></div>
           <div class="savings-stat"><div class="ss-label">Potential options</div><div class="ss-value">3</div></div>
-          <div class="savings-stat"><div class="ss-label">Renewal date</div><div class="ss-value">12 Sep 2026</div></div>
+          <div class="savings-stat"><div class="ss-label">Renewal date</div><div class="ss-value">12 Sep</div></div>
         </div>
       </div>
     </div>
@@ -222,8 +222,8 @@
             </div>
           </div>
           <div class="quote-card-stub">
-            <span class="pill pill-neutral">Standard</span>
-            <a href="dashboard/quote-details.html" class="btn btn-secondary btn-sm w-100">View Quote</a>
+            <span class="pill pill-neutral quote-stub-badge">Standard</span>
+            <a href="dashboard/quote-details.html" class="btn btn-secondary btn-sm quote-stub-btn">View Quote</a>
           </div>
         </div>
 
@@ -248,8 +248,8 @@
             </div>
           </div>
           <div class="quote-card-stub">
-            <span class="pill pill-success">Best Value</span>
-            <a href="dashboard/quote-details.html" class="btn btn-primary btn-sm w-100">View Quote</a>
+            <span class="pill pill-success quote-stub-badge">Best Value</span>
+            <a href="dashboard/quote-details.html" class="btn btn-primary btn-sm quote-stub-btn">View Quote</a>
           </div>
         </div>
 
@@ -274,8 +274,8 @@
             </div>
           </div>
           <div class="quote-card-stub">
-            <span class="pill pill-neutral">Budget</span>
-            <a href="dashboard/quote-details.html" class="btn btn-secondary btn-sm w-100">View Quote</a>
+            <span class="pill pill-neutral quote-stub-badge">Budget</span>
+            <a href="dashboard/quote-details.html" class="btn btn-secondary btn-sm quote-stub-btn">View Quote</a>
           </div>
         </div>
       </div>
@@ -323,7 +323,7 @@
           <p class="lede" style="margin-top:16px">One place to track your active policy, review renewal dates, and pull up documents whenever you need them.</p>
           <div class="wallet-card card" style="margin-top:var(--space-6)">
             <div class="wallet-row"><span class="wr-label">Policy no.</span><span class="wr-value">POL-DEMO-2847</span></div>
-            <div class="wallet-row"><span class="wr-label">Renewal</span><span class="wr-value">12 Sep 2026</span></div>
+            <div class="wallet-row"><span class="wr-label">Renewal</span><span class="wr-value">12 Sep</span></div>
             <div class="wallet-row"><span class="wr-label">Premium</span><span class="wr-value">₹16,200</span></div>
             <div class="flex gap-3" style="margin-top:var(--space-5)">
               <a href="dashboard/policy-details.html" class="btn btn-ghost btn-sm">View Policy</a>
@@ -338,10 +338,10 @@
     </div>
   </section>
 
-  <!-- ============ FINAL CTA ============ -->
+  <!-- ============ MID CTA ============ -->
   <section class="section">
     <div class="container">
-      <div class="cta-banner reveal-up">
+      <div class="cta-banner cta-banner-home reveal-up">
         <h2 class="h2">Your next renewal can be simpler.</h2>
         <p class="lede" style="margin-inline:auto;margin-top:12px">Start whenever you're ready — it takes a few minutes to see your options.</p>
         <div class="btn-row">
@@ -445,7 +445,9 @@
           <div class="extra-testimonial-stars">★★★★★</div>
           <p class="extra-testimonial-quote">"I used to dread renewal time. With RenewPath I could see all the options laid out clearly and chose a plan that actually saved me money this year."</p>
           <div class="extra-testimonial-author">
-            <div class="extra-testimonial-avatar" style="background:var(--color-primary-100);color:var(--color-primary)">SK</div>
+            <div class="extra-testimonial-avatar">
+              <img src="assets/images/testimonials/suresh-k.jpg" alt="Suresh K. - Chennai" loading="lazy">
+            </div>
             <div>
               <div class="extra-testimonial-name">Suresh K.</div>
               <div class="extra-testimonial-role text-muted" style="font-size:0.8rem">Chennai · Hyundai Creta owner</div>
@@ -456,7 +458,9 @@
           <div class="extra-testimonial-stars">★★★★★</div>
           <p class="extra-testimonial-quote">"The step-by-step flow is incredibly smooth. I renewed my car insurance in under 4 minutes and the policy document was ready to download immediately."</p>
           <div class="extra-testimonial-author">
-            <div class="extra-testimonial-avatar" style="background:var(--color-success-100);color:var(--color-success)">PA</div>
+            <div class="extra-testimonial-avatar">
+              <img src="assets/images/testimonials/priya-a.jpg" alt="Priya A. - Bengaluru" loading="lazy">
+            </div>
             <div>
               <div class="extra-testimonial-name">Priya A.</div>
               <div class="extra-testimonial-role text-muted" style="font-size:0.8rem">Bengaluru · Toyota Innova owner</div>
@@ -467,7 +471,9 @@
           <div class="extra-testimonial-stars">★★★★☆</div>
           <p class="extra-testimonial-quote">"The comparison table finally helped me understand what I was actually paying for. Zero depreciation was a game changer for my newer vehicle."</p>
           <div class="extra-testimonial-author">
-            <div class="extra-testimonial-avatar" style="background:var(--color-secondary-100);color:var(--color-secondary-600)">RM</div>
+            <div class="extra-testimonial-avatar">
+              <img src="assets/images/testimonials/rajiv-m.jpg" alt="Rajiv M. - Mumbai" loading="lazy">
+            </div>
             <div>
               <div class="extra-testimonial-name">Rajiv M.</div>
               <div class="extra-testimonial-role text-muted" style="font-size:0.8rem">Mumbai · Maruti Swift owner</div>
@@ -530,7 +536,7 @@
   </section>
 
   <!-- ============ BOTTOM EXPLORE CTAs ============ -->
-  <section class="section-bottom-explore">
+  <!-- <section class="section-bottom-explore">
     <div class="container">
       <div class="bottom-explore-card reveal-up">
         <div class="bottom-explore-info">
@@ -554,10 +560,11 @@
         </div>
       </div>
     </div>
+  </section> -->
   <!-- ============ FINAL CTA ============ -->
   <section class="section">
     <div class="container">
-      <div class="cta-banner reveal-up">
+      <div class="cta-banner cta-banner-home reveal-up">
         <h2 class="h2">Ready to renew or explore policy options?</h2>
         <p class="lede">It takes two minutes to compare prices and find the right cover for your car.</p>
         <div class="btn-row">

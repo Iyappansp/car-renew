@@ -15,10 +15,28 @@
   var NAV_ITEMS = [
     { label: "Home", href: root + "index.html", match: "index.html" },
     { label: "Home 2", href: root + "home-2.html", match: "home-2.html" },
+    { label: "About", href: root + "about.html", match: "about.html" },
     { label: "How It Works", href: root + "how-it-works.html", match: "how-it-works.html" },
     { label: "Policy Types", href: root + "policy-types.html", match: "policy-types.html" },
-    { label: "Claims", href: root + "claims.html", match: "claims.html" },
-    { label: "Insurers", href: root + "insurers.html", match: "insurers.html" },
+    {
+      label: "Services",
+      dropdown: true,
+      match: ["claims.html", "insurers.html"],
+      items: [
+        {
+          label: "Claims Assistance",
+          href: root + "claims.html",
+          match: "claims.html",
+          desc: "Step-by-step guidance & filing"
+        },
+        {
+          label: "Partner Insurers",
+          href: root + "insurers.html",
+          match: "insurers.html",
+          desc: "24+ network insurers & garages"
+        }
+      ]
+    },
     { label: "Renew", href: root + "renewal.html", match: "renewal.html" },
     { label: "Contact", href: root + "contact.html", match: "contact.html" }
   ];
@@ -44,12 +62,54 @@
     if (!header) return;
 
     var file = currentFile();
+
+    // Desktop nav
     var navHtml = NAV_ITEMS.map(function (item) {
+      if (item.dropdown) {
+        var isDropdownActive = Array.isArray(item.match) && item.match.indexOf(file) !== -1;
+        var subItemsHtml = item.items.map(function (sub) {
+          var subActive = sub.match === file ? " active" : "";
+          return '<a href="' + sub.href + '" class="dropdown-item' + subActive + '" role="menuitem">' +
+            '<span class="dropdown-item-content">' +
+              '<strong class="dropdown-item-title">' + sub.label + '</strong>' +
+              '<small class="dropdown-item-desc">' + sub.desc + '</small>' +
+            '</span>' +
+          '</a>';
+        }).join("");
+
+        return '<div class="nav-dropdown" id="nav-dropdown-services">' +
+          '<button type="button" class="nav-dropdown-btn' + (isDropdownActive ? " active" : "") + '" aria-haspopup="true" aria-expanded="false" id="services-dropdown-btn">' +
+            '<span>' + item.label + '</span>' +
+            '<svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>' +
+          '</button>' +
+          '<div class="nav-dropdown-menu" id="services-dropdown-menu" role="menu" aria-labelledby="services-dropdown-btn">' +
+            '<div class="dropdown-menu-inner">' + subItemsHtml + '</div>' +
+          '</div>' +
+        '</div>';
+      }
+
       var active = item.match === file ? " active" : "";
       return '<a href="' + item.href + '" class="' + active.trim() + '">' + item.label + "</a>";
     }).join("");
 
+    // Mobile nav
     var mobileNavHtml = NAV_ITEMS.map(function (item) {
+      if (item.dropdown) {
+        var isDropdownActive = Array.isArray(item.match) && item.match.indexOf(file) !== -1;
+        var subLinksHtml = item.items.map(function (sub) {
+          var subActive = sub.match === file ? " active" : "";
+          return '<a href="' + sub.href + '" class="mobile-sublink' + subActive + '">' + sub.label + '</a>';
+        }).join("");
+
+        return '<div class="mobile-nav-dropdown' + (isDropdownActive ? " open" : "") + '">' +
+          '<button type="button" class="mobile-dropdown-btn' + (isDropdownActive ? " active" : "") + '" aria-expanded="' + (isDropdownActive ? "true" : "false") + '">' +
+            '<span>' + item.label + '</span>' +
+            '<svg class="mobile-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>' +
+          '</button>' +
+          '<div class="mobile-dropdown-content">' + subLinksHtml + '</div>' +
+        '</div>';
+      }
+
       var active = item.match === file ? " active" : "";
       return '<a href="' + item.href + '" class="' + active.trim() + '">' + item.label + "</a>";
     }).join("");
@@ -92,6 +152,31 @@
       header.classList.toggle("is-scrolled", window.scrollY > 8);
     }, { passive: true });
 
+    // Desktop Dropdown toggling
+    var desktopDropWrap = document.getElementById("nav-dropdown-services");
+    var desktopDropBtn = document.getElementById("services-dropdown-btn");
+    if (desktopDropWrap && desktopDropBtn) {
+      desktopDropBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var isOpen = desktopDropWrap.classList.toggle("is-open");
+        desktopDropBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+
+      document.addEventListener("click", function (e) {
+        if (!desktopDropWrap.contains(e.target)) {
+          desktopDropWrap.classList.remove("is-open");
+          desktopDropBtn.setAttribute("aria-expanded", "false");
+        }
+      });
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          desktopDropWrap.classList.remove("is-open");
+          desktopDropBtn.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
+
     // Mobile panel
     var panel = document.getElementById("mobile-panel");
     var backdrop = document.getElementById("mobile-backdrop");
@@ -112,6 +197,20 @@
     if (openBtn) openBtn.addEventListener("click", openPanel);
     if (closeBtn) closeBtn.addEventListener("click", closePanel);
     if (backdrop) backdrop.addEventListener("click", closePanel);
+
+    // Mobile accordion dropdown click
+    panel.querySelectorAll(".mobile-dropdown-btn").forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var parent = btn.closest(".mobile-nav-dropdown");
+        if (parent) {
+          parent.classList.toggle("open");
+          btn.setAttribute("aria-expanded", parent.classList.contains("open") ? "true" : "false");
+        }
+      });
+    });
+
     panel.querySelectorAll("nav a").forEach(function (a) {
       a.addEventListener("click", closePanel);
     });
@@ -119,6 +218,7 @@
     // Theme + RTL toggles
     var themeBtn = document.getElementById("theme-toggle");
     if (themeBtn) themeBtn.addEventListener("click", toggleTheme);
+
     var rtlBtn = document.getElementById("rtl-toggle");
     if (rtlBtn) rtlBtn.addEventListener("click", toggleRTL);
   }
@@ -170,6 +270,7 @@
 
           '<!-- Company Links -->' +
           '<div class="footer-col"><h4>Company</h4><ul>' +
+            '<li><a href="' + root + 'about.html">About Us</a></li>' +
             '<li><a href="' + root + 'how-it-works.html">How It Works</a></li>' +
             '<li><a href="' + root + 'insurers.html">Partner Insurers</a></li>' +
             '<li><a href="' + root + 'faq.html">FAQ & Help</a></li>' +
@@ -313,7 +414,7 @@
   }
 
   // ---------- Init ----------
-  document.addEventListener("DOMContentLoaded", function () {
+  function initApp() {
     buildHeader();
     buildFooter();
     initBackToTop();
@@ -325,5 +426,11 @@
         el.classList.add("in-view");
       });
     }, 1200);
-  });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initApp);
+  } else {
+    initApp();
+  }
 })();

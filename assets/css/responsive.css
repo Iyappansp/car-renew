@@ -1,9 +1,9 @@
 /* ============================================================
-   RESPONSIVE — Mobile First
-   Breakpoints: 360 (base), 768, 1024, 1440
+   RESPONSIVE — Mobile First & Tablet Layout Optimization
+   Breakpoints: 320/360 (base mobile), 768 (tablet), 1150 (desktop), 1440 (wide)
    ============================================================ */
 
-/* ---- Base / Mobile & Tablet (<= 1024px) ---- */
+/* ---- Base / Mobile (< 768px) ---- */
 .main-nav { display: none !important; }
 .header-login-btn,
 .header-dash-btn { display: none !important; }
@@ -12,46 +12,77 @@
 
 .footer-grid { grid-template-columns: 1fr; gap: var(--space-6); }
 .footer-col h4 { min-height: auto; }
-.grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
 
-.hero-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-7); }
-.hero-visual { order: -1; }
+/* Mobile One-by-One Container and Cards Stacking (< 768px) */
+@media (max-width: 767px) {
+  .grid-2, .grid-3, .grid-4,
+  .garage-grid, .garage-list-grid,
+  .benchmark-grid, .checklist-grid,
+  .extra-stats-grid, .extra-hiw-grid,
+  .extra-testimonials-grid, .about-stats-strip,
+  .mission-vision-grid, .scenarios-grid,
+  .mistakes-grid, .usp-grid, .reg-trust-grid,
+  .early-perks-grid, .guarantee-grid,
+  .compare-transformation-grid, .addon-toggle-grid {
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+  }
 
-.table-responsive-cards .data-table { display: none; }
-.table-responsive-cards .card-rows { display: flex; flex-direction: column; gap: var(--space-4); }
+  .hero-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-7); }
+  .hero-visual { order: -1; }
 
-.footer-bottom { flex-direction: column; align-items: flex-start; gap: 14px; }
+  /* Mobile Table to One-by-One Container Cards */
+  .table-desktop-only { display: none !important; }
+  .compare-cards-mobile { display: flex !important; flex-direction: column; gap: var(--space-4); width: 100%; }
+  .scorecard-wrap.table-desktop-only { display: none !important; }
+  .scorecard-cards-mobile { display: flex !important; flex-direction: column; gap: var(--space-4); width: 100%; }
+
+  .table-responsive-cards .data-table { display: none; }
+  .table-responsive-cards .card-rows { display: flex; flex-direction: column; gap: var(--space-4); }
+
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 14px; }
+}
 
 /* ---- Tablet 640px+ ---- */
-@media (min-width: 640px) {
+@media (min-width: 640px) and (max-width: 767px) {
   .footer-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-6); }
   .footer-brand, .footer-col-newsletter { grid-column: 1 / -1; }
 }
 
-/* ---- Tablet 768px+ ---- */
+/* ---- Tablet (768px - 1149px, includes 768px & 1024px) ---- */
 @media (min-width: 768px) {
   .footer-bottom { flex-direction: row; align-items: center; }
-  .grid-2 { grid-template-columns: repeat(2, 1fr); }
-  .grid-3 { grid-template-columns: repeat(2, 1fr); }
-  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-6); }
+  .footer-brand, .footer-col-newsletter { grid-column: 1 / -1; }
+
+  /* Grid alignment across tablet views */
+  .grid-2 { grid-template-columns: repeat(2, 1fr) !important; }
+  .grid-3 { grid-template-columns: repeat(2, 1fr) !important; }
+  .grid-4 { grid-template-columns: repeat(2, 1fr) !important; }
+  .extra-testimonials-grid { grid-template-columns: repeat(3, 1fr) !important; }
   .stat-strip { grid-template-columns: repeat(4, 1fr) !important; }
+  .garage-list-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .about-stats-strip { grid-template-columns: repeat(4, 1fr) !important; }
+  .mission-vision-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* Desktop tables visible on tablet and desktop */
+  .table-desktop-only { display: block !important; }
+  .compare-cards-mobile { display: none !important; }
+  .scorecard-wrap.table-desktop-only { display: block !important; }
+  .scorecard-cards-mobile { display: none !important; }
 }
 
-/* ---- Tablet Only (768px - 1023px): Center odd last container in the middle ---- */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .grid-3 > :last-child:nth-child(odd),
-  .grid-2 > :last-child:nth-child(odd),
-  .grid > :last-child:nth-child(odd) {
+@media (min-width: 768px) and (max-width: 1149px) {
+  /* Clean horizontal alignment: allow odd trailing cards to span full width cleanly */
+  .grid-3 > :last-child:nth-child(odd) {
     grid-column: 1 / -1;
-    justify-self: center;
     width: 100%;
-    max-width: calc((100% - var(--space-6, 24px)) / 2);
-    margin-inline: auto;
+    margin-inline: 0;
   }
 }
 
-/* ---- Desktop >= 1024px ---- */
-@media (min-width: 1024px) {
+/* ---- Desktop >= 1150px ---- */
+@media (min-width: 1150px) {
   .main-nav { display: flex !important; }
   .header-actions .toggle-btn, .header-actions .rtl-text-btn { display: inline-flex; }
   .header-login-btn,
@@ -61,9 +92,11 @@
   .footer-grid { grid-template-columns: 1.35fr 1fr 1fr 1.45fr; gap: clamp(24px, 2.5vw, 44px); }
   .footer-brand, .footer-col-newsletter { grid-column: auto; }
   .footer-col h4 { min-height: 34px; }
-  .grid-2 { grid-template-columns: repeat(2, 1fr); }
-  .grid-3 { grid-template-columns: repeat(3, 1fr); }
-  .grid-4 { grid-template-columns: repeat(4, 1fr); }
+  .grid-2 { grid-template-columns: repeat(2, 1fr) !important; }
+  .grid-3 { grid-template-columns: repeat(3, 1fr) !important; }
+  .grid-4 { grid-template-columns: repeat(4, 1fr) !important; }
+  .extra-testimonials-grid { grid-template-columns: repeat(3, 1fr) !important; }
+  .garage-list-grid { grid-template-columns: repeat(3, 1fr) !important; }
 
   .hero-grid { grid-template-columns: 1.05fr 0.95fr; align-items: center; }
   .hero-visual { order: 0; }
@@ -77,11 +110,15 @@
   :root { --container-max: 1320px; }
 }
 
-/* ---- Small phone safety (360/320) ---- */
-@media (max-width: 400px) {
-  .btn-lg { padding: 14px 22px; font-size: 0.92rem; }
+/* ---- Small phone safety (320px - 480px) ---- */
+@media (max-width: 480px) {
+  :root { --container-pad: 16px; }
+  .btn-lg { padding: 13px 20px; font-size: 0.92rem; }
   .h1 { font-size: clamp(1.75rem, 8vw, 2.2rem); }
-  .container, .container-narrow { padding-inline: 16px; }
+  .container, .container-narrow { padding-inline: 16px !important; }
   .floating-card { display: none; }
   .floating-card.floating-card-primary { display: flex; }
+  .card, .dash-card, .plan-mobile-card, .scorecard-mobile-card {
+    padding: 16px !important;
+  }
 }

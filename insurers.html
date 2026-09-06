@@ -171,7 +171,8 @@
         <h2 class="h2">Claim settlement audit scorecard.</h2>
         <p class="lede" style="margin-top:12px;margin-inline:auto">We pull verified annual IRDAI solvency and Claim Settlement Ratios (CSR) so you can compare financial stability side by side.</p>
       </div>
-      <div class="scorecard-wrap reveal-up">
+      <!-- Desktop Audit Scorecard Table (>= 768px) -->
+      <div class="scorecard-wrap reveal-up table-desktop-only">
         <table class="scorecard-table">
           <thead>
             <tr>
@@ -226,6 +227,94 @@
             </tr>
           </tbody>
         </table>
+      </div>
+
+      <!-- Mobile One-by-One Container Cards (< 768px) -->
+      <div class="scorecard-cards-mobile reveal-up">
+        <!-- Container 1: National Shield -->
+        <div class="card scorecard-mobile-card">
+          <div class="scorecard-mobile-head">
+            <div>
+              <h4 class="h4">National Shield Insurance</h4>
+              <span class="text-muted" style="font-size:0.80rem">Top Solvency &amp; Speed</span>
+            </div>
+            <span class="pill pill-success">98.9% CSR</span>
+          </div>
+          <div class="plan-mobile-rows">
+            <div class="pm-row"><span class="pm-label">Avg. Turnaround</span><span class="pm-val">2.8 Days</span></div>
+            <div class="pm-row"><span class="pm-label">Solvency Ratio</span><span class="pm-val font-semibold">2.15x (High buffer)</span></div>
+            <div class="pm-row"><span class="pm-label">Incurred Claim (ICR)</span><span class="pm-val">78%</span></div>
+            <div class="pm-row"><span class="pm-label">Network Garages</span><span class="pm-val">1,240+ Workshops</span></div>
+          </div>
+        </div>
+
+        <!-- Container 2: Apex General -->
+        <div class="card scorecard-mobile-card">
+          <div class="scorecard-mobile-head">
+            <div>
+              <h4 class="h4">Apex General Insurance</h4>
+              <span class="text-muted" style="font-size:0.80rem">High Value Coverage</span>
+            </div>
+            <span class="pill pill-success">98.2% CSR</span>
+          </div>
+          <div class="plan-mobile-rows">
+            <div class="pm-row"><span class="pm-label">Avg. Turnaround</span><span class="pm-val">3.1 Days</span></div>
+            <div class="pm-row"><span class="pm-label">Solvency Ratio</span><span class="pm-val font-semibold">1.95x</span></div>
+            <div class="pm-row"><span class="pm-label">Incurred Claim (ICR)</span><span class="pm-val">82%</span></div>
+            <div class="pm-row"><span class="pm-label">Network Garages</span><span class="pm-val">980+ Workshops</span></div>
+          </div>
+        </div>
+
+        <!-- Container 3: Horizon Motor -->
+        <div class="card scorecard-mobile-card">
+          <div class="scorecard-mobile-head">
+            <div>
+              <h4 class="h4">Horizon Motor Cover</h4>
+              <span class="text-muted" style="font-size:0.80rem">Fastest Approval Track</span>
+            </div>
+            <span class="pill pill-success">97.8% CSR</span>
+          </div>
+          <div class="plan-mobile-rows">
+            <div class="pm-row"><span class="pm-label">Avg. Turnaround</span><span class="pm-val font-semibold text-success">2.4 Days (Fastest)</span></div>
+            <div class="pm-row"><span class="pm-label">Solvency Ratio</span><span class="pm-val font-semibold">1.88x</span></div>
+            <div class="pm-row"><span class="pm-label">Incurred Claim (ICR)</span><span class="pm-val">80%</span></div>
+            <div class="pm-row"><span class="pm-label">Network Garages</span><span class="pm-val">860+ Workshops</span></div>
+          </div>
+        </div>
+
+        <!-- Container 4: BluePeak General -->
+        <div class="card scorecard-mobile-card">
+          <div class="scorecard-mobile-head">
+            <div>
+              <h4 class="h4">BluePeak General</h4>
+              <span class="text-muted" style="font-size:0.80rem">Balanced Metro Network</span>
+            </div>
+            <span class="pill pill-neutral">97.4% CSR</span>
+          </div>
+          <div class="plan-mobile-rows">
+            <div class="pm-row"><span class="pm-label">Avg. Turnaround</span><span class="pm-val">3.5 Days</span></div>
+            <div class="pm-row"><span class="pm-label">Solvency Ratio</span><span class="pm-val font-semibold">1.80x</span></div>
+            <div class="pm-row"><span class="pm-label">Incurred Claim (ICR)</span><span class="pm-val">84%</span></div>
+            <div class="pm-row"><span class="pm-label">Network Garages</span><span class="pm-val">740+ Workshops</span></div>
+          </div>
+        </div>
+
+        <!-- Container 5: Summit Underwriters -->
+        <div class="card scorecard-mobile-card">
+          <div class="scorecard-mobile-head">
+            <div>
+              <h4 class="h4">Summit Underwriters</h4>
+              <span class="text-muted" style="font-size:0.80rem">Established Reliability</span>
+            </div>
+            <span class="pill pill-neutral">96.9% CSR</span>
+          </div>
+          <div class="plan-mobile-rows">
+            <div class="pm-row"><span class="pm-label">Avg. Turnaround</span><span class="pm-val">4.0 Days</span></div>
+            <div class="pm-row"><span class="pm-label">Solvency Ratio</span><span class="pm-val font-semibold">1.76x</span></div>
+            <div class="pm-row"><span class="pm-label">Incurred Claim (ICR)</span><span class="pm-val">85%</span></div>
+            <div class="pm-row"><span class="pm-label">Network Garages</span><span class="pm-val">610+ Workshops</span></div>
+          </div>
+        </div>
       </div>
       <p class="text-muted text-center" style="font-size:0.8rem;margin-top:var(--space-4)">*Data compiled from illustrative prototype audit metrics based on standard general insurance benchmarks.</p>
     </div>
@@ -337,7 +426,7 @@
   <!-- ============ FINAL CTA ============ -->
   <section class="section">
     <div class="container">
-      <div class="cta-banner reveal-up">
+      <div class="cta-banner cta-banner-insurers reveal-up">
         <h2 class="h2">Ready to see full quotes?</h2>
         <p class="lede">Compare real-time premiums across India's top insurers and renew in under 2 minutes.</p>
         <div class="btn-row">

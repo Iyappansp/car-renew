@@ -150,7 +150,7 @@
         <div class="garage-list-grid reveal-stagger" id="garage-cards-grid">
           <div class="garage-item-card" data-city="delhi">
             <div>
-              <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px">
+              <div class="garage-card-header">
                 <span class="pill pill-success">Authorized Cashless</span>
                 <span style="font-size:0.85rem;font-weight:700;color:#f59e0b">★ 4.9 (420 reviews)</span>
               </div>
@@ -168,7 +168,7 @@
           </div>
           <div class="garage-item-card" data-city="mumbai">
             <div>
-              <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px">
+              <div class="garage-card-header">
                 <span class="pill pill-success">Authorized Cashless</span>
                 <span style="font-size:0.85rem;font-weight:700;color:#f59e0b">★ 4.8 (310 reviews)</span>
               </div>
@@ -186,7 +186,7 @@
           </div>
           <div class="garage-item-card" data-city="bengaluru">
             <div>
-              <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px">
+              <div class="garage-card-header">
                 <span class="pill pill-success">Authorized Cashless</span>
                 <span style="font-size:0.85rem;font-weight:700;color:#f59e0b">★ 4.9 (540 reviews)</span>
               </div>
@@ -196,6 +196,24 @@
                 <span>✓ Express 24-hr minor dent bay</span>
                 <span>✓ Direct tie-up with all 6 insurers</span>
                 <span>✓ Live bay CCTV progress feed</span>
+              </div>
+            </div>
+            <div style="margin-top:var(--space-4)">
+              <button type="button" class="btn btn-secondary btn-sm btn-block" onclick="window.RenewPath.toast('Garage assigned for demo claim inspection.')">Select Workshop</button>
+            </div>
+          </div>
+          <div class="garage-item-card" data-city="chennai">
+            <div>
+              <div class="garage-card-header">
+                <span class="pill pill-success">Authorized Cashless</span>
+                <span style="font-size:0.85rem;font-weight:700;color:#f59e0b">★ 4.9 (480 reviews)</span>
+              </div>
+              <h4 class="h4">Marina Auto Precision</h4>
+              <p class="text-muted" style="font-size:0.84rem;margin-top:4px">Guindy Industrial Estate, Chennai</p>
+              <div style="font-size:0.82rem;margin-top:12px;display:flex;flex-direction:column;gap:4px">
+                <span>✓ High-speed digital appraisal</span>
+                <span>✓ Dedicated collision repair bay</span>
+                <span>✓ Genuine OEM spare parts warranty</span>
               </div>
             </div>
             <div style="margin-top:var(--space-4)">
@@ -323,7 +341,7 @@
   <!-- ============ FINAL CTA ============ -->
   <section class="section">
     <div class="container">
-      <div class="cta-banner reveal-up">
+      <div class="cta-banner cta-banner-claims reveal-up">
         <h2 class="h2">Ready to renew or explore policy options?</h2>
         <p class="lede">It takes two minutes to compare prices and find the right cover for your car.</p>
         <div class="btn-row">

@@ -5,7 +5,9 @@
 
 /* ---------- Inner hero (shorter than home hero) ---------- */
 .inner-hero {
-  padding-block: clamp(60px, 8vw, 100px) clamp(50px, 7vw, 90px);
+  padding-top: clamp(140px, 16vw, 195px);
+  padding-bottom: clamp(64px, 7vw, 100px);
+  min-height: clamp(420px, 48vh, 560px);
   position: relative;
   overflow: hidden;
   background-size: cover;
@@ -72,7 +74,7 @@
   display: inline-flex;
   margin-inline: auto;
   justify-content: center;
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-4);
 }
 .inner-hero .eyebrow.center-eyebrow {
   justify-content: center;
@@ -80,6 +82,8 @@
 .inner-hero .h1 {
   margin-inline: auto;
   text-align: center;
+  max-width: 880px;
+  line-height: 1.18;
 }
 .inner-hero .lede {
   margin-inline: auto;
