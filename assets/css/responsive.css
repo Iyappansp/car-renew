@@ -31,8 +31,9 @@
     width: 100% !important;
   }
 
-  .hero-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-7); }
-  .hero-visual { order: -1; }
+  .hero-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-6); }
+  .hero-copy { order: 1; }
+  .hero-visual { order: 2; width: 100%; margin-top: var(--space-2); }
 
   /* Mobile Table to One-by-One Container Cards */
   .table-desktop-only { display: none !important; }
@@ -140,6 +141,7 @@
   .garage-list-grid { grid-template-columns: repeat(4, 1fr) !important; }
 
   .hero-grid { grid-template-columns: 1.08fr 0.92fr; gap: clamp(28px, 4vw, 56px); align-items: center; }
+  .hero-copy { order: 0; }
   .hero-visual { order: 0; justify-content: flex-end; }
 
   .table-responsive-cards .data-table { display: table; }

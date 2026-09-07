@@ -142,7 +142,7 @@
 .hero-visual-frame {
   position: relative;
   width: 100%;
-  max-width: 485px;
+  max-width: 410px; /* Reduced for balanced proportions & generous spacing */
   aspect-ratio: 1 / 1;
   border-radius: var(--radius-lg);
   overflow: visible;
@@ -362,20 +362,20 @@
 
 /* Thoughtful placement around perimeter so car and shield are 100% visible */
 .floating-card-primary {
-  top: -4px;
-  inset-inline-start: -14px;
+  top: -6px;
+  inset-inline-start: -10px;
   animation: floatBadge1 5.5s ease-in-out infinite;
 }
 
 .floating-card-secondary {
   top: 6px;
-  inset-inline-end: -14px;
+  inset-inline-end: -10px;
   animation: floatBadge2 6.2s ease-in-out infinite 0.9s;
 }
 
 .floating-card-tertiary {
-  bottom: 12px;
-  inset-inline-start: -10px;
+  bottom: 8px;
+  inset-inline-start: -8px;
   animation: floatBadge3 5.8s ease-in-out infinite 1.5s;
 }
 
@@ -498,16 +498,16 @@
     padding-inline-end: 0;
   }
   .hero-visual-frame {
-    max-width: 440px;
+    max-width: 310px; /* Reduced on tablets */
     margin-inline: auto;
   }
   .floating-card-primary {
-    top: 2%;
-    inset-inline-start: 0;
+    top: -2px;
+    inset-inline-start: -4px;
   }
   .floating-card-secondary {
-    top: 6%;
-    inset-inline-end: 0;
+    top: 4px;
+    inset-inline-end: -4px;
   }
   .floating-card-tertiary {
     display: none;
@@ -515,6 +515,9 @@
 }
 
 @media (max-width: 640px) {
+  .hero-visual-frame {
+    max-width: 270px; /* Compact & neatly proportioned on mobile phones */
+  }
   .hcp-caption {
     display: none;
   }
@@ -530,27 +533,113 @@
     display: none;
   }
   .floating-card {
-    min-width: 130px;
-    padding: 8px 12px;
+    min-width: 120px;
+    padding: 6px 10px;
+  }
+  .floating-card .fc-label {
+    font-size: 0.64rem;
   }
   .floating-card .fc-value {
-    font-size: 0.82rem;
+    font-size: 0.78rem;
   }
   .floating-card-icon {
-    width: 28px;
-    height: 28px;
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
   }
   .floating-card-icon svg {
-    width: 14px;
-    height: 14px;
+    width: 13px;
+    height: 13px;
   }
 }
 
-/* ---------- Trust strip ---------- */
-.trust-strip { padding-block: var(--space-6); border-block: 1px solid var(--border); }
-.trust-strip-list { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-7); }
-.trust-strip-item { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 600; color: var(--text-secondary); }
-.trust-strip-item svg { width: 18px; height: 18px; color: var(--color-success); flex-shrink: 0; }
+/* ---------- Trust Marquee (Seamless Infinite Looping Banner) ---------- */
+.trust-marquee-section {
+  padding-block: 16px;
+  background: var(--surface);
+  border-block: 1px solid var(--border);
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+}
+
+.trust-marquee-section::before,
+.trust-marquee-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: clamp(35px, 8vw, 90px);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.trust-marquee-section::before {
+  left: 0;
+  background: linear-gradient(to right, var(--surface) 0%, transparent 100%);
+}
+
+.trust-marquee-section::after {
+  right: 0;
+  background: linear-gradient(to left, var(--surface) 0%, transparent 100%);
+}
+
+.trust-marquee-track-wrap {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.trust-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: trustMarqueeScroll 28s linear infinite;
+  will-change: transform;
+}
+
+.trust-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes trustMarqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.trust-marquee-group {
+  display: flex;
+  align-items: center;
+  gap: clamp(28px, 4vw, 52px);
+  padding-right: clamp(28px, 4vw, 52px);
+  flex-shrink: 0;
+}
+
+.trust-marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.trust-marquee-item:hover {
+  color: var(--color-primary);
+  transform: translateY(-1px);
+}
+
+.trust-marquee-item svg {
+  width: 18px;
+  height: 18px;
+  color: var(--color-success);
+  flex-shrink: 0;
+}
 
 /* ---------- Quick renewal (two options) ---------- */
 .renewal-option-card { padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-4); }
