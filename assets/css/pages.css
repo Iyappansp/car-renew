@@ -5,9 +5,9 @@
 
 /* ---------- Inner hero (shorter than home hero) ---------- */
 .inner-hero {
-  padding-top: clamp(140px, 16vw, 195px);
-  padding-bottom: clamp(64px, 7vw, 100px);
-  min-height: clamp(420px, 48vh, 560px);
+  padding-top: clamp(105px, 12vw, 140px);
+  padding-bottom: clamp(36px, 4.5vw, 56px);
+  min-height: clamp(320px, 36vh, 420px);
   position: relative;
   overflow: hidden;
   background-size: cover;
@@ -95,7 +95,20 @@
 .step-grid { display: grid; gap: var(--space-6); }
 @media (min-width: 640px) { .step-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1024px) { .step-grid { grid-template-columns: repeat(4, 1fr); } }
-.step-card { padding: var(--space-6); position: relative; }
+.step-card {
+  padding: var(--space-6);
+  position: relative;
+  transition: transform var(--dur-med) var(--ease), box-shadow var(--dur-med) var(--ease), border-color var(--dur-fast) var(--ease);
+}
+.step-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-primary);
+  box-shadow: 0 12px 30px rgba(21, 94, 239, 0.14);
+}
+.step-card:hover .step-num {
+  color: var(--color-primary);
+  transition: color var(--dur-fast) var(--ease);
+}
 .step-card .step-num { font-size: 2.2rem; font-weight: 800; color: var(--color-secondary-100); line-height: 1; margin-bottom: var(--space-4); }
 .step-card .step-icon { width: 42px; height: 42px; border-radius: 12px; background: var(--color-secondary-100); color: var(--color-secondary-600); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4); }
 .step-card .step-icon svg { width: 20px; height: 20px; }

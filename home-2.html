@@ -46,7 +46,7 @@
 
   <!-- ============ STORY: 3 editorial blocks ============ -->
   <section class="section">
-    <div class="container" style="display:flex;flex-direction:column;gap:var(--space-9)">
+    <div class="container" style="display:flex;flex-direction:column;gap:clamp(32px, 4vw, 48px)">
       <div class="section-head">
         <h2 class="h2">Insurance should feel easier to understand.</h2>
       </div>
@@ -70,7 +70,11 @@
           <h3 class="h3">Compare your options</h3>
           <p class="lede" style="margin-top:12px">Line up illustrative quotes from multiple insurers side by side — premium, IDV, deductible and add-ons — so the trade-offs are obvious before you choose.</p>
         </div>
-        <div class="editorial-media"><img src="assets/images/dashboard/quote-comparison.svg" alt="Side by side comparison of insurance quotes" width="640" height="420"></div>
+        <div class="editorial-media">
+          <div class="ai-img-wrap">
+            <img src="assets/Compare-your-options.png" alt="Compare your options side by side" loading="lazy">
+          </div>
+        </div>
       </div>
 
       <div class="editorial-block reveal-up">
@@ -224,6 +228,8 @@
           <p class="eyebrow">Policy wallet</p>
           <h2 class="h2">Everything important about your policy, in one view.</h2>
           <p class="lede" style="margin-top:16px">No more digging through email threads or old folders — the details that matter are always one tap away.</p>
+          <p class="lede" style="margin-top:16px">Quickly find important messages, documents, updates, and key details without wasting time searching across different platforms. Everything is organized, easy to access, and available when you need it..</p>
+<p class="lede" style="margin-top:16px">Key information at a glance includes: policy number, renewal date, premium amount, coverage details, and any recent updates or notes. Manage your car insurance proactively with complete clarity.</p>
         </div>
         <div class="card wallet-card reveal-up">
           <div class="wallet-row"><span class="wr-label">Vehicle</span><span class="wr-value">Hyundai Creta SX</span></div>
@@ -238,73 +244,126 @@
     </div>
   </section>
 
-  <!-- ============ CLAIM STORY (timeline) ============ -->
+  <!-- ============ CLAIM STORY (3x3 Grid Redesign) ============ -->
   <section class="section" style="background:var(--surface);border-block:1px solid var(--border)">
     <div class="container">
       <div class="section-head center">
-        <p class="eyebrow" style="justify-content:center">Claim story</p>
+        <p class="eyebrow" style="justify-content:center">Claim Story Roadmap</p>
         <h2 class="h2">If something happens, here's the path forward.</h2>
+        <p class="lede" style="margin-top:10px;margin-inline:auto">A streamlined 6-step claim journey designed for transparency, fast turnaround, and zero paperwork surprises.</p>
       </div>
-      <div class="container-narrow">
-        <div class="timeline reveal-up">
-          <div class="timeline-item is-done">
-            <span class="timeline-dot">1</span>
-            <div class="timeline-content">
-              <h4>Accident</h4>
-              <p>An incident occurs — the first priority is always safety.</p>
-              <div class="ai-img-wrap" style="max-width:140px;margin-top:10px">
-                <img src="assets/ai/home-2/Accident.png" alt="Accident" loading="lazy">
-              </div>
+      
+      <div class="claim-grid-3x3 reveal-stagger">
+        <!-- Step 1 -->
+        <div class="claim-card-step is-done">
+          <div class="claim-step-header">
+            <span class="claim-step-badge">Step 01</span>
+            <span class="claim-step-indicator">✓</span>
+          </div>
+          <div class="claim-card-img-wrap">
+            <img src="assets/ai/home-2/Accident.png" alt="Accident" loading="lazy">
+          </div>
+          <div class="claim-card-body">
+            <h4>1. Accident</h4>
+            <p>An incident occurs — the immediate priority is always personal safety and vehicle security.</p>
+            <div class="claim-card-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              Safety first &amp; secure zone
             </div>
           </div>
-          <div class="timeline-item is-done">
-            <span class="timeline-dot">2</span>
-            <div class="timeline-content">
-              <h4>Report</h4>
-              <p>Notify your insurer and log the incident details.</p>
-              <div class="ai-img-wrap" style="max-width:140px;margin-top:10px">
-                <img src="assets/ai/home-2/Report.png" alt="Report" loading="lazy">
-              </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="claim-card-step is-done">
+          <div class="claim-step-header">
+            <span class="claim-step-badge">Step 02</span>
+            <span class="claim-step-indicator">✓</span>
+          </div>
+          <div class="claim-card-img-wrap">
+            <img src="assets/ai/home-2/Report.png" alt="Report" loading="lazy">
+          </div>
+          <div class="claim-card-body">
+            <h4>2. Report</h4>
+            <p>Notify your insurer instantly via app or toll-free support and record the initial incident details.</p>
+            <div class="claim-card-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              Instant digital intimation
             </div>
           </div>
-          <div class="timeline-item">
-            <span class="timeline-dot">3</span>
-            <div class="timeline-content">
-              <h4>Document</h4>
-              <p>Photos, driving licence and repair estimates are gathered.</p>
-              <div class="ai-img-wrap" style="max-width:140px;margin-top:10px">
-                <img src="assets/ai/home-2/Document.png" alt="Document" loading="lazy">
-              </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="claim-card-step">
+          <div class="claim-step-header">
+            <span class="claim-step-badge">Step 03</span>
+            <span class="claim-step-indicator">03</span>
+          </div>
+          <div class="claim-card-img-wrap">
+            <img src="assets/ai/home-2/Document.png" alt="Document" loading="lazy">
+          </div>
+          <div class="claim-card-body">
+            <h4>3. Document</h4>
+            <p>Snap damage photos, driving licence, RC copy, and repair estimates directly on your phone.</p>
+            <div class="claim-card-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              100% paperless upload
             </div>
           </div>
-          <div class="timeline-item">
-            <span class="timeline-dot">4</span>
-            <div class="timeline-content">
-              <h4>Inspection</h4>
-              <p>The vehicle is assessed to confirm the extent of damage.</p>
-              <div class="ai-img-wrap" style="max-width:140px;margin-top:10px">
-                <img src="assets/ai/home-2/Inspection.png" alt="Inspection" loading="lazy">
-              </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="claim-card-step">
+          <div class="claim-step-header">
+            <span class="claim-step-badge">Step 04</span>
+            <span class="claim-step-indicator">04</span>
+          </div>
+          <div class="claim-card-img-wrap">
+            <img src="assets/ai/home-2/Inspection.png" alt="Inspection" loading="lazy">
+          </div>
+          <div class="claim-card-body">
+            <h4>4. Inspection</h4>
+            <p>The vehicle is assessed via rapid AI video survey or network garage surveyor without waiting days.</p>
+            <div class="claim-card-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              AI video damage assessment
             </div>
           </div>
-          <div class="timeline-item">
-            <span class="timeline-dot">5</span>
-            <div class="timeline-content">
-              <h4>Claim review</h4>
-              <p>The insurer reviews documentation against the policy.</p>
-              <div class="ai-img-wrap" style="max-width:140px;margin-top:10px">
-                <img src="assets/ai/home-2/Claim-review.png" alt="Claim review" loading="lazy">
-              </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="claim-card-step">
+          <div class="claim-step-header">
+            <span class="claim-step-badge">Step 05</span>
+            <span class="claim-step-indicator">05</span>
+          </div>
+          <div class="claim-card-img-wrap">
+            <img src="assets/ai/home-2/Claim-review.png" alt="Claim review" loading="lazy">
+          </div>
+          <div class="claim-card-body">
+            <h4>5. Claim review</h4>
+            <p>The insurer reviews documentation against your policy terms and confirms fair coverage validation.</p>
+            <div class="claim-card-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              Fair coverage validation
             </div>
           </div>
-          <div class="timeline-item">
-            <span class="timeline-dot">6</span>
-            <div class="timeline-content">
-              <h4>Resolution</h4>
-              <p>Approved claims move to settlement.</p>
-              <div class="ai-img-wrap" style="max-width:140px;margin-top:10px">
-                <img src="assets/ai/home-2/Resolution.png" alt="Resolution" loading="lazy">
-              </div>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="claim-card-step">
+          <div class="claim-step-header">
+            <span class="claim-step-badge">Step 06</span>
+            <span class="claim-step-indicator">06</span>
+          </div>
+          <div class="claim-card-img-wrap">
+            <img src="assets/ai/home-2/Resolution.png" alt="Resolution" loading="lazy">
+          </div>
+          <div class="claim-card-body">
+            <h4>6. Resolution</h4>
+            <p>Approved claims move straight to settlement with cashless network repairs or direct bank transfer.</p>
+            <div class="claim-card-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+              Direct cashless settlement
             </div>
           </div>
         </div>
@@ -312,13 +371,22 @@
     </div>
   </section>
 
-  <!-- ============ MID CTA ============ -->
-  <section class="section">
-    <div class="container">
-      <div class="cta-banner cta-banner-home-2 reveal-up">
-        <h2 class="h2">Drive with more confidence about what covers you.</h2>
-        <div class="btn-row">
-          <a href="renewal.html" class="btn btn-primary btn-lg">Start Your Renewal</a>
+  <!-- ============ MID CTA & LAPSED POLICY ASSISTANCE ============ -->
+
+
+      <!-- Lapsed Policy AI Video Restore Callout Container -->
+      <div class="lapsed-banner-card reveal-up">
+        <div>
+          <span class="badge" style="background:rgba(255,107,74,0.14);color:var(--color-secondary-600);font-weight:700">Policy Expired or Lapsed?</span>
+          <h3 class="h3" style="margin-top:10px;font-size:clamp(1.25rem, 2vw, 1.65rem)">Renew even after 90 days with zero physical inspection.</h3>
+          <p class="text-secondary" style="margin-top:10px;font-size:0.92rem;line-height:1.6">A lapsed policy doesn't have to mean cumbersome paperwork. Record a quick 30-second smartphone video walkaround and restore Comprehensive coverage with instant AI verification.</p>
+          <div style="display:flex;gap:12px;margin-top:18px;flex-wrap:wrap">
+            <a href="renewal.html" class="btn btn-primary btn-sm">Restore Lapsed Policy</a>
+            <a href="how-it-works.html" class="btn btn-secondary btn-sm">How AI Inspection Works</a>
+          </div>
+        </div>
+        <div class="ai-img-wrap">
+          <img src="assets/90 Days Lapsed.png" alt="90 Days Lapsed AI Video Inspection" loading="lazy">
         </div>
       </div>
     </div>
@@ -477,14 +545,14 @@
             <img src="assets/ai/home-2/Engine&Gearbox-Guard.png" alt="Engine & Gearbox Guard" loading="lazy">
           </div>
           <div class="extra-stat-label" style="font-size:1.05rem;color:var(--text-primary)">Engine &amp; Gearbox Guard</div>
-          <p class="extra-stat-desc">Protects against devastating water-logging hydro-lock repairs during monsoon flooding, typically excluded from standard plans.</p>
+          <p class="extra-stat-desc">Protects against devastating water-logging hydro-lock repairs during monsoon flooding, typically from standard plans.</p>
         </div>
         <div class="extra-stat-card">
           <div class="ai-img-wrap">
             <img src="assets/ai/home-2/Key&Lock-Replacement.png" alt="Key & Lock Replacement" loading="lazy">
           </div>
           <div class="extra-stat-label" style="font-size:1.05rem;color:var(--text-primary)">Key &amp; Lock Replacement</div>
-          <p class="extra-stat-desc">High-tech smart keys with immobilizers cost ₹8,000–₹25,000 to replace. This rider covers full locksmith and reprogramming costs.</p>
+          <p class="extra-stat-desc">High-tech smart keys with immobilizers cost ₹8,000–₹25,000 to replace. This rider covers full locksmith and .</p>
         </div>
         <div class="extra-stat-card">
           <div class="ai-img-wrap">
@@ -549,15 +617,11 @@
   <section class="section">
     <div class="container">
       <div class="cta-banner cta-banner-home-2 reveal-up">
-        <h2 class="h2">Ready to renew or explore policy options?</h2>
-        <p class="lede">It takes two minutes to compare prices and find the right cover for your car.</p>
+        <h2 class="h2">Drive with more confidence about what covers you.</h2>
         <div class="btn-row">
-          <a href="renewal.html" class="btn btn-primary btn-lg">Start Renewal</a>
-          <a href="contact.html" class="btn btn-secondary btn-lg">Talk to an Advisor</a>
+          <a href="renewal.html" class="btn btn-primary btn-lg">Start Your Renewal</a>
         </div>
       </div>
-    </div>
-  </section>
 
 </main>
 

@@ -26,7 +26,7 @@
   .compare-transformation-grid, .addon-toggle-grid,
   .home-dashboard-grid, .calc-grid, .sos-grid,
   .quiz-options-grid, .editorial-block, .dash-preview-body,
-  .claim-flow-grid, .checklist-card-grid {
+  .claim-flow-grid, .checklist-card-grid, .claim-grid-3x3, .lapsed-banner-card {
     grid-template-columns: 1fr !important;
     width: 100% !important;
   }
@@ -106,6 +106,7 @@
   .garage-list-grid { grid-template-columns: repeat(2, 1fr) !important; }
   .about-stats-strip { grid-template-columns: repeat(4, 1fr) !important; }
   .mission-vision-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .claim-grid-3x3 { grid-template-columns: repeat(2, 1fr) !important; }
 
   /* Desktop tables visible on tablet and desktop */
   .table-desktop-only { display: block !important; }
@@ -138,6 +139,7 @@
   .grid-3 { grid-template-columns: repeat(3, 1fr) !important; }
   .grid-4 { grid-template-columns: repeat(4, 1fr) !important; }
   .extra-testimonials-grid { grid-template-columns: repeat(3, 1fr) !important; }
+  .claim-grid-3x3 { grid-template-columns: repeat(3, 1fr) !important; }
   .garage-list-grid { grid-template-columns: repeat(4, 1fr) !important; }
 
   .hero-grid { grid-template-columns: 1.08fr 0.92fr; gap: clamp(28px, 4vw, 56px); align-items: center; }

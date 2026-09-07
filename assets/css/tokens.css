@@ -67,7 +67,7 @@
 
   /* Container */
   --container-max: 1280px;
-  --container-pad: clamp(20px, 5vw, 64px);
+  --container-pad: clamp(16px, 3.5vw, 32px);
 
   /* Motion */
   --ease: cubic-bezier(0.4, 0, 0.2, 1);

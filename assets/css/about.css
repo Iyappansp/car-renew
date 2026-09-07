@@ -7,9 +7,9 @@
 .inner-hero-about {
   background-image: url('../images/hero/hero-bg-about.jpg');
   background-position: center 38%;
-  padding-top: clamp(140px, 16vw, 195px);
-  padding-bottom: clamp(64px, 7vw, 100px);
-  min-height: clamp(420px, 48vh, 560px);
+  padding-top: clamp(105px, 12vw, 140px);
+  padding-bottom: clamp(36px, 4.5vw, 56px);
+  min-height: clamp(320px, 36vh, 420px);
 }
 
 /* ---------- Key Metrics Bar ---------- */
