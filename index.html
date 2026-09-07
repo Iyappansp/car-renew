@@ -13,6 +13,9 @@
 <link rel="icon" href="assets/images/favicons.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/hero1.png">
+<link rel="preload" as="image" href="assets/hero2.png">
+<link rel="preload" as="image" href="assets/hero3.png">
 <link rel="stylesheet" href="assets/css/tokens.css">
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/home.css">
@@ -40,26 +43,66 @@
         </div>
         <p class="hero-disclaimer">*Illustrative savings shown for demonstration. Actual premiums vary.</p>
       </div>
-      <div class="hero-visual">
+      <div class="hero-visual" id="hero-slider-wrap">
         <div class="hero-visual-frame">
-          <img src="assets/images/hero/insurance-car-hero.svg" alt="Illustration of a car with insurance document cards" width="900" height="720">
-          <div class="floating-card floating-card-primary reveal-up">
-            <span class="floating-card-icon" style="background:var(--color-secondary-100);color:var(--color-secondary-600)">
+          <!-- Ambient Glow Backdrop -->
+          <div class="hero-carousel-glow" aria-hidden="true"></div>
+
+          <!-- Cross-fading 3D Insurance Vehicle Slides -->
+          <div class="hero-carousel-track" role="region" aria-label="Car insurance coverage showcase" aria-live="polite">
+            <div class="hero-carousel-slide active" data-index="0" role="group" aria-roledescription="slide" aria-label="1 of 3: Comprehensive Multi-Vehicle Shield Protection">
+              <img src="assets/hero1.png" alt="Multi-car comprehensive insurance shield coverage" width="1254" height="1254" fetchpriority="high" decoding="async">
+            </div>
+            <div class="hero-carousel-slide" data-index="1" role="group" aria-roledescription="slide" aria-label="2 of 3: 24/7 Roadside Assistance and Instant Towing Coverage">
+              <img src="assets/hero2.png" alt="Roadside assistance, towing, and zero-hassle claim protection" width="1254" height="1254" loading="eager" decoding="async">
+            </div>
+            <div class="hero-carousel-slide" data-index="2" role="group" aria-roledescription="slide" aria-label="3 of 3: Complete Umbrella Coverage with Accident Safeguard">
+              <img src="assets/hero3.png" alt="Complete umbrella vehicle safety and full damage coverage" width="1254" height="1254" loading="eager" decoding="async">
+            </div>
+          </div>
+
+          <!-- Carousel Arrow Navigation -->
+          <button type="button" class="hero-carousel-nav-btn hero-carousel-prev" aria-label="Previous slide" id="hero-prev-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button type="button" class="hero-carousel-nav-btn hero-carousel-next" aria-label="Next slide" id="hero-next-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+
+          <!-- Floating Badges / Stats -->
+          <div class="floating-card floating-card-primary">
+            <span class="floating-card-icon" style="background:rgba(245, 158, 11, 0.15);color:#F59E0B">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
             </span>
             <span><span class="fc-label">Renewal due</span><span class="fc-value">12 days</span></span>
           </div>
-          <div class="floating-card floating-card-secondary reveal-up">
-            <span class="floating-card-icon" style="background:var(--color-secondary-100);color:var(--color-secondary-600)">
+          <div class="floating-card floating-card-secondary">
+            <span class="floating-card-icon" style="background:rgba(22, 163, 74, 0.15);color:#16A34A">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
             </span>
-            <span><span class="fc-label">Policy status</span><span class="fc-value">Active</span></span>
+            <span><span class="fc-label">Policy status</span><span class="fc-value" style="display:flex;align-items:center;gap:6px;">Active <span class="status-pulse-dot" aria-hidden="true"></span></span></span>
           </div>
-          <div class="floating-card floating-card-tertiary reveal-up">
-            <span class="floating-card-icon" style="background:var(--color-secondary-100);color:var(--color-secondary-600)">
+          <div class="floating-card floating-card-tertiary">
+            <span class="floating-card-icon" style="background:rgba(37, 99, 235, 0.15);color:#2563EB">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
             </span>
             <span><span class="fc-label">Savings</span><span class="fc-value" data-counter="4200" data-prefix="Up to ₹" data-suffix="*">Up to ₹4,200*</span></span>
+          </div>
+
+          <!-- Carousel Indicators / Progress Pills -->
+          <div class="hero-carousel-pagination" role="tablist" aria-label="Insurance visuals selector">
+            <button type="button" class="hero-carousel-tab is-active" role="tab" aria-selected="true" aria-label="Slide 1: Comprehensive Shield" data-slide="0">
+              <span class="hcp-bar"><span class="hcp-fill"></span></span>
+              <span class="hcp-caption">Comprehensive</span>
+            </button>
+            <button type="button" class="hero-carousel-tab" role="tab" aria-selected="false" aria-label="Slide 2: Roadside & Towing" data-slide="1">
+              <span class="hcp-bar"><span class="hcp-fill"></span></span>
+              <span class="hcp-caption">Roadside 24/7</span>
+            </button>
+            <button type="button" class="hero-carousel-tab" role="tab" aria-selected="false" aria-label="Slide 3: Umbrella Protection" data-slide="2">
+              <span class="hcp-bar"><span class="hcp-fill"></span></span>
+              <span class="hcp-caption">Full Umbrella</span>
+            </button>
           </div>
         </div>
       </div>
@@ -100,8 +143,12 @@
           <span class="renewal-option-num">02</span>
           <h3 class="h3">Enter vehicle registration</h3>
           <p class="text-muted">Enter your registration number to begin the renewal journey.</p>
+          <p class="text-muted">Demo Vehicle: <span id="demo-reg-number">TN 07 AB 4521</span></p>
+          <p class="text-muted">Select your insurance provider from the list below or click "Upload Policy" above. Click "Continue" to view quotes</p>
+
+
           <div class="field mb-0">
-            <label for="reg-number">Vehicle registration number</label>
+            <!-- <label for="reg-number">Vehicle registration number</label> -->
             <input type="text" id="reg-number" class="input" placeholder="e.g. TN 07 AB 4521" maxlength="14">
           </div>
           <button type="button" class="btn btn-primary btn-block" id="lookup-btn">Continue</button>
@@ -341,10 +388,10 @@
   </section>
 
   <!-- ============ DASHBOARD PREVIEW ============ -->
-  <section class="section" style="background:var(--surface);border-block:1px solid var(--border);">
+  <section class="section home-dashboard-section" style="background:var(--surface);border-block:1px solid var(--border);">
     <div class="container">
-      <div class="grid grid-2" style="align-items:center;gap:var(--space-8)">
-        <div class="reveal-up">
+      <div class="home-dashboard-grid reveal-stagger">
+        <div class="reveal-up home-dashboard-content">
           <p class="eyebrow">Your dashboard</p>
           <h2 class="h2">Your policies. Documents. Renewals. All together.</h2>
           <p class="lede" style="margin-top:16px">One place to track your active policy, review renewal dates, and pull up documents whenever you need them.</p>
@@ -352,14 +399,16 @@
             <div class="wallet-row"><span class="wr-label">Policy no.</span><span class="wr-value">POL-DEMO-2847</span></div>
             <div class="wallet-row"><span class="wr-label">Renewal</span><span class="wr-value">12 Sep</span></div>
             <div class="wallet-row"><span class="wr-label">Premium</span><span class="wr-value">₹16,200</span></div>
-            <div class="flex gap-3" style="margin-top:var(--space-5)">
+            <div class="flex gap-3 wallet-actions" style="margin-top:var(--space-5)">
               <a href="dashboard/policy-details.html" class="btn btn-ghost btn-sm">View Policy</a>
               <a href="renewal.html" class="btn btn-primary btn-sm">Renew Policy</a>
             </div>
           </div>
         </div>
-        <div class="reveal-up">
-          <img src="assets/images/dashboard/policy-overview.svg" alt="Preview of the policy dashboard showing active policy details" width="640" height="420" style="border-radius:var(--radius-lg);border:1px solid var(--border)">
+        <div class="reveal-up home-dashboard-visual">
+          <div class="home-dashboard-img-wrap">
+            <img src="assets/ai/home1/Your-dashboard.png" alt="RenewPath policy dashboard on laptop showing active coverage, documents and renewals" width="640" height="640" loading="lazy" class="home-dashboard-img">
+          </div>
         </div>
       </div>
     </div>

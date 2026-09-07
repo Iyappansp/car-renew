@@ -2,7 +2,7 @@
    DASHBOARD.CSS — SaaS shell: sidebar + topbar + widgets
    ============================================================ */
 
-.dash-shell { display: flex; min-height: 100vh; background: var(--color-bg); }
+.dash-shell { display: flex; min-height: 100vh; background: var(--color-bg); max-width: 100vw; overflow-x: hidden; }
 
 /* ---------- Sidebar ---------- */
 .dash-sidebar {
@@ -37,7 +37,7 @@
 .dash-sidebar-backdrop { display: none; }
 
 /* ---------- Main / topbar ---------- */
-.dash-main { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.dash-main { flex: 1; min-width: 0; max-width: 100%; display: flex; flex-direction: column; overflow-x: hidden; }
 .dash-topbar {
   height: 68px; border-bottom: 1px solid var(--border); background: var(--surface);
   display: flex; align-items: center; justify-content: space-between; padding-inline: var(--space-6);
@@ -195,9 +195,36 @@
 .claim-card { padding: var(--space-6); }
 .claim-card-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: var(--space-5); gap: 12px; flex-wrap: wrap; }
 
-/* ---------- Tabs (Policies page) ---------- */
-.dash-tabs { display: flex; gap: 6px; margin-bottom: var(--space-6); border-bottom: 1px solid var(--border); }
-.dash-tab-btn { padding: 12px 18px; font-size: 0.9rem; font-weight: 600; color: var(--text-muted); border: none; background: none; border-bottom: 2px solid transparent; margin-bottom: -1px; }
+/* ---------- Tabs (Policies / Documents page) ---------- */
+.dash-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: var(--space-6);
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  max-width: 100%;
+  width: 100%;
+  flex-wrap: nowrap;
+  padding-bottom: 2px;
+}
+.dash-tabs::-webkit-scrollbar { display: none; }
+.dash-tab-btn {
+  padding: 11px 16px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  border: none;
+  background: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  flex-shrink: 0;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color var(--dur-fast), border-color var(--dur-fast);
+}
 .dash-tab-btn.active { color: var(--color-primary); border-color: var(--color-primary); }
 [data-tab-panel] { display: none; }
 [data-tab-panel].active { display: block; }
@@ -295,4 +322,140 @@
 }
 @media (min-width: 1200px) {
   .stat-strip { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ---------- Mobile Dashboard & Small Screen Refinements ---------- */
+@media (max-width: 640px) {
+  .dash-topbar {
+    height: 58px;
+    padding-inline: 12px;
+    gap: 8px;
+  }
+  .dash-topbar-left {
+    gap: 8px;
+    min-width: 0;
+    flex: 1;
+  }
+  .dash-page-title {
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .dash-topbar-right {
+    gap: 6px;
+    flex-shrink: 0;
+  }
+  .dash-topbar-right .toggle-btn,
+  .dash-topbar-right .rtl-text-btn {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    padding: 0;
+    font-size: 0.72rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .dash-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 0.78rem;
+  }
+  .dash-content {
+    padding-inline: 12px !important;
+    padding-block: 16px !important;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+  .dash-card {
+    padding: 16px !important;
+  }
+  .dash-card .flex.gap-3 {
+    flex-direction: column !important;
+    width: 100%;
+  }
+  .dash-card .flex.gap-3 .btn,
+  .dash-card .flex.gap-3 a.btn {
+    width: 100% !important;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Mobile Document & Receipt Cards: 2-row layout with full button widths */
+  .doc-card {
+    display: grid !important;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "icon meta"
+      "actions actions";
+    gap: 12px 14px;
+    align-items: center;
+    padding: 14px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .doc-card-icon {
+    grid-area: icon;
+  }
+  .doc-card-meta {
+    grid-area: meta;
+    min-width: 0;
+  }
+  .doc-card-meta p {
+    font-size: 0.88rem;
+    white-space: normal;
+    word-break: break-word;
+    line-height: 1.35;
+  }
+  .doc-card-actions {
+    grid-area: actions;
+    display: flex;
+    gap: 8px;
+    width: 100%;
+  }
+  .doc-card-actions .btn {
+    flex: 1;
+    justify-content: center;
+    text-align: center;
+    padding: 8px 12px;
+    font-size: 0.82rem;
+  }
+
+  .reminder-timing-chips {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+  .reminder-timing-chips .filter-chip,
+  .reminder-timing-chips button {
+    width: 100% !important;
+    padding: 9px 12px !important;
+    font-size: 0.84rem !important;
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .dash-topbar {
+    padding-inline: 8px;
+    gap: 6px;
+  }
+  .dash-topbar-right {
+    gap: 4px;
+  }
+  .dash-topbar-right .rtl-text-btn {
+    display: none;
+  }
+  .doc-card-actions {
+    flex-direction: column;
+  }
+  .doc-card-actions .btn {
+    width: 100%;
+  }
+  .reminder-timing-chips {
+    grid-template-columns: 1fr !important;
+  }
 }

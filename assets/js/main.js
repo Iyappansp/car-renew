@@ -413,12 +413,249 @@
     });
   }
 
+  // ---------- Hero 3D Car Visual Slider (Directional Swipe Loop - 2s Interval) ----------
+  function initHeroCarousel() {
+    var wrap = document.getElementById("hero-slider-wrap");
+    if (!wrap) return;
+
+    var slides = wrap.querySelectorAll(".hero-carousel-slide");
+    var tabs = wrap.querySelectorAll(".hero-carousel-tab");
+    var prevBtn = document.getElementById("hero-prev-btn");
+    var nextBtn = document.getElementById("hero-next-btn");
+
+    if (!slides.length) return;
+
+    var currentIndex = 0;
+    var totalSlides = slides.length;
+    var slideDuration = 2000; // Exactly 2 seconds auto-advance
+    var timer = null;
+    var isPaused = false;
+    var isTransitioning = false;
+    var prefersReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function swipeToSlide(targetIndex, direction) {
+      if (isTransitioning) return;
+      if (targetIndex === currentIndex) return;
+
+      if (targetIndex < 0) targetIndex = totalSlides - 1;
+      if (targetIndex >= totalSlides) targetIndex = 0;
+
+      // Direction: true = forward (swipe left), false = backward (swipe right)
+      var isForward = true;
+      if (direction !== undefined) {
+        isForward = direction > 0;
+      } else {
+        if (currentIndex === totalSlides - 1 && targetIndex === 0) {
+          isForward = true;
+        } else if (currentIndex === 0 && targetIndex === totalSlides - 1) {
+          isForward = false;
+        } else {
+          isForward = targetIndex > currentIndex;
+        }
+      }
+
+      isTransitioning = true;
+      var outgoing = slides[currentIndex];
+      var incoming = slides[targetIndex];
+
+      // Stage incoming slide
+      incoming.classList.remove("swipe-out-left", "swipe-out-right", "active");
+      incoming.classList.add(isForward ? "enter-right" : "enter-left");
+      void incoming.offsetWidth; // Force layout reflow
+
+      // Animate slides in parallel
+      incoming.classList.remove("enter-right", "enter-left");
+      incoming.classList.add("active");
+      incoming.setAttribute("aria-hidden", "false");
+
+      outgoing.classList.remove("active");
+      outgoing.classList.add(isForward ? "swipe-out-left" : "swipe-out-right");
+      outgoing.setAttribute("aria-hidden", "true");
+
+      setTimeout(function () {
+        outgoing.classList.remove("swipe-out-left", "swipe-out-right");
+        isTransitioning = false;
+      }, 560);
+
+      currentIndex = targetIndex;
+
+      // Update tabs and reset 2-second progress bar
+      tabs.forEach(function (tab, i) {
+        var isActive = (i === currentIndex);
+        tab.classList.toggle("is-active", isActive);
+        tab.setAttribute("aria-selected", String(isActive));
+        var fill = tab.querySelector(".hcp-fill");
+        if (fill) {
+          fill.style.transition = "none";
+          fill.style.width = "0%";
+          if (isActive && !isPaused && !prefersReduced) {
+            void fill.offsetWidth; // Force reflow
+            fill.style.transition = "width " + slideDuration + "ms linear";
+            fill.style.width = "100%";
+          }
+        }
+      });
+    }
+
+    function nextSlide() {
+      swipeToSlide(currentIndex + 1, 1);
+    }
+
+    function prevSlide() {
+      swipeToSlide(currentIndex - 1, -1);
+    }
+
+    function startTimer() {
+      if (prefersReduced || isPaused) return;
+      stopTimer();
+      timer = setInterval(function () {
+        if (!isPaused) {
+          nextSlide();
+        }
+      }, slideDuration);
+    }
+
+    function stopTimer() {
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
+      }
+    }
+
+    function resetTimer() {
+      stopTimer();
+      startTimer();
+    }
+
+    // Attach events to tabs
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener("click", function () {
+        swipeToSlide(i);
+        resetTimer();
+      });
+    });
+
+    // Arrow navigation
+    if (prevBtn) {
+      prevBtn.addEventListener("click", function () {
+        prevSlide();
+        resetTimer();
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener("click", function () {
+        nextSlide();
+        resetTimer();
+      });
+    }
+
+    // Pause on hover
+    wrap.addEventListener("mouseenter", function () {
+      isPaused = true;
+      stopTimer();
+      var activeFill = wrap.querySelector(".hero-carousel-tab.is-active .hcp-fill");
+      if (activeFill) {
+        var computedWidth = window.getComputedStyle(activeFill).width;
+        activeFill.style.transition = "none";
+        activeFill.style.width = computedWidth;
+      }
+    });
+
+    wrap.addEventListener("mouseleave", function () {
+      isPaused = false;
+      var activeFill = wrap.querySelector(".hero-carousel-tab.is-active .hcp-fill");
+      if (activeFill) {
+        activeFill.style.transition = "width " + slideDuration + "ms linear";
+        activeFill.style.width = "100%";
+      }
+      startTimer();
+    });
+
+    // Keyboard navigation
+    wrap.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowLeft") {
+        prevSlide();
+        resetTimer();
+      } else if (e.key === "ArrowRight") {
+        nextSlide();
+        resetTimer();
+      }
+    });
+
+    // Tab visibility handling
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) {
+        isPaused = true;
+        stopTimer();
+      } else {
+        isPaused = false;
+        var activeFill = wrap.querySelector(".hero-carousel-tab.is-active .hcp-fill");
+        if (activeFill) {
+          activeFill.style.transition = "none";
+          activeFill.style.width = "0%";
+          void activeFill.offsetWidth;
+          activeFill.style.transition = "width " + slideDuration + "ms linear";
+          activeFill.style.width = "100%";
+        }
+        startTimer();
+      }
+    });
+
+    // Mobile touch swipe gesture detection
+    var touchStartX = 0;
+    var touchStartY = 0;
+
+    wrap.addEventListener("touchstart", function (e) {
+      if (e.touches && e.touches.length === 1) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      }
+    }, { passive: true });
+
+    wrap.addEventListener("touchend", function (e) {
+      if (!touchStartX) return;
+      var touchEndX = e.changedTouches[0].clientX;
+      var touchEndY = e.changedTouches[0].clientY;
+      var diffX = touchEndX - touchStartX;
+      var diffY = touchEndY - touchStartY;
+
+      if (Math.abs(diffX) > 35 && Math.abs(diffX) > Math.abs(diffY)) {
+        if (diffX < 0) {
+          nextSlide();
+        } else {
+          prevSlide();
+        }
+        resetTimer();
+      }
+      touchStartX = 0;
+      touchStartY = 0;
+    }, { passive: true });
+
+    // Initial activation
+    slides.forEach(function (slide, i) {
+      slide.classList.toggle("active", i === 0);
+      slide.setAttribute("aria-hidden", String(i !== 0));
+    });
+    tabs.forEach(function (tab, i) {
+      var isActive = (i === 0);
+      tab.classList.toggle("is-active", isActive);
+      tab.setAttribute("aria-selected", String(isActive));
+      var fill = tab.querySelector(".hcp-fill");
+      if (fill && isActive) {
+        fill.style.transition = "width " + slideDuration + "ms linear";
+        fill.style.width = "100%";
+      }
+    });
+    startTimer();
+  }
+
   // ---------- Init ----------
   function initApp() {
     buildHeader();
     buildFooter();
     initBackToTop();
     initExtraFaq();
+    initHeroCarousel();
 
     // Hard fallback: ensure nothing stays invisible if observers misfire
     setTimeout(function () {

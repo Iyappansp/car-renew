@@ -121,6 +121,9 @@
           btn.setAttribute("aria-selected", "true");
           var panel = tabGroup.querySelector('[data-tab-panel="' + target + '"]');
           if (panel) panel.classList.add("active");
+          if (typeof btn.scrollIntoView === "function") {
+            btn.scrollIntoView({ behavior: "smooth", inline: "nearest", block: "nearest" });
+          }
         });
       });
     });
