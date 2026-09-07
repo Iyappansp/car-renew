@@ -899,7 +899,16 @@
 @media (min-width: 1024px) { .editorial-block { grid-template-columns: 1fr 1fr; gap: var(--space-8); } }
 .editorial-block.reverse .editorial-media { order: 2; }
 .editorial-num { font-size: 0.85rem; font-weight: 700; color: var(--color-primary); margin-bottom: var(--space-3); }
-.editorial-media img { border-radius: var(--radius-lg); }
+.editorial-media .ai-img-wrap {
+  aspect-ratio: 16 / 10;
+  max-height: 380px;
+  width: 100%;
+}
+.editorial-media img {
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+  object-position: center;
+}
 
 .wallet-card { padding: var(--space-6); }
 .wallet-row { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--border-soft); }
