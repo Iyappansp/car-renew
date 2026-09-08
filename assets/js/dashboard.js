@@ -132,6 +132,12 @@
     if (toggleBtn) toggleBtn.addEventListener("click", openSidebar);
     if (backdrop) backdrop.addEventListener("click", closeSidebar);
 
+    // Scroll elevation on fixed topbar
+    window.addEventListener("scroll", function () {
+      var topbar = document.querySelector(".dash-topbar");
+      if (topbar) topbar.classList.toggle("is-scrolled", window.scrollY > 8);
+    }, { passive: true });
+
     var themeBtn = document.getElementById("theme-toggle");
     if (themeBtn) themeBtn.addEventListener("click", function () {
       var current = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";

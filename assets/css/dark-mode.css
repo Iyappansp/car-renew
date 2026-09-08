@@ -5,11 +5,13 @@
 
 [data-theme="dark"] body { background: var(--color-bg); }
 
-[data-theme="dark"] .site-header {
+[data-theme="dark"] .site-header,
+[data-theme="dark"] .dash-topbar {
   background: color-mix(in srgb, var(--surface) 88%, transparent);
   border-bottom-color: rgba(255, 255, 255, 0.08);
 }
-[data-theme="dark"] .site-header.is-scrolled {
+[data-theme="dark"] .site-header.is-scrolled,
+[data-theme="dark"] .dash-topbar.is-scrolled {
   background: color-mix(in srgb, var(--surface) 96%, transparent);
   border-bottom-color: rgba(255, 255, 255, 0.12);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
@@ -28,7 +30,29 @@
 
 [data-theme="dark"] .btn-secondary { background: var(--surface); }
 
-[data-theme="dark"] .quote-card.is-recommended { box-shadow: 0 0 0 2px var(--color-primary), var(--shadow-lg); }
+[data-theme="dark"] .quote-card {
+  background: var(--surface);
+  border-color: var(--border);
+}
+[data-theme="dark"] .quote-card.is-recommended {
+  background: color-mix(in srgb, var(--color-primary) 12%, var(--surface));
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 1px var(--color-primary), var(--shadow-md);
+}
+[data-theme="dark"] .quote-insurer-logo {
+  background: var(--surface-raised);
+  border-color: var(--border);
+}
+[data-theme="dark"] .dash-tab-btn {
+  background: var(--surface);
+  border-color: var(--border);
+  color: var(--text-secondary);
+}
+[data-theme="dark"] .dash-tab-btn.active {
+  background: rgba(76, 140, 255, 0.16);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
 
 [data-theme="dark"] .doc-preview-frame { background: #0D1420; }
 

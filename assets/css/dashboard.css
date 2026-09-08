@@ -62,12 +62,32 @@
   display: flex;
   flex-direction: column;
   margin-inline-start: 260px;
+  padding-top: 68px;
   overflow-x: clip;
 }
 .dash-topbar {
-  height: 68px; border-bottom: 1px solid var(--border); background: var(--surface);
-  display: flex; align-items: center; justify-content: space-between; padding-inline: var(--space-6);
-  position: sticky; top: 0; z-index: 50; gap: var(--space-4);
+  height: 68px;
+  border-bottom: 1px solid var(--border-soft);
+  background: color-mix(in srgb, var(--surface) 95%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: var(--space-6);
+  position: fixed;
+  top: 0;
+  inset-inline-start: 260px;
+  inset-inline-end: 0;
+  z-index: 150;
+  gap: var(--space-4);
+  box-sizing: border-box;
+  transition: border-color var(--dur-med) var(--ease), background-color var(--dur-med) var(--ease), box-shadow var(--dur-med) var(--ease);
+}
+.dash-topbar.is-scrolled {
+  border-color: var(--border);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  background: color-mix(in srgb, var(--surface) 98%, transparent);
 }
 .dash-topbar-left { display: flex; align-items: center; gap: 14px; min-width: 0; }
 .dash-page-title { font-size: 1.1rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -224,7 +244,7 @@
 /* ---------- Tabs (Policies / Documents page) ---------- */
 .dash-tabs {
   display: flex;
-  gap: 4px;
+  gap: 6px;
   margin-bottom: var(--space-6);
   border-bottom: 1px solid var(--border);
   overflow-x: auto;
@@ -238,7 +258,7 @@
 }
 .dash-tabs::-webkit-scrollbar { display: none; }
 .dash-tab-btn {
-  padding: 11px 16px;
+  padding: 11px 18px;
   font-size: 0.88rem;
   font-weight: 600;
   color: var(--text-muted);
@@ -249,11 +269,143 @@
   flex-shrink: 0;
   white-space: nowrap;
   cursor: pointer;
-  transition: color var(--dur-fast), border-color var(--dur-fast);
+  transition: all var(--dur-fast);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
 }
-.dash-tab-btn.active { color: var(--color-primary); border-color: var(--color-primary); }
+.dash-tab-btn:hover {
+  color: var(--color-primary);
+  background: var(--surface-raised);
+}
+.dash-tab-btn.active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
 [data-tab-panel] { display: none; }
 [data-tab-panel].active { display: block; }
+
+/* ---------- Quote Cards in Dashboard (renewal.html & quotes) ---------- */
+.quote-card {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px 22px;
+  gap: 16px;
+  box-shadow: var(--shadow-xs);
+  transition: transform var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease), border-color var(--dur-fast);
+  box-sizing: border-box;
+}
+.quote-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary);
+}
+.quote-card.is-recommended {
+  border-color: var(--color-primary);
+  background: color-mix(in srgb, var(--color-primary-50) 45%, var(--surface));
+  box-shadow: 0 0 0 1px var(--color-primary), var(--shadow-sm);
+}
+.quote-card .quote-badge {
+  position: absolute;
+  top: -10px;
+  inset-inline-start: 20px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(21, 94, 239, 0.25);
+}
+.quote-card-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  gap: 20px;
+  min-width: 0;
+}
+.quote-insurer-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 140px;
+}
+.quote-insurer-logo {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-raised, var(--color-bg));
+  border: 1px solid var(--border-soft);
+}
+.quote-insurer-logo img,
+.quote-insurer-logo svg {
+  width: 100%;
+  height: 100%;
+  max-width: 44px;
+  max-height: 44px;
+  object-fit: contain;
+  display: block;
+}
+.quote-insurer-row strong {
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+.quote-spec-grid {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.quote-spec {
+  display: flex;
+  flex-direction: column;
+}
+.quote-spec .qs-label {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+.quote-spec .qs-value {
+  font-size: 1.22rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+.quote-card-stub {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.quote-card-stub .pill {
+  min-width: 84px;
+  text-align: center;
+  justify-content: center;
+  padding: 6px 12px;
+  font-size: 0.80rem;
+  font-weight: 600;
+}
+
+/* Stepper adjustments in dashboard */
+.stepper {
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-7);
+  padding-top: 4px;
+}
 
 /* ---------- Settings sections ---------- */
 .settings-row { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--border-soft); gap: 16px; }
@@ -338,7 +490,20 @@
   .dash-sidebar.open { transform: translateX(0); }
   .dash-sidebar-backdrop.open { display: block; position: fixed; inset: 0; background: rgba(11,15,23,0.5); z-index: 290; }
   .dash-sidebar-toggle { display: flex; }
-  .dash-main { margin-inline-start: 0; }
+  .dash-topbar {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    width: 100%;
+    z-index: 200;
+  }
+  .dash-main {
+    margin-inline-start: 0;
+    padding-top: 68px !important;
+  }
   .dash-content { padding-inline: 16px; }
 }
 @media (min-width: 1150px) {
@@ -357,6 +522,9 @@
     height: 58px;
     padding-inline: 12px;
     gap: 8px;
+  }
+  .dash-main {
+    padding-top: 58px !important;
   }
   .dash-topbar-left {
     gap: 8px;
@@ -389,6 +557,11 @@
     height: 32px;
     font-size: 0.78rem;
   }
+  .dash-notif-panel {
+    top: calc(100% + 4px);
+    inset-inline-end: 0;
+    max-width: min(320px, calc(100vw - 20px));
+  }
   .dash-content {
     padding-inline: 12px !important;
     padding-block: 16px !important;
@@ -408,6 +581,95 @@
     width: 100% !important;
     text-align: center;
     justify-content: center;
+  }
+
+  /* Mobile: Filter Tabs One-by-One Full-Width Stack (documents.html, policies.html) */
+  .dash-tabs {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 20px !important;
+    width: 100% !important;
+    overflow: visible !important;
+    white-space: normal !important;
+  }
+  .dash-tab-btn {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 13px 18px !important;
+    border-radius: var(--radius-md) !important;
+    background: var(--surface) !important;
+    border: 1.5px solid var(--border) !important;
+    margin-bottom: 0 !important;
+    font-size: 0.90rem !important;
+    font-weight: 600 !important;
+    color: var(--text-secondary) !important;
+    text-align: start !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    box-sizing: border-box !important;
+    cursor: pointer !important;
+    transition: all var(--dur-fast) var(--ease) !important;
+  }
+  .dash-tab-btn:hover {
+    border-color: var(--color-primary) !important;
+    color: var(--color-primary) !important;
+    background: var(--surface-raised) !important;
+  }
+  .dash-tab-btn.active {
+    background: var(--color-primary-100) !important;
+    border-color: var(--color-primary) !important;
+    color: var(--color-primary) !important;
+    font-weight: 700 !important;
+    box-shadow: 0 2px 8px rgba(21, 94, 239, 0.14) !important;
+  }
+  .dash-tab-btn.active::after {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    flex-shrink: 0;
+    margin-inline-start: 12px;
+  }
+
+  /* Mobile Quote Cards */
+  .quote-card {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 16px !important;
+    gap: 14px !important;
+  }
+  .quote-card-main {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+    padding-top: 0 !important;
+  }
+  .quote-insurer-row {
+    width: 100% !important;
+    justify-content: flex-start !important;
+  }
+  .quote-spec-grid {
+    width: 100% !important;
+    justify-content: space-between !important;
+    padding-block: 10px 0 !important;
+    border-top: 1px solid var(--border-soft) !important;
+  }
+  .quote-card-stub {
+    width: 100% !important;
+    justify-content: flex-end !important;
+    padding-top: 10px !important;
+    border-top: 1px dashed var(--border-soft) !important;
+  }
+  .quote-card-stub .pill {
+    width: 100% !important;
+    text-align: center !important;
   }
 
   /* Mobile Document & Receipt Cards: 2-row layout with full button widths */
@@ -467,8 +729,15 @@
 
 @media (max-width: 360px) {
   .dash-topbar {
+    height: 54px;
     padding-inline: 8px;
     gap: 6px;
+  }
+  .dash-main {
+    padding-top: 54px !important;
+  }
+  .dash-page-title {
+    font-size: 0.88rem;
   }
   .dash-topbar-right {
     gap: 4px;
@@ -484,5 +753,9 @@
   }
   .reminder-timing-chips {
     grid-template-columns: 1fr !important;
+  }
+  .dash-tab-btn {
+    padding: 11px 14px !important;
+    font-size: 0.85rem !important;
   }
 }
