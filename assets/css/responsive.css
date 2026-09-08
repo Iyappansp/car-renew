@@ -57,8 +57,8 @@
   .scorecard-wrap.table-desktop-only { display: none !important; }
   .scorecard-cards-mobile { display: flex !important; flex-direction: column; gap: var(--space-4); width: 100%; }
 
-  .table-responsive-cards .data-table { display: none; }
-  .table-responsive-cards .card-rows { display: flex; flex-direction: column; gap: var(--space-4); }
+  .table-responsive-cards .data-table { display: none !important; }
+  .table-responsive-cards .card-rows { display: flex !important; flex-direction: column; gap: var(--space-4); }
 
   .footer-bottom { flex-direction: column; align-items: flex-start; gap: 14px; }
 
@@ -118,7 +118,7 @@
   .grid-3 { grid-template-columns: repeat(2, 1fr) !important; }
   .grid-4 { grid-template-columns: repeat(2, 1fr) !important; }
   .extra-testimonials-grid { grid-template-columns: repeat(3, 1fr) !important; }
-  .stat-strip { grid-template-columns: repeat(4, 1fr) !important; }
+  .stat-strip { grid-template-columns: repeat(2, 1fr) !important; }
   .garage-list-grid { grid-template-columns: repeat(2, 1fr) !important; }
   .about-stats-strip { grid-template-columns: repeat(4, 1fr) !important; }
   .mission-vision-grid { grid-template-columns: repeat(2, 1fr) !important; }
@@ -135,6 +135,8 @@
   .compare-cards-mobile { display: none !important; }
   .scorecard-wrap.table-desktop-only { display: block !important; }
   .scorecard-cards-mobile { display: none !important; }
+  .table-responsive-cards .data-table { display: table !important; }
+  .table-responsive-cards .card-rows { display: none !important; }
 }
 
 @media (min-width: 992px) {
@@ -151,6 +153,15 @@
     width: 100% !important;
     max-width: calc((100% - var(--space-6, 32px)) / 2) !important;
     margin-inline: auto !important;
+  }
+
+  /* Dashboard pages & document lists must remain full width one-by-one, not half-width centered */
+  .dash-content .grid-2 > :last-child:nth-child(odd),
+  .dash-content .doc-list > *,
+  .doc-card {
+    max-width: 100% !important;
+    justify-self: stretch !important;
+    margin-inline: 0 !important;
   }
 
   .garage-grid > :last-child:nth-child(odd),
@@ -196,6 +207,7 @@
   .grid-3 { grid-template-columns: repeat(3, 1fr) !important; }
   .grid-4 { grid-template-columns: repeat(4, 1fr) !important; }
   .extra-testimonials-grid { grid-template-columns: repeat(3, 1fr) !important; }
+  .stat-strip { grid-template-columns: repeat(4, 1fr) !important; }
   .claim-grid-3x3 { grid-template-columns: repeat(3, 1fr) !important; }
   .claim-flow-grid { grid-template-columns: repeat(4, 1fr) !important; }
   .garage-list-grid { grid-template-columns: repeat(4, 1fr) !important; }

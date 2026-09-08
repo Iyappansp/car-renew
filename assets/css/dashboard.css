@@ -203,9 +203,9 @@
 }
 
 /* ---------- Data tables ---------- */
-.data-table { width: 100%; border-collapse: collapse; min-width: 640px; }
-.data-table th { text-align: left; padding: 14px 18px; font-size: 0.76rem; color: var(--text-muted); font-weight: 700; border-bottom: 1px solid var(--border); }
-.data-table td { padding: 14px 18px; font-size: 0.87rem; border-bottom: 1px solid var(--border-soft); }
+.data-table { width: 100%; border-collapse: collapse; min-width: 600px; }
+.data-table th { text-align: start; padding: 14px 18px; font-size: 0.78rem; color: var(--text-muted); font-weight: 700; border-bottom: 1px solid var(--border); letter-spacing: 0.03em; text-transform: uppercase; }
+.data-table td { padding: 14px 18px; font-size: 0.88rem; border-bottom: 1px solid var(--border-soft); vertical-align: middle; }
 .data-table tbody tr:last-child td { border-bottom: none; }
 .data-table tbody tr:hover { background: var(--color-bg); }
 .card-rows { display: flex; flex-direction: column; gap: var(--space-4); }
@@ -227,8 +227,32 @@
 .switch input:checked + .switch-track::before { transform: translateX(20px); }
 [dir="rtl"] .switch input:checked + .switch-track::before { transform: translateX(-20px); }
 
-/* ---------- Doc/receipt cards ---------- */
-.doc-card { display: flex; align-items: center; gap: 14px; padding: var(--space-4); border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface); }
+/* ---------- Doc/receipt cards & Lists ---------- */
+.doc-list,
+.doc-cards-list,
+[data-dash-page="documents"] .grid-2 {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: var(--space-4) !important;
+  width: 100% !important;
+}
+.doc-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  width: 100%;
+  box-sizing: border-box;
+  transition: transform var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease), border-color var(--dur-fast);
+}
+.doc-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
+}
 .doc-card-icon { width: 42px; height: 42px; border-radius: 10px; background: var(--color-secondary-100); color: var(--color-secondary-600); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .doc-card-icon svg { width: 19px; height: 19px; }
 .doc-card-meta { flex: 1; min-width: 0; }
