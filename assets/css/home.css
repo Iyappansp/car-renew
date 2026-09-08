@@ -493,21 +493,48 @@
 }
 
 @media (max-width: 1023px) {
+  .hero-copy {
+    text-align: center;
+    margin-inline: auto;
+    max-width: 680px;
+  }
+  .hero-copy .eyebrow {
+    justify-content: center;
+    margin-inline: auto;
+  }
+  .hero-copy .h1 {
+    text-align: center;
+    margin-inline: auto;
+  }
+  .hero-copy .lede {
+    text-align: center;
+    margin-inline: auto;
+    max-width: 620px;
+  }
+  .hero-cta-row {
+    justify-content: center;
+    margin-inline: auto;
+  }
+  .hero-disclaimer {
+    text-align: center;
+  }
   .hero-visual {
     justify-content: center;
     padding-inline-end: 0;
+    margin-inline: auto;
   }
   .hero-visual-frame {
-    max-width: 310px; /* Reduced on tablets */
+    max-width: 370px; /* Proportionate on tablets */
     margin-inline: auto;
   }
   .floating-card-primary {
-    top: -2px;
-    inset-inline-start: -4px;
+    top: -8px;
+    inset-inline-start: -10px;
   }
   .floating-card-secondary {
-    top: 4px;
-    inset-inline-end: -4px;
+    top: auto;
+    bottom: 12px;
+    inset-inline-end: -10px;
   }
   .floating-card-tertiary {
     display: none;
@@ -547,9 +574,14 @@
     height: 26px;
     border-radius: 6px;
   }
-  .floating-card-icon svg {
-    width: 13px;
-    height: 13px;
+  .floating-card-primary {
+    top: -6px;
+    inset-inline-start: -6px;
+  }
+  .floating-card-secondary {
+    top: auto;
+    bottom: 8px;
+    inset-inline-end: -6px;
   }
 }
 
@@ -904,16 +936,42 @@
   margin-inline: auto;
   width: 100%;
 }
-.editorial-num { font-size: 0.85rem; font-weight: 700; color: var(--color-primary); margin-bottom: var(--space-3); }
+.editorial-num {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--space-3);
+  text-align: center;
+  margin-inline: auto;
+}
+.editorial-copy .h3 {
+  text-align: center;
+  margin-inline: auto;
+}
+.editorial-copy .lede,
+.editorial-copy p {
+  text-align: center;
+  margin-inline: auto !important;
+  max-width: 680px;
+  width: 100%;
+}
+.editorial-media {
+  width: 100%;
+  max-width: 720px;
+  margin-inline: auto;
+}
 .editorial-media .ai-img-wrap {
   aspect-ratio: 16 / 10;
   max-height: 380px;
   width: 100%;
+  margin-inline: auto;
 }
 .editorial-media img {
   border-radius: var(--radius-lg);
   object-fit: cover;
   object-position: center;
+  width: 100%;
+  height: 100%;
 }
 
 .wallet-card { padding: var(--space-6); }

@@ -427,6 +427,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-6);
+  align-items: stretch;
 }
 
 @media (min-width: 640px) {
@@ -451,6 +452,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
 }
 
 [data-theme="dark"] .team-card {
@@ -505,9 +507,13 @@
 .team-bio {
   font-size: 0.84rem;
   color: var(--text-secondary);
-  line-height: 1.5;
+  line-height: 1.55;
   margin-bottom: var(--space-4);
   flex-grow: 1;
+  min-height: 4.8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .team-pedigree {
@@ -520,12 +526,14 @@
   padding: 4px 10px;
   border-radius: var(--radius-pill);
   margin-bottom: var(--space-3);
+  min-height: 24px;
 }
 
 .team-social-row {
   display: flex;
   gap: 8px;
   justify-content: center;
+  margin-top: auto;
 }
 
 .team-social-link {

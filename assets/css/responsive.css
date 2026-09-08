@@ -192,6 +192,40 @@
   }
 }
 
+/* Tablet & Mobile (< 1024px): Center Editorial blocks and subtitles */
+@media (max-width: 1023px) {
+  .editorial-block {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-6) !important;
+  }
+  .editorial-copy {
+    text-align: center !important;
+    margin-inline: auto !important;
+    max-width: 720px !important;
+    width: 100% !important;
+  }
+  .editorial-copy .editorial-num {
+    text-align: center !important;
+    margin-inline: auto !important;
+  }
+  .editorial-copy .h3 {
+    text-align: center !important;
+    margin-inline: auto !important;
+  }
+  .editorial-copy .lede,
+  .editorial-copy p {
+    text-align: center !important;
+    margin-inline: auto !important;
+    max-width: 680px !important;
+    width: 100% !important;
+  }
+  .editorial-media {
+    max-width: 720px !important;
+    margin-inline: auto !important;
+    width: 100% !important;
+  }
+}
+
 /* ---- Desktop >= 1150px ---- */
 @media (min-width: 1150px) {
   .main-nav { display: flex !important; }

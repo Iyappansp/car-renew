@@ -106,6 +106,8 @@ p, .p, .body-text, .text-muted, .text-secondary {
 
 .section-head { max-width: 640px; margin-bottom: clamp(20px, 3vw, 32px); }
 .section-head.center { margin-inline: auto; text-align: center; }
+.section-head.center .lede,
+.section-head.center p { margin-inline: auto !important; text-align: center !important; }
 
 /* ---------- Buttons ---------- */
 .btn {
@@ -1191,14 +1193,23 @@ textarea.input { resize: vertical; min-height: 120px; }
 .extra-stat-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin: 0; }
 
 /* --- 2. Mini Process Steps (index.html) --- */
-.extra-hiw-grid { display: grid; gap: var(--space-6); grid-template-columns: 1fr; }
+.extra-hiw-grid { display: grid; gap: var(--space-6); grid-template-columns: 1fr; align-items: stretch; }
 @media (min-width: 640px) { .extra-hiw-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1024px) { .extra-hiw-grid { grid-template-columns: repeat(4, 1fr); } }
 .extra-hiw-step {
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
   padding: var(--space-6); position: relative; transition: transform var(--dur-fast);
+  height: 100%; display: flex; flex-direction: column;
 }
 .extra-hiw-step:hover { transform: translateY(-3px); }
+.extra-hiw-step h4 {
+  min-height: 2.6em;
+  display: flex;
+  align-items: center;
+}
+.extra-hiw-step p {
+  flex-grow: 1;
+}
 .extra-hiw-num {
   font-size: 1.8rem; font-weight: 800; color: var(--color-primary-100); line-height: 1; margin-bottom: var(--space-3);
 }
@@ -1553,20 +1564,27 @@ textarea.input { resize: vertical; min-height: 120px; }
 [data-theme="dark"] .addon-toggle-item.selected { background: rgba(76,140,255,0.1); }
 
 .early-perks-grid { display: grid; gap: var(--space-5); grid-template-columns: 1fr; }
+.early-perks-grid { display: grid; gap: var(--space-5); grid-template-columns: 1fr; align-items: stretch; }
 @media (min-width: 640px) { .early-perks-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1024px) { .early-perks-grid { grid-template-columns: repeat(4, 1fr); } }
 .early-perk-card {
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
   padding: var(--space-5); text-align: start;
+  height: 100%; display: flex; flex-direction: column;
 }
+.early-perk-card h4 { min-height: 2.6em; display: flex; align-items: center; }
+.early-perk-card p { flex-grow: 1; }
 
-.guarantee-grid { display: grid; gap: var(--space-5); grid-template-columns: 1fr; }
+.guarantee-grid { display: grid; gap: var(--space-5); grid-template-columns: 1fr; align-items: stretch; }
 @media (min-width: 640px) { .guarantee-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1024px) { .guarantee-grid { grid-template-columns: repeat(4, 1fr); } }
 .guarantee-card {
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
   padding: var(--space-5); text-align: center;
+  height: 100%; display: flex; flex-direction: column;
 }
+.guarantee-card h4 { min-height: 2.6em; display: flex; align-items: center; justify-content: center; }
+.guarantee-card p { flex-grow: 1; }
 
 /* --- 11. Universal CTA Banner with 16:9 Background Themes & Reduced Opacity Overlay --- */
 .cta-banner {
