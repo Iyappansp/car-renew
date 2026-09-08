@@ -107,12 +107,17 @@
   .about-stats-strip { grid-template-columns: repeat(4, 1fr) !important; }
   .mission-vision-grid { grid-template-columns: repeat(2, 1fr) !important; }
   .claim-grid-3x3 { grid-template-columns: repeat(2, 1fr) !important; }
+  .claim-flow-grid { grid-template-columns: repeat(2, 1fr) !important; }
 
   /* Desktop tables visible on tablet and desktop */
   .table-desktop-only { display: block !important; }
   .compare-cards-mobile { display: none !important; }
   .scorecard-wrap.table-desktop-only { display: block !important; }
   .scorecard-cards-mobile { display: none !important; }
+}
+
+@media (min-width: 992px) {
+  .claim-flow-grid { grid-template-columns: repeat(4, 1fr) !important; }
 }
 
 @media (min-width: 768px) and (max-width: 1149px) {
@@ -140,6 +145,7 @@
   .grid-4 { grid-template-columns: repeat(4, 1fr) !important; }
   .extra-testimonials-grid { grid-template-columns: repeat(3, 1fr) !important; }
   .claim-grid-3x3 { grid-template-columns: repeat(3, 1fr) !important; }
+  .claim-flow-grid { grid-template-columns: repeat(4, 1fr) !important; }
   .garage-list-grid { grid-template-columns: repeat(4, 1fr) !important; }
 
   .hero-grid { grid-template-columns: 1.08fr 0.92fr; gap: clamp(28px, 4vw, 56px); align-items: center; }

@@ -23,18 +23,8 @@
       dropdown: true,
       match: ["claims.html", "insurers.html"],
       items: [
-        {
-          label: "Claims Assistance",
-          href: root + "claims.html",
-          match: "claims.html",
-          desc: "Step-by-step guidance & filing"
-        },
-        {
-          label: "Partner Insurers",
-          href: root + "insurers.html",
-          match: "insurers.html",
-          desc: "24+ network insurers & garages"
-        }
+        { label: "Claims Assistance", href: root + "claims.html", match: "claims.html" },
+        { label: "Partner Insurers", href: root + "insurers.html", match: "insurers.html" }
       ]
     },
     { label: "Renew", href: root + "renewal.html", match: "renewal.html" },
@@ -70,10 +60,7 @@
         var subItemsHtml = item.items.map(function (sub) {
           var subActive = sub.match === file ? " active" : "";
           return '<a href="' + sub.href + '" class="dropdown-item' + subActive + '" role="menuitem">' +
-            '<span class="dropdown-item-content">' +
-              '<strong class="dropdown-item-title">' + sub.label + '</strong>' +
-              '<small class="dropdown-item-desc">' + sub.desc + '</small>' +
-            '</span>' +
+            sub.label +
           '</a>';
         }).join("");
 
@@ -152,30 +139,73 @@
       header.classList.toggle("is-scrolled", window.scrollY > 8);
     }, { passive: true });
 
-    // Desktop Dropdown toggling
+    // Desktop Dropdown toggling & hover management
     var desktopDropWrap = document.getElementById("nav-dropdown-services");
     var desktopDropBtn = document.getElementById("services-dropdown-btn");
+    var closeTimeout = null;
+
     if (desktopDropWrap && desktopDropBtn) {
+      function openDropdown() {
+        if (closeTimeout) clearTimeout(closeTimeout);
+        desktopDropWrap.classList.add("is-open");
+        desktopDropBtn.setAttribute("aria-expanded", "true");
+      }
+
+      function closeDropdown() {
+        if (closeTimeout) clearTimeout(closeTimeout);
+        desktopDropWrap.classList.remove("is-open");
+        desktopDropBtn.setAttribute("aria-expanded", "false");
+      }
+
+      function closeDropdownWithDelay() {
+        if (closeTimeout) clearTimeout(closeTimeout);
+        closeTimeout = setTimeout(function () {
+          closeDropdown();
+        }, 160);
+      }
+
       desktopDropBtn.addEventListener("click", function (e) {
         e.stopPropagation();
-        var isOpen = desktopDropWrap.classList.toggle("is-open");
-        desktopDropBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        var isOpen = desktopDropWrap.classList.contains("is-open");
+        if (isOpen) {
+          closeDropdown();
+        } else {
+          openDropdown();
+        }
+      });
+
+      desktopDropWrap.addEventListener("mouseenter", function () {
+        openDropdown();
+      });
+
+      desktopDropWrap.addEventListener("mouseleave", function () {
+        closeDropdownWithDelay();
       });
 
       document.addEventListener("click", function (e) {
         if (!desktopDropWrap.contains(e.target)) {
-          desktopDropWrap.classList.remove("is-open");
-          desktopDropBtn.setAttribute("aria-expanded", "false");
+          closeDropdown();
         }
       });
 
       document.addEventListener("keydown", function (e) {
         if (e.key === "Escape") {
-          desktopDropWrap.classList.remove("is-open");
-          desktopDropBtn.setAttribute("aria-expanded", "false");
+          closeDropdown();
+          desktopDropBtn.focus();
         }
       });
     }
+
+    // Touch tap support for claim flow steps
+    document.querySelectorAll(".claim-flow-step").forEach(function (step) {
+      step.addEventListener("click", function (e) {
+        var isAlreadyHovered = step.classList.contains("is-hovered");
+        document.querySelectorAll(".claim-flow-step.is-hovered").forEach(function (s) {
+          if (s !== step) s.classList.remove("is-hovered");
+        });
+        step.classList.toggle("is-hovered", !isAlreadyHovered);
+      });
+    });
 
     // Mobile panel
     var panel = document.getElementById("mobile-panel");

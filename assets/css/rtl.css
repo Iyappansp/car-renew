@@ -45,3 +45,6 @@
 
 [dir="rtl"] .scorecard-table th,
 [dir="rtl"] .scorecard-table td { text-align: right; }
+
+[dir="rtl"] .claim-step-hover-overlay { text-align: right; }
+

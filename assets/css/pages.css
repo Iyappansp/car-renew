@@ -151,14 +151,196 @@
 .compare-card-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border-soft); font-size: 0.87rem; }
 .compare-card-row:last-child { border-bottom: none; }
 
-/* ---------- Claim process (vertical flow) ---------- */
-.claim-flow { display: flex; flex-direction: column; align-items: center; gap: 0; max-width: 420px; margin-inline: auto; }
-.claim-flow-step {
-  width: 100%; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md);
-  padding: 16px 20px; text-align: center; font-weight: 600; box-shadow: var(--shadow-sm);
+/* ---------- Claim process step-by-step (Fully fitted, Hover Reveal) ---------- */
+.claim-flow-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: clamp(16px, 2.2vw, 24px);
+  width: 100%;
 }
-.claim-flow-arrow { color: var(--text-muted); margin-block: 6px; }
-.claim-flow-arrow svg { width: 18px; height: 18px; }
+@media (min-width: 992px) {
+  .claim-flow-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .claim-flow-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.claim-flow-step {
+  position: relative !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  border-radius: var(--radius-lg) !important;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  aspect-ratio: 16 / 11;
+  min-height: 220px;
+  cursor: pointer;
+  isolation: isolate;
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.32s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.32s ease;
+}
+.claim-flow-step:hover,
+.claim-flow-step:focus-visible,
+.claim-flow-step:focus-within,
+.claim-flow-step.is-hovered {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.22), 0 0 0 1.5px var(--color-primary);
+  border-color: var(--color-primary);
+}
+[data-theme="dark"] .claim-flow-step:hover,
+[data-theme="dark"] .claim-flow-step:focus-visible,
+[data-theme="dark"] .claim-flow-step:focus-within,
+[data-theme="dark"] .claim-flow-step.is-hovered {
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.7), 0 0 20px rgba(76, 140, 255, 0.28);
+}
+
+/* Image fully fitted inside the card edge-to-edge */
+.claim-flow-step .ai-img-wrap {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: absolute !important;
+  inset: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  aspect-ratio: unset !important;
+  z-index: 1;
+}
+.claim-flow-step .ai-img-wrap img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+  transform: scale(1);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.claim-flow-step:hover .ai-img-wrap img,
+.claim-flow-step:focus-visible .ai-img-wrap img,
+.claim-flow-step:focus-within .ai-img-wrap img,
+.claim-flow-step.is-hovered .ai-img-wrap img {
+  transform: scale(1.08);
+}
+
+/* Rest-state step pill */
+.claim-step-resting-pill {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  background: rgba(15, 23, 42, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+[dir="rtl"] .claim-step-resting-pill {
+  left: auto;
+  right: 14px;
+}
+.claim-step-resting-pill-success {
+  border-color: rgba(22, 163, 74, 0.6);
+  color: #4ADE80;
+  background: rgba(6, 38, 18, 0.78);
+}
+.claim-flow-step:hover .claim-step-resting-pill,
+.claim-flow-step:focus-visible .claim-step-resting-pill,
+.claim-flow-step:focus-within .claim-step-resting-pill,
+.claim-flow-step.is-hovered .claim-step-resting-pill {
+  opacity: 0;
+  transform: translateY(-4px);
+}
+
+/* Hover overlay containing text details */
+.claim-step-hover-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: clamp(16px, 2.2vw, 22px);
+  background: linear-gradient(
+    to top,
+    rgba(9, 14, 26, 0.96) 0%,
+    rgba(9, 14, 26, 0.85) 55%,
+    rgba(9, 14, 26, 0.25) 85%,
+    transparent 100%
+  );
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  transform: translateY(14px);
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.claim-flow-step:hover .claim-step-hover-overlay,
+.claim-flow-step:focus-visible .claim-step-hover-overlay,
+.claim-flow-step:focus-within .claim-step-hover-overlay,
+.claim-flow-step.is-hovered .claim-step-hover-overlay {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.claim-step-hover-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--color-primary);
+  color: #FFFFFF;
+  font-size: 0.70rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 8px;
+  border-radius: 4px;
+  align-self: flex-start;
+  margin-bottom: 8px;
+}
+.claim-step-hover-badge-success {
+  background: var(--color-success);
+}
+.claim-step-hover-title {
+  color: #FFFFFF !important;
+  font-size: 1.12rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.01em;
+}
+.claim-step-hover-desc {
+  color: rgba(255, 255, 255, 0.88) !important;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Step 8 Resolution styling */
+.claim-flow-step.claim-flow-step-resolution {
+  border-color: rgba(22, 163, 74, 0.4);
+}
+.claim-flow-step.claim-flow-step-resolution:hover,
+.claim-flow-step.claim-flow-step-resolution:focus-visible,
+.claim-flow-step.claim-flow-step-resolution:focus-within,
+.claim-flow-step.claim-flow-step-resolution.is-hovered {
+  border-color: var(--color-success);
+  box-shadow: 0 16px 36px rgba(22, 163, 74, 0.28), 0 0 0 1.5px var(--color-success);
+}
 
 .checklist-grid { display: grid; gap: var(--space-4); }
 @media (min-width: 640px) { .checklist-grid { grid-template-columns: repeat(2, 1fr); } }
