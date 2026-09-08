@@ -53,6 +53,9 @@
 
   /* Type */
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-weight-heading: 600;
+  --font-weight-body: 400;
+  --font-weight-body-medium: 500;
 
   /* Spacing scale */
   --space-1: 4px;
