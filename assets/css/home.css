@@ -898,6 +898,12 @@
 .editorial-block { display: grid; gap: var(--space-6); align-items: center; }
 @media (min-width: 1024px) { .editorial-block { grid-template-columns: 1fr 1fr; gap: var(--space-8); } }
 .editorial-block.reverse .editorial-media { order: 2; }
+.editorial-copy {
+  text-align: center;
+  max-width: 720px;
+  margin-inline: auto;
+  width: 100%;
+}
 .editorial-num { font-size: 0.85rem; font-weight: 700; color: var(--color-primary); margin-bottom: var(--space-3); }
 .editorial-media .ai-img-wrap {
   aspect-ratio: 16 / 10;
