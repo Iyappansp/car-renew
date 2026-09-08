@@ -344,6 +344,17 @@
 
 .checklist-grid { display: grid; gap: var(--space-4); }
 @media (min-width: 640px) { .checklist-grid { grid-template-columns: repeat(2, 1fr); } }
+.checklist-grid .ai-img-wrap,
+.compare-transformation-grid .ai-img-wrap {
+  aspect-ratio: 16 / 10;
+  max-height: 320px;
+  background: #ffffff;
+}
+.checklist-grid .ai-img-wrap img,
+.compare-transformation-grid .ai-img-wrap img {
+  object-fit: contain;
+  background: #ffffff;
+}
 .checklist-item { display: flex; align-items: center; gap: 12px; padding: 14px 18px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); font-size: 0.9rem; font-weight: 500; }
 .checklist-item svg { width: 18px; height: 18px; color: var(--color-success); flex-shrink: 0; }
 

@@ -1291,6 +1291,17 @@ textarea.input { resize: vertical; min-height: 120px; }
 .checklist-grid { display: grid; gap: var(--space-5); grid-template-columns: 1fr; }
 @media (min-width: 640px) { .checklist-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1024px) { .checklist-grid { grid-template-columns: repeat(4, 1fr); } }
+.checklist-grid .ai-img-wrap,
+.compare-transformation-grid .ai-img-wrap {
+  aspect-ratio: 16 / 10;
+  max-height: 320px;
+  background: #ffffff;
+}
+.checklist-grid .ai-img-wrap img,
+.compare-transformation-grid .ai-img-wrap img {
+  object-fit: contain;
+  background: #ffffff;
+}
 .checklist-card {
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
   padding: var(--space-5); position: relative;
