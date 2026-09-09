@@ -2003,12 +2003,15 @@ textarea.input { resize: vertical; min-height: 120px; }
 .claim-flow-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: clamp(16px, 2.2vw, 24px);
+  column-gap: var(--space-6);
+  row-gap: clamp(32px, 4vw, 44px);
   width: 100%;
 }
 @media (min-width: 992px) {
   .claim-flow-grid {
     grid-template-columns: repeat(4, 1fr);
+    column-gap: var(--space-6);
+    row-gap: clamp(32px, 4vw, 44px);
   }
 }
 .checklist-card-grid {

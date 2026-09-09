@@ -123,7 +123,11 @@
   .about-stats-strip { grid-template-columns: repeat(4, 1fr) !important; }
   .mission-vision-grid { grid-template-columns: repeat(2, 1fr) !important; }
   .claim-grid-3x3 { grid-template-columns: repeat(2, 1fr) !important; }
-  .claim-flow-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .claim-flow-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    column-gap: var(--space-6) !important;
+    row-gap: clamp(28px, 3.5vw, 40px) !important;
+  }
   .garage-grid { grid-template-columns: repeat(2, 1fr) !important; }
   .timeline-flow { grid-template-columns: repeat(2, 1fr) !important; }
   .scenarios-grid { grid-template-columns: repeat(2, 1fr) !important; gap: var(--space-5) !important; }
@@ -140,7 +144,11 @@
 }
 
 @media (min-width: 992px) {
-  .claim-flow-grid { grid-template-columns: repeat(4, 1fr) !important; }
+  .claim-flow-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    column-gap: var(--space-6) !important;
+    row-gap: clamp(32px, 4vw, 44px) !important;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1149px) {
@@ -243,7 +251,11 @@
   .extra-testimonials-grid { grid-template-columns: repeat(3, 1fr) !important; }
   .stat-strip { grid-template-columns: repeat(4, 1fr) !important; }
   .claim-grid-3x3 { grid-template-columns: repeat(3, 1fr) !important; }
-  .claim-flow-grid { grid-template-columns: repeat(4, 1fr) !important; }
+  .claim-flow-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    column-gap: var(--space-6) !important;
+    row-gap: clamp(32px, 4vw, 44px) !important;
+  }
   .garage-list-grid { grid-template-columns: repeat(4, 1fr) !important; }
   .garage-grid { grid-template-columns: repeat(3, 1fr) !important; }
   .timeline-flow { grid-template-columns: repeat(5, 1fr) !important; }

@@ -92,7 +92,12 @@
 }
 
 /* ---------- Numbered steps (How It Works) ---------- */
-.step-grid { display: grid; gap: var(--space-6); align-items: stretch; }
+.step-grid {
+  display: grid;
+  column-gap: clamp(16px, 2.2vw, 24px);
+  row-gap: clamp(28px, 3.6vw, 40px);
+  align-items: stretch;
+}
 @media (min-width: 640px) { .step-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1024px) { .step-grid { grid-template-columns: repeat(4, 1fr); } }
 .step-card {
@@ -162,21 +167,59 @@
 .compare-card-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border-soft); font-size: 0.87rem; }
 .compare-card-row:last-child { border-bottom: none; }
 
+/* Universal post-hero section spacing & container separation */
+.inner-hero + .section,
+.inner-hero + section.section {
+  padding-top: clamp(56px, 6vw, 84px) !important;
+}
+
+.claim-process-section,
+.hiw-process-section {
+  padding-top: clamp(48px, 5.5vw, 76px) !important;
+  padding-bottom: clamp(56px, 6.5vw, 88px) !important;
+  scroll-margin-top: calc(var(--header-h) + 24px);
+}
+
+.checklist-section,
+.claims-checklist-section {
+  background: var(--surface);
+  border-block: 1px solid var(--border);
+  padding-top: clamp(56px, 6.5vw, 88px) !important;
+  padding-bottom: clamp(56px, 6.5vw, 88px) !important;
+}
+
+.policy-intro-section,
+.insurers-filter-section,
+.contact-details-section,
+.faq-content-section {
+  padding-top: clamp(56px, 6vw, 84px) !important;
+  padding-bottom: clamp(56px, 6vw, 84px) !important;
+}
+
+.claim-process-section .section-head,
+.hiw-process-section .section-head {
+  margin-bottom: clamp(28px, 3.2vw, 40px);
+}
+
 /* ---------- Claim process step-by-step (Fully fitted, Hover Reveal) ---------- */
 .claim-flow-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: clamp(16px, 2.2vw, 24px);
+  column-gap: var(--space-6) !important; /* 32px wide gap between Step 1 and Step 2 */
+  row-gap: clamp(32px, 4vw, 44px) !important;
   width: 100%;
 }
 @media (min-width: 992px) {
   .claim-flow-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr) !important;
+    column-gap: var(--space-6) !important; /* 32px between Step 1 and Step 2 */
+    row-gap: clamp(32px, 4vw, 44px) !important;
   }
 }
 @media (max-width: 640px) {
   .claim-flow-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+    row-gap: 24px !important;
   }
 }
 
@@ -188,8 +231,8 @@
   border: 1.5px solid var(--border);
   background: var(--surface);
   box-shadow: var(--shadow-sm);
-  aspect-ratio: 16 / 11;
-  min-height: 220px;
+  aspect-ratio: 16 / 10.5;
+  min-height: 195px;
   cursor: pointer;
   isolation: isolate;
   transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.32s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.32s ease;
