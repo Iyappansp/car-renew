@@ -124,9 +124,9 @@
   .mission-vision-grid { grid-template-columns: repeat(2, 1fr) !important; }
   .claim-grid-3x3 { grid-template-columns: repeat(2, 1fr) !important; }
   .claim-flow-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    column-gap: var(--space-6) !important;
-    row-gap: clamp(28px, 3.5vw, 40px) !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    column-gap: var(--space-5) !important;
+    row-gap: clamp(24px, 3.2vw, 36px) !important;
   }
   .garage-grid { grid-template-columns: repeat(2, 1fr) !important; }
   .timeline-flow { grid-template-columns: repeat(2, 1fr) !important; }
@@ -143,11 +143,12 @@
   .table-responsive-cards .card-rows { display: none !important; }
 }
 
-@media (min-width: 992px) {
+/* 1024px & iPad Pro (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
   .claim-flow-grid {
-    grid-template-columns: repeat(4, 1fr) !important;
-    column-gap: var(--space-6) !important;
-    row-gap: clamp(32px, 4vw, 44px) !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    column-gap: 16px !important;
+    row-gap: 22px !important;
   }
 }
 
@@ -252,7 +253,7 @@
   .stat-strip { grid-template-columns: repeat(4, 1fr) !important; }
   .claim-grid-3x3 { grid-template-columns: repeat(3, 1fr) !important; }
   .claim-flow-grid {
-    grid-template-columns: repeat(4, 1fr) !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
     column-gap: var(--space-6) !important;
     row-gap: clamp(32px, 4vw, 44px) !important;
   }
