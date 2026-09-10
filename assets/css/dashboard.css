@@ -93,6 +93,21 @@
 .dash-page-title { font-size: 1.1rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .dash-sidebar-toggle { display: none; }
 .dash-topbar-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+.dash-topbar-right .toggle-btn,
+.dash-topbar-right .rtl-text-btn {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  min-height: 36px;
+  max-width: 36px;
+  max-height: 36px;
+  border-radius: 50% !important;
+  aspect-ratio: 1 / 1;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .dash-notif-wrapper { position: relative; }
 .dash-notif-btn { position: relative; }
@@ -126,9 +141,11 @@
 .stat-mini .sm-value { font-size: 1.35rem; font-weight: 700; }
 
 /* ---------- Dashboard cards ---------- */
-.dash-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-6); }
-.dash-card-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-5); gap: 12px; flex-wrap: wrap; }
-.dash-card-head h3 { font-size: 1.02rem; font-weight: 600; }
+.dash-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-6); display: flex; flex-direction: column; height: 100%; }
+.dash-card-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: var(--space-5); gap: 12px; flex-wrap: wrap; min-height: 48px; }
+.dash-card-head h3 { font-size: 1.02rem; font-weight: 600; line-height: 1.35; }
+.dash-card > .btn:last-child,
+.dash-card > a.btn:last-child { margin-top: auto; }
 
 .activity-row { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border-soft); }
 .activity-row:last-child { border-bottom: none; }
@@ -583,6 +600,11 @@
     width: 32px;
     height: 32px;
     min-width: 32px;
+    min-height: 32px;
+    max-width: 32px;
+    max-height: 32px;
+    border-radius: 50% !important;
+    aspect-ratio: 1 / 1;
     padding: 0;
     font-size: 0.72rem;
     display: inline-flex;
@@ -792,6 +814,11 @@
     width: 30px;
     height: 30px;
     min-width: 30px;
+    min-height: 30px;
+    max-width: 30px;
+    max-height: 30px;
+    border-radius: 50% !important;
+    aspect-ratio: 1 / 1;
     padding: 0;
     font-size: 0.70rem;
     align-items: center;
