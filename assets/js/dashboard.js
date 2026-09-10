@@ -82,7 +82,7 @@
               '<span class="icon-moon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></span>' +
             '</button>' +
             '<button type="button" class="rtl-text-btn" id="rtl-toggle" aria-label="Toggle right-to-left layout">RTL</button>' +
-            '<div style="position:relative">' +
+            '<div class="dash-notif-wrapper" style="position:relative">' +
               '<button type="button" class="toggle-btn dash-notif-btn" id="dash-notif-btn" aria-label="Notifications" aria-expanded="false">' +
                 '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>' +
                 '<span class="dash-notif-dot"></span>' +
@@ -201,8 +201,11 @@
   }
 
   (function initPrefs() {
-    var theme = localStorage.getItem("rp-theme") || "light";
-    var rtl = localStorage.getItem("rp-rtl") === "1";
+    var params = new URLSearchParams(window.location.search);
+    var qTheme = params.get("theme");
+    var qDir = params.get("dir");
+    var theme = qTheme || localStorage.getItem("rp-theme") || "light";
+    var rtl = qDir ? (qDir === "rtl") : (localStorage.getItem("rp-rtl") === "1");
     document.documentElement.setAttribute("data-theme", theme);
     document.documentElement.setAttribute("dir", rtl ? "rtl" : "ltr");
   })();

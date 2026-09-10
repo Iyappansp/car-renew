@@ -3,11 +3,100 @@
    Activated via [dir="rtl"] on <html>
    Most layout already uses logical properties (margin-inline,
    padding-inline, inset-inline, border-start/end) so this file
-   only handles the exceptions that need explicit mirroring.
+   handles bidirectional mirroring, form alignments, and punctuation.
    ============================================================ */
 
-[dir="rtl"] body { text-align: right; }
+[dir="rtl"] body {
+  text-align: right;
+  direction: rtl;
+}
 
+/* Prevent English punctuation jumping to line-start in RTL */
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6,
+[dir="rtl"] p,
+[dir="rtl"] .lede,
+[dir="rtl"] .eyebrow,
+[dir="rtl"] span,
+[dir="rtl"] label,
+[dir="rtl"] a,
+[dir="rtl"] li {
+  unicode-bidi: plaintext;
+}
+
+/* Form input and placeholder alignments in RTL */
+[dir="rtl"] input,
+[dir="rtl"] select,
+[dir="rtl"] textarea {
+  text-align: right;
+}
+
+[dir="rtl"] input::placeholder,
+[dir="rtl"] textarea::placeholder {
+  text-align: right;
+}
+
+/* Phone & email inputs: visual right alignment while preserving LTR data entry */
+[dir="rtl"] input[type="tel"] {
+  text-align: right;
+  direction: ltr;
+  unicode-bidi: plaintext;
+}
+
+[dir="rtl"] input[type="email"] {
+  text-align: right;
+  direction: ltr;
+  unicode-bidi: plaintext;
+}
+
+/* Date input in RTL: dd-mm-yyyy on the right, calendar picker on the left */
+[dir="rtl"] input[type="date"] {
+  direction: rtl;
+  text-align: right;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+}
+
+[dir="rtl"] input[type="date"]::-webkit-datetime-edit {
+  direction: rtl;
+  text-align: right;
+  flex: 1;
+}
+
+[dir="rtl"] input[type="date"]::-webkit-calendar-picker-indicator {
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+/* Password toggle button positioning in RTL */
+[dir="rtl"] .input-group .input-suffix-btn {
+  inset-inline-end: 4px;
+  inset-inline-start: auto;
+}
+
+[dir="rtl"] .input-suffix-btn svg {
+  transform: none;
+}
+
+/* Checkbox alignment in RTL */
+[dir="rtl"] .checkbox-row {
+  direction: rtl;
+  text-align: right;
+  unicode-bidi: plaintext;
+}
+
+[dir="rtl"] .checkbox-row input {
+  margin-inline-start: 0;
+  margin-inline-end: 8px;
+}
+
+/* Icons and layout flips */
 [dir="rtl"] .icon-flip { transform: scaleX(-1); }
 
 [dir="rtl"] .eyebrow::before { order: 2; }
@@ -20,7 +109,29 @@
 
 [dir="rtl"] .step-line { background: linear-gradient(to left, var(--color-primary), var(--border)); }
 
-[dir="rtl"] .timeline::before { inset-inline-start: unset; inset-inline-end: 19px; }
+/* Renewal Stepper line in RTL */
+[dir="rtl"] .stepper-step:not(:last-child)::after {
+  left: -45%;
+  right: 55%;
+}
+
+/* Preserve numbers, dates, timings and IDs in natural LTR order */
+[dir="rtl"] .wr-value,
+[dir="rtl"] .filter-chip,
+[dir="rtl"] .reminder-timing-chips button,
+[dir="rtl"] .dcr-line span:last-child,
+[dir="rtl"] .pill,
+[dir="rtl"] .badge,
+[dir="rtl"] .stat-value,
+[dir="rtl"] time {
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: inline-block;
+}
+
+[dir="rtl"] .wallet-row .wr-value {
+  text-align: left;
+}
 
 [dir="rtl"] .toast svg { margin-inline-start: 0; }
 
@@ -29,8 +140,6 @@
 [dir="rtl"] .compare-scroll { direction: rtl; }
 
 [dir="rtl"] .dash-shell { direction: rtl; }
-
-[dir="rtl"] .password-toggle-icon { transform: scaleX(-1); }
 
 [dir="rtl"] .chevron-next { transform: scaleX(-1); }
 
@@ -47,4 +156,3 @@
 [dir="rtl"] .scorecard-table td { text-align: right; }
 
 [dir="rtl"] .claim-step-hover-overlay { text-align: right; }
-

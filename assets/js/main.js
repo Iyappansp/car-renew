@@ -387,8 +387,11 @@
 
   // Apply stored preferences immediately (before header builds) to avoid flash
   (function initPrefs() {
-    var theme = localStorage.getItem("rp-theme") || "light";
-    var rtl = localStorage.getItem("rp-rtl") === "1";
+    var params = new URLSearchParams(window.location.search);
+    var qTheme = params.get("theme");
+    var qDir = params.get("dir");
+    var theme = qTheme || localStorage.getItem("rp-theme") || "light";
+    var rtl = qDir ? (qDir === "rtl") : (localStorage.getItem("rp-rtl") === "1");
     document.documentElement.setAttribute("data-theme", theme);
     document.documentElement.setAttribute("dir", rtl ? "rtl" : "ltr");
   })();
