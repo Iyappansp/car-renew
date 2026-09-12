@@ -729,7 +729,16 @@
 .auth-card-logo-img {
   height: 32px;
   width: auto;
+  max-width: 175px;
+  object-fit: contain;
   display: block;
+  transition: transform var(--dur-fast) var(--ease), opacity var(--dur-fast);
+}
+.brand:hover .auth-card-logo-img,
+.brand:focus-visible .auth-card-logo-img,
+.auth-card-logo-wrap .brand:hover img,
+.auth-card-logo-wrap .brand:focus-visible img {
+  transform: translateY(-1px) scale(1.02);
 }
 .auth-card-header {
   margin-bottom: 18px;

@@ -439,7 +439,7 @@
             <span class="pill pill-primary" style="margin-bottom:10px">Recommended For You</span>
             <h3 class="h3" id="calc-rec-plan" style="margin-top:6px;font-size:1.25rem">Zero Depreciation Comprehensive</h3>
             <p class="text-muted" style="font-size:0.84rem;margin-top:4px">Provides complete bumper-to-bumper protection with zero deduction on plastic, metal &amp; glass parts.</p>
-            <div class="calc-price-display" id="calc-price">₹5,900<span style="font-size:0.9rem;font-weight:500;color:var(--text-muted)">/yr*</span></div>
+            <div class="calc-price-display" id="calc-price">₹5,900<span style="font-size:0.9rem;font-weight:500;color:var(--text-muted);margin-inline-start:4px">/yr*</span></div>
             <p style="font-size:0.8rem;color:var(--color-success);font-weight:500;margin-bottom:16px">Estimated savings up to ₹3,200 vs dealer renewal</p>
             <a href="renewal.html" class="btn btn-primary btn-block">Lock This Demo Rate</a>
           </div>
@@ -652,7 +652,7 @@
       var plan = activeAge.dataset.plan;
 
       var finalPrice = Math.round(base * mult * (1 - (ncb / 100)));
-      if (priceEl) priceEl.innerHTML = '₹' + finalPrice.toLocaleString('en-IN') + '<span style="font-size:0.9rem;font-weight:500;color:var(--text-muted)">/yr*</span>';
+      if (priceEl) priceEl.innerHTML = '₹' + finalPrice.toLocaleString('en-IN') + '<span style="font-size:0.9rem;font-weight:500;color:var(--text-muted);margin-inline-start:4px">/yr*</span>';
       if (planEl) planEl.textContent = plan;
     }
 

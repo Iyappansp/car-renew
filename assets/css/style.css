@@ -1211,7 +1211,7 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
   color: var(--color-secondary-600) !important;
 }
 .extra-stat-icon svg { width: 22px; height: 22px; }
-.extra-stat-value { font-size: 2.2rem; font-weight: 800; color: var(--text-primary); line-height: 1.1; margin-bottom: 4px; }
+.extra-stat-value { font-size: clamp(1.45rem, 2.4vw, 1.7rem); font-weight: 800; color: var(--text-primary); line-height: 1.15; margin-bottom: 4px; }
 .extra-stat-label { font-size: 0.95rem; font-weight: 600; color: var(--color-secondary-600); margin-bottom: 8px; }
 .extra-stat-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin: 0; }
 
@@ -1460,21 +1460,22 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
 .scenario-meta-row span { white-space: nowrap; font-size: 0.82rem; flex-shrink: 0; }
 .scenario-meta-row strong { text-align: right; font-size: 0.84rem; line-height: 1.3; }
 
-.ncb-ladder-grid { display: grid; gap: 10px; grid-template-columns: 1fr; }
-@media (min-width: 640px) { .ncb-ladder-grid { grid-template-columns: repeat(2, 1fr); } }
+.ncb-ladder-grid { display: grid; gap: var(--space-5, 20px); grid-template-columns: 1fr; grid-auto-rows: 1fr; align-items: stretch; }
+@media (min-width: 640px) { .ncb-ladder-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-5, 20px); } }
 @media (min-width: 640px) and (max-width: 1149px) {
   .ncb-ladder-grid > :last-child:nth-child(odd) {
     grid-column: 1 / -1;
     justify-self: center;
     width: 100%;
-    max-width: calc((100% - 10px) / 2);
+    max-width: calc((100% - var(--space-5, 20px)) / 2);
     margin-inline: auto;
   }
 }
-@media (min-width: 1150px) { .ncb-ladder-grid { grid-template-columns: repeat(5, 1fr); } }
+@media (min-width: 1150px) { .ncb-ladder-grid { grid-template-columns: repeat(5, 1fr); gap: var(--space-4, 16px); } }
 .ncb-rung {
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md);
   padding: var(--space-4); text-align: center; transition: all var(--dur-fast);
+  display: flex; flex-direction: column; justify-content: flex-start; height: 100%; box-sizing: border-box;
 }
 .ncb-rung:hover { border-color: var(--color-primary); transform: translateY(-2px); }
 .ncb-pct { font-size: 1.6rem; font-weight: 800; color: var(--color-primary); }

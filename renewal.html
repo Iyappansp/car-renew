@@ -258,7 +258,7 @@
         <div style="margin-top:var(--space-6);padding-top:var(--space-5);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
           <div>
             <span class="text-muted" style="font-size:0.88rem">Selected Add-ons Subtotal:</span>
-            <div style="font-size:1.6rem;font-weight:800;color:var(--color-primary)" id="addon-total-display">₹2,349<span style="font-size:0.85rem;font-weight:500;color:var(--text-muted)">/yr</span></div>
+            <div style="font-size:1.6rem;font-weight:800;color:var(--color-primary)" id="addon-total-display">₹2,349<span style="font-size:0.85rem;font-weight:500;color:var(--text-muted);margin-inline-start:4px">/yr</span></div>
           </div>
           <button type="button" class="btn btn-primary" onclick="window.RenewPath.toast('Add-on bundle applied to your renewal quote.')">Apply To My Renewal</button>
         </div>
@@ -467,7 +467,7 @@
         }
       });
       if (totalDisplay) {
-        totalDisplay.innerHTML = '₹' + sum.toLocaleString('en-IN') + '<span style="font-size:0.85rem;font-weight:500;color:var(--text-muted)">/yr</span>';
+        totalDisplay.innerHTML = '₹' + sum.toLocaleString('en-IN') + '<span style="font-size:0.85rem;font-weight:500;color:var(--text-muted);margin-inline-start:4px">/yr</span>';
       }
     }
 
